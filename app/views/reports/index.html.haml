@@ -1,0 +1,41 @@
+= content_for :head do
+  = stylesheet_link_tag 'reports', :media => 'all'
+
+/ Start Header
+= render :partial => 'shared/header'
+/ End Header
+
+#main
+  #intro
+    .container_12
+      #brief.prefix_6
+        %h1{ :style => "position:relative; left: 50px;" } Reports
+  #content
+    .container_12
+      %ul#rows
+        %li
+          %ul.header.report
+            %li.date
+              Date
+            %li.description
+              Description
+            %li.oil
+              Oil
+            %li.urgent
+              Urgent
+            %li.media
+              Media
+        - for report in @reports do
+          %li
+            %ul.report
+              %li.date
+                = report.created_at.strftime('%m.%d.%Y')
+              %li.description
+                = truncate(report.description, :length => 25)
+              %li.oil
+                = report.oil
+              %li.urgent
+                = report.respond? ? "Yes" : "No"
+              %li.media.nopadding
+                = report.media? ? image_tag(report.media(:thumb)) : image_tag('http://placehold.it/50x50')
+      %br(clear="all")

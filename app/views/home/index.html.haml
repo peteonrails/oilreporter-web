@@ -8,11 +8,10 @@
     .container_12
       / Start Slides
       #slides
-        %img{ :src => "img/slide.1.png", :alt => "", :class => "active" }
-        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
-        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
-        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
-        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
+        %img{ :src => "img/slide.1.png", :alt => "Oil Reporter for iPhone", :class => "active" }
+        %img{ :src => "img/slide.2.png", :alt => "Oil Reporter - What do you see?" }
+        %img{ :src => "img/slide.3.png", :alt => "Oil Reporter Twitter feed" }
+        %img{ :src => "img/slide.4.png", :alt => "About Oil Reporter", :class => "last" }
       / End Slides
       #brief.prefix_6.grid_6
         %h1{ :style => "position:relative;left:20px;" } Helping Clean Up
@@ -52,9 +51,8 @@
           %h3 Built on Titanium
           %p.compact
             Oil Reporter was built with 
-            %strong
-              Appcelerator Titanium
-            in just _ days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Learn more about
+            = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
+            in a matter of days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Learn more about
             = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
             for mobile development.
       .grid_6
@@ -65,7 +63,6 @@
           %p.compact
             Oil Reporter for iPhone and Android has been released as open source on GitHub. If you're a developer and would like to contribute then please 
             = link_to 'join the social coding!', '#'
-              
       .clear
       .grid_6
         %a{ :href => "http://heroku.com" }
@@ -75,7 +72,7 @@
           %p.compact
             Oil Reporter uses 
             = link_to 'Heroku', 'http://heroku.com'
-            Heroku for hosting in the coud. Heroku is a cloud application platform for Ruby. Heroku lets app developers spend 100% of their time on their application code, not managing servers, deployment, ongoing operations, or scaling. Learn more about the
+            for hosting in the coud. Heroku is a cloud application platform for Ruby. Heroku lets app developers spend 100% of their time on their application code, not managing servers, deployment, ongoing operations, or scaling. Learn more about the
             = link_to 'Heroku Ruby Cloud Platform', 'http://heroku.com'
             today!
       .clear  

@@ -4,6 +4,8 @@ db/schema.rb
 db/*.sqlite3
 public/system
 *.DS_Store
+*.Memeo
+*.plist
 coverage/*
 *.swp
 vendor/bundler_gems

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>accessDate</key>
+		<date>2010-02-04T03:25:40Z</date>
+		<key>actualSize</key>
+		<integer>84</integer>
+		<key>attributeModDate</key>
+		<date>2010-01-21T00:21:35Z</date>
+		<key>createDate</key>
+		<date>2009-05-07T03:27:26Z</date>
+		<key>creationDate</key>
+		<date>2010-04-13T03:29:09Z</date>
+		<key>encrypted</key>
+		<false/>
+		<key>id</key>
+		<string>2143AA00-65C8-4BAE-96A8-4A5A9A0A59AF</string>
+		<key>lastModifiedDate</key>
+		<date>2009-05-09T21:18:17Z</date>
+		<key>originalPath</key>
+		<string>/Users/jnelson/code/nonprofit/tradui/public/javascripts/application.js</string>
+		<key>originalSize</key>
+		<integer>84</integer>
+		<key>versionMetadataList</key>
+		<array>
+			<dict>
+				<key>POSIXPermissions</key>
+				<integer>-32348</integer>
+				<key>creatorCode</key>
+				<integer>0</integer>
+				<key>fileType</key>
+				<integer>0</integer>
+				<key>id</key>
+				<string>21CCEFBA-9444-4386-A90A-9D0690332797</string>
+				<key>macAttributes</key>
+				<integer>0</integer>
+				<key>ownerGID</key>
+				<integer>20</integer>
+				<key>ownerUID</key>
+				<integer>501</integer>
+			</dict>
+		</array>
+		<key>versionType</key>
+		<integer>0</integer>
+	</dict>
+</array>
+</plist>

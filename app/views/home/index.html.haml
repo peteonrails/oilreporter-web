@@ -1,0 +1,159 @@
+/ Start Header
+= render :partial => 'header'
+/ End Header
+
+/ Start Showcase Content
+#main
+  #intro
+    .container_12
+      / Start Slides
+      #slides
+        %img{ :src => "img/slide.1.png", :alt => "", :class => "active" }
+        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
+        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
+        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
+        %img{ :src => "img/slide.1.png", :alt => "", :class => "" }
+      / End Slides
+      #brief.prefix_6.grid_6
+        %h1{ :style => "position:relative;left:20px;" } Helping Clean Up
+        %h3{ :style => "color:white;position:relative;left:80px;" }
+          Oil Reporter App Available for
+        %a{ :href => "", :class => "signup ie6fix" }
+          iPhone
+        %a{ :href => "", :class => "more ie6fix" }
+          Android  
+      .clear
+      / end of #brief
+  / end of #intro
+  #content
+    .container_12
+      .grid_6
+        %a{ :href => "http://intridea.com" }
+          %img{ :src => "img/intridea_small.png", :alt => "", :class => "left" }
+        .right.text
+          %h3 To the Gulf of Mexico with Love
+          %p.compact
+            Oil Reporter was built by 
+            %a{ :href => "http://intridea.com" }
+              Intridea
+            for the Gulf of Mexico Oil Spill.  On April 20, 2010, an explosion occurred on the semi-submersible offshore drilling rig Deepwater Horizon in the Gulf of Mexico killing 11 rig workers and injuring 17 others.  On April 24, it was found that the wellhead was damaged and was leaking oil into the Gulf.  Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what their seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more.
+      .grid_6
+        %a{ :href => "http://github.com/brendanlim/Tradui" }
+          %img{ :src => "img/github_small.png", :alt => "", :class => "left" }
+        .right.text
+          %h3 Open Source
+          %p.compact
+            Oil Reporter for iPhone and Android has been released as open source on GitHub. If you're a developer and would like to contribute then please 
+            %a{ :href => "#" }
+              join the social coding!
+      .clear
+      .grid_6
+        %a{ :href => "http://crisiscommons.org" }
+          %img{ :src => "img/crisiscommons_small.png", :alt => "", :class => "left" }
+        .right.text
+          %h3 Crisis Commons
+          %p.compact
+            %a{ :href => "http://crisiscommons.org" }
+              Crisis Commons
+            is an international volunteer network of professionals drawn together by a call to service. We create technological tools and resources for responders to use in mitigating disasters and crises around the world.
+      .grid_6
+        %a{ :href => "http://cchaiti.presentlyapp.com/browse" }
+          %img{ :src => "img/presently_enterprise_microblogging_small.png", :alt => "", :class => "left" }
+        .right.text
+          %h3 Collaboration
+          %p.compact
+            Oil Report mobile team uses 
+            %a{ :href => "http://presentlyapp.com" }
+              Presently
+            to collaborate with other contributors. Presently allows us to stay in sync and focus on delivering a quality application in the least amount of time.
+      .clear
+      .grid_6
+        %a{ :href => "http://www.appcelerator.com/products/titanium-mobile/" }
+          %img{ :src => "img/appcelerator_small.png", :alt => "", :class => "left" }
+        .right.text
+          %h3 Built on Titanium
+          %p.compact
+            Oil Reporter was built with 
+            %strong
+              Appcelerator Titanium
+            in just _ days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Learn more about
+            %a{ :href => "http://www.appcelerator.com/products/titanium-mobile/" }
+              Appcelerator Titanium
+            for mobile development.
+      .clear
+      / end of grid row
+      .grid_12
+        / Start Tweets
+        = render :partial => "shared/twitterbuzz"
+      
+      .clear
+      / start news
+      / = render :partial => "shared/news"
+      / end news
+      .clear      
+      / end grid
+  / end #content
+/ end #main  
+
+#foot
+  .container_12
+    .grid_3
+      %h4 The Team
+      %p
+        %a{ :href => "http://intridea.com" }
+          Intridea
+        designs and develops simple, intuitive applications to help companies realize the power of social and business collaboration, cloud computing, and next-generation tools for the enterprise.
+    .grid_3
+      %h4{ :style => "color:#171717"} .
+      %p
+        %a{ :href => "http://twitter.com/brendanlim" }
+          Brendan Lim
+        is Intridea's mobile application extraordinaire. Brendan spent his days as a systems architect at a mobile startup called kajeet, Inc. He also found the time to co-found, design, and lead development on Yappd, a microblogging social network, built on Rails, that was featured in such publications as PC Magazine, TechCrunch and Mashable.
+    .grid_3
+      %h4{ :style => "color:#171717"} .
+      %p
+        %a{ :href => "http://twitter.com/cselmer" }
+          Chris
+        is an expert Ruby on Rails architect with over 10 years of project leadership and hands-on development experience. He specializes in leading small teams on fast-paced development projects as Director of Client Solutions at Intridea.
+    .grid_3
+      %h4{ :style => "color:#171717"} .
+      %p
+        %a{ :href => "http://twitter.com/jonathannelson" }
+          Jonathan
+        is the Product Manager for Intridea after selling his previous company, TwitterMass, last year. ATL [Startup Digest] Curator, Startup King, Lover of All Things People, Hustle 2.0, Entrepreneur for Life, Aspiring Author & Tech Geek.
+    .clear
+    / end grid
+    
+    / second row
+    .grid_3
+      %h4{ :style => "color:#171717"} .
+      %p
+        %a{ :href => "http://twitter.com/ssoper" }
+          Sean
+        is a Software Architect at Intridea. A Ruby enthusiast for over five years, Sean brings a decade of software development experience in industries ranging from defense to health care. In addition, he is a registered iPhone developer with several apps to his name. An avid learner, Sean is constantly seeking out interesting languages and solving computer science-related problems.
+    .grid_3
+      %h4{ :style => "color:#171717"} .
+      %p
+        %a{ :href => "http://intridea.com/about/people/simon" }
+          Simon
+        is a Software Architect at Intridea. Simon loves Ruby’s dynamism and Rails’ terseness. He can build an app from end-to-end – design, UI, and hacking the DB when ActiveRecord just won’t do it. He likes working on interfaces, tweaking for usability.
+    .clear
+    / end grid
+    
+    
+    
+    .grid_9
+      %p
+        Copyright ©2010
+        %a{ :href => "http://intridea.com", :title => "Intridea - Design, Development, and Strategy for the Enterprise Web" }
+          Intridea, Inc.
+    .grid_3
+      %a{ :href => "http://intridea.com" }
+        %img{ :src => "img/logo.foot.png", :alt => "" }
+    .clear
+    / end of grid row
+/ end footer
+        
+        
+        
+                                                       

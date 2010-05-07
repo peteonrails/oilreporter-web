@@ -1,0 +1,36 @@
+%head
+  %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
+  %meta{ :content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible" }
+  == <meta name="keywords" content="oil spill, oil cleanup, oil reporting" />
+  == <meta name="description" content="Oil Reporter was built by Intridea for Crisis Commons for the Gulf of Mexico Oil Spill." />
+  == <meta name="google-site-verification" content="" />
+
+  %title
+    = @title || "Oil Reporter"
+  
+  %link{ :href => 'favicon.ico', :type => 'image/x-icon', :rel => 'icon' }
+  
+  / Stylesheets
+  = stylesheet_link_tag 'style', :media => 'all'
+  = stylesheet_link_tag 'pretty.photo.css', :media => 'all'
+  = stylesheet_link_tag 'facebox', :media => 'screen'
+  
+  / JavaScript
+  = javascript_include_tag 'jquery'
+  = javascript_include_tag 'pretty.photo'
+  = javascript_include_tag 'custom'
+  = javascript_include_tag 'facebox'
+  = javascript_include_tag 'application'
+  
+  /[if IE 6]
+    = javascript_include_tag 'dd_belated_png'
+    :javascript
+      / PNG FIX
+      DD_belatedPNG.fix('.ie6fix, #top, #nav a:hover, #nav li.selected a, #slides img, #path');
+    
+  = yield :javascript
+
+  - if flash[:notice] || flash[:warning] || flash[:message] || flash[:error]
+    = javascript_tag "$(document).ready(function(){setTimeout(\"$('#flash').fadeOut(1000);\", 6000)})"
+
+  = yield :head

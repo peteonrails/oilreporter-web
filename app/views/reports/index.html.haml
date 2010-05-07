@@ -37,5 +37,5 @@
               %li.urgent
                 = report.respond? ? "Yes" : "No"
               %li.media.nopadding
-                = report.media? ? image_tag(report.media(:thumb)) : image_tag('http://placehold.it/50x50')
+                = report.media? ? image_tag(report.media(:tiny)) : image_tag('http://placehold.it/50x50')
       %br(clear="all")

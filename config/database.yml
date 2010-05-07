@@ -1,17 +1,23 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
-
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql
+  server: localhost
+  username: root 
+  password:
+  database: oilreporter
+  
+test: &TEST
+  adapter: mysql
+  server: localhost
+  username: root 
+  password:
+  database: oilreporter_test
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql
+  server: localhost
+  username: root 
+  password:
+  database: oilreporter_production
+
+cucumber:
+  <<: *TEST

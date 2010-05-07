@@ -9,15 +9,9 @@ gem 'haml'
 gem 'twitter'
 gem 'RedCloth'
 gem 'httparty'
-<<<<<<< HEAD
-gem 'pg'
-# gem 'mysql'
-=======
 gem 'mysql', '~> 2.8.1'
 gem 'pg', '~> 0.9.0'
-gem 'libxml-ruby', '~> 1.1.3', :require => 'libxml'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
->>>>>>> c2c41493212127c3d9001ef6e1d85d0802b4f321
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'

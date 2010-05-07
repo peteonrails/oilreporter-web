@@ -6,40 +6,34 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  libxml-ruby: 
+  pg: 
     group: 
     - :default
-    version: ~> 1.1.3
-    require: 
-    - libxml
+    version: ~> 0.9.0
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  mysql: 
-    group: 
-    - :default
-    version: ~> 2.8.1
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  mysql: 
+    group: 
+    - :default
+    version: ~> 2.8.1
   sqlite3-ruby: 
     group: 
     - :development
@@ -157,8 +151,6 @@ specs:
     version: 0.2.0
 - httparty: 
     version: 0.5.2
-- libxml-ruby: 
-    version: 1.1.4
 - linecache: 
     version: "0.43"
 - memcache-client: 
@@ -189,7 +181,7 @@ specs:
     version: 0.7.6
 - twitter: 
     version: 0.9.5
-hash: 77dd133d8fc352c1ae1e3091f9333db074460733
+hash: a540ca58b5f688faf662bd501f5811a988e8188e
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

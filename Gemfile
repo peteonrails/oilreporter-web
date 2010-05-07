@@ -8,6 +8,7 @@ gem 'haml'
 gem 'twitter'
 gem 'RedCloth'
 gem 'httparty'
+gem 'activerecord-postgresql-adapter'
 # gem 'mysql'
 
 group :plugins do

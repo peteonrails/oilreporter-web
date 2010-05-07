@@ -1,0 +1,17 @@
+default: &default
+  access_key_id: 0DJS82NPQGHD4N18T982
+  secret_access_key: 678KF7swcpEaUHpoHE4RQWEFVBRQiaC9Zqo4O3Ph
+  bucket: oilreporter_production
+
+development:
+  access_key_id: 0DJS82NPQGHD4N18T982 
+  secret_access_key: 678KF7swcpEaUHpoHE4RQWEFVBRQiaC9Zqo4O3Ph 
+  bucket: oilreporter_development 
+
+test:
+  access_key_id: 0DJS82NPQGHD4N18T982 
+  secret_access_key: 678KF7swcpEaUHpoHE4RQWEFVBRQiaC9Zqo4O3Ph 
+  bucket: oilreporter_development 
+
+production:
+  <<: *default

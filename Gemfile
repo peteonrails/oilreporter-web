@@ -10,6 +10,11 @@ gem 'RedCloth'
 gem 'httparty'
 # gem 'mysql'
 
+group :plugins do
+  gem 'paperclip', '~> 2.3.1'
+  gem 'aws-s3', '~> 0.6.2'
+end
+
 group :development do
   gem 'sqlite3-ruby', '~> 1.2.5', :require => nil
   gem 'ruby-debug', '~> 0.10.3', :require => nil

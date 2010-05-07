@@ -23,3 +23,4 @@ if ENV['MEMCACHE_SERVERS']
   config.cache_store = :mem_cache_store, memcache_config
 end
 
+HOST = 'oilreporter.org'

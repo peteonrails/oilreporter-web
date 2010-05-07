@@ -36,6 +36,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.5.0
+  paperclip: 
+    group: 
+    - :plugins
+    version: ~> 2.3.1
   factory_girl: 
     group: 
     - :testing
@@ -50,6 +54,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.2.1
+  aws-s3: 
+    group: 
+    - :plugins
+    version: ~> 0.6.2
   RedCloth: 
     group: 
     - :default
@@ -81,10 +89,14 @@ specs:
     version: 2.3.5
 - builder: 
     version: 2.1.2
-- culerity: 
-    version: 0.2.10
 - mime-types: 
     version: "1.16"
+- xml-simple: 
+    version: 1.0.12
+- aws-s3: 
+    version: 0.6.2
+- culerity: 
+    version: 0.2.10
 - nokogiri: 
     version: 1.4.1
 - rack-test: 
@@ -127,6 +139,8 @@ specs:
     version: "0.43"
 - oauth: 
     version: 0.4.0
+- paperclip: 
+    version: 2.3.1.1
 - pickle: 
     version: 0.2.10
 - rails: 
@@ -145,7 +159,7 @@ specs:
     version: 0.7.6
 - twitter: 
     version: 0.9.5
-hash: 0651e3b68dcea962df6386c2fd43d557dbe98bde
+hash: 70b684435926102eb608dc6b7f2f1d20accd000a
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

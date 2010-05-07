@@ -1,0 +1,21 @@
+/* Local overrides */
+#top { padding-bottom: 20px; }
+#intro { position: relative; height: 55px; padding-top: 0px; }
+#brief h1 { text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3); }
+#index #content .container_12 { padding-top: 2em; }
+
+/* Reports */
+ul#rows, ul.report { list-style: none }
+ul#rows li, ul.report li { list-style-type: none; display: inline }
+ul#rows li:nth-child(2n+1) ul.report li { background: #F3F3F3 }
+
+ul.report.header li { background: #FFF !important; float: left; border-bottom: 1px solid #CCC; padding: 5px 0; }
+
+ul.report li.date { width: 100px; }
+ul.report li.description { width: 500px }
+ul.report li.oil { width: 100px }
+ul.report li.urgent { width: 100px }
+ul.report li.media { width: 50px; }
+
+ul.report li { float: left; padding: 10px 0; border-bottom: 1px solid #EEE; }
+ul.report li.nopadding { padding: 0px; } 

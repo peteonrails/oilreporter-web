@@ -8,6 +8,7 @@ gem 'haml'
 gem 'twitter'
 gem 'RedCloth'
 gem 'httparty'
+gem 'pg'
 # gem 'mysql'
 
 group :plugins do

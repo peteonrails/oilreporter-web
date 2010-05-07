@@ -63,24 +63,11 @@
           %p.compact
             Oil Reporter for iPhone and Android has been released as open source on GitHub. If you're a developer and would like to contribute then please 
             = link_to 'join the social coding!', 'http://github.com/intridea/oilreporter-mobile'
-      .clear
-      .grid_6
-        %a{ :href => "http://heroku.com" }
-          %img{ :src => "img/heroku_small.png", :alt => "Heroku - Ruby Cloud Platform", :class => "left" }
-        .right.text
-          %h3 Hosting
-          %p.compact
-            Oil Reporter uses 
-            = link_to 'Heroku', 'http://heroku.com'
-            for hosting in the coud. Heroku is a cloud application platform for Ruby. Heroku lets app developers spend 100% of their time on their application code, not managing servers, deployment, ongoing operations, or scaling. Learn more about the
-            = link_to 'Heroku Ruby Cloud Platform', 'http://heroku.com'
-            today!
       .clear  
       / end of grid row
       .grid_12
         / Start Tweets
         = render :partial => "shared/twitterbuzz"
-      
       .clear
       / = render :partial => "shared/news"
       / end news

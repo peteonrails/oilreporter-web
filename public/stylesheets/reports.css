@@ -12,8 +12,10 @@ ul#rows li:nth-child(2n+1) ul.report li { background: #F3F3F3 }
 ul.report.header li { background: #FFF !important; float: left; border-bottom: 1px solid #CCC; padding: 5px 0; }
 
 ul.report li.date { width: 100px; }
-ul.report li.description { width: 500px }
-ul.report li.oil { width: 100px }
+ul.report li.description { width: 380px }
+ul.report li.wildlife { width: 100px }
+ul.report li.wetlands { width: 60px }
+ul.report li.oil { width: 60px }
 ul.report li.urgent { width: 100px }
 ul.report li.media { width: 50px; }
 

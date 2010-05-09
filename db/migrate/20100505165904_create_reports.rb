@@ -3,7 +3,7 @@ class CreateReports < ActiveRecord::Migration
     create_table :reports do |t|
       t.string   :description
       t.integer  :oil
-      t.integer   :smell
+      t.integer  :smell
       t.string   :media_file_name
       t.string   :media_content_type
       t.integer  :media_file_size

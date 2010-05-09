@@ -19,10 +19,12 @@
               Date
             %li.description
               Description
+            %li.wildlife
+              Wildlife
             %li.oil
               Oil
-            %li.urgent
-              Urgent
+            %li.wetlands
+              Wetlands
             %li.media
               Media
         - for report in @reports do
@@ -32,10 +34,12 @@
                 = report.created_at.strftime('%m.%d.%Y')
               %li.description
                 = truncate(report.description, :length => 25)
+              %li.wildlife
+                = report.wildlife
               %li.oil
                 = report.oil
-              %li.urgent
-                = report.respond? ? "Yes" : "No"
+              %li.wetlands
+                = report.wetlands
               %li.media.nopadding
                 = report.media? ? image_tag(report.media(:tiny)) : image_tag('http://placehold.it/50x50')
       %br(clear="all")

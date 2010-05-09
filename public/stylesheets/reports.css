@@ -11,11 +11,11 @@ ul#rows li:nth-child(2n+1) ul.report li { background: #F3F3F3 }
 
 ul.report.header li { background: #FFF !important; float: left; border-bottom: 1px solid #CCC; padding: 5px 0; }
 
-ul.report li.date { width: 100px; }
+ul.report li.date { width: 100px; clear:both; }
 ul.report li.description { width: 300px; }
 ul.report li.wildlife { width: 200px; }
-ul.report li.wetlands { width: 50px; }
-ul.report li.oil { width: 50px; }
+ul.report li.wetlands { width: 100px; }
+ul.report li.oil { width: 100px; }
 ul.report li.media { width: 50px; }
 
 ul.report li { float: left; padding: 10px 0; border-bottom: 1px solid #EEE; }

@@ -10,4 +10,8 @@ class Report < ActiveRecord::Base
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => ":attachment/:id/:style.:extension",
     :bucket => 'oilreporter_production'
+
+  def self.per_page
+    10
+  end
 end

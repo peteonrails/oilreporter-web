@@ -30,7 +30,7 @@ class ReportsController < ApplicationController
   end
 
   def index
-    @reports = Report.all
+    @reports = Report.paginate(:page => params[:page], :order => 'created_at DESC')
   end
 
 end

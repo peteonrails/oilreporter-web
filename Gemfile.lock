@@ -6,34 +6,34 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  mysql: 
-    group: 
-    - :default
-    version: ~> 2.8.1
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  mysql: 
+    group: 
+    - :default
+    version: ~> 2.8.1
   sqlite3-ruby: 
     group: 
     - :development
@@ -54,6 +54,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.5.0
+  will_paginate: 
+    group: 
+    - :plugins
+    version: ~> 2.3
   paperclip: 
     group: 
     - :plugins
@@ -72,16 +76,16 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.2.1
-  RedCloth: 
-    group: 
-    - :default
-    version: ">= 0"
   aws-s3: 
     group: 
     - :default
     version: ~> 0.6.2
     require: 
     - aws/s3
+  RedCloth: 
+    group: 
+    - :default
+    version: ">= 0"
   capybara: 
     group: 
     - :testing
@@ -154,7 +158,7 @@ specs:
 - factory_girl: 
     version: 1.2.4
 - haml: 
-    version: 2.2.24
+    version: 3.0.0
 - hashie: 
     version: 0.2.0
 - httparty: 
@@ -191,7 +195,9 @@ specs:
     version: 0.7.6
 - twitter: 
     version: 0.9.5
-hash: 4f3f4cf511644b16d37849fd09ecf1f574cd6c05
+- will_paginate: 
+    version: 2.3.12
+hash: 5b26ca0675e58deda5eacf89005485241b29bb77
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

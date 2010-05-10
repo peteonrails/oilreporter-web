@@ -17,6 +17,7 @@ gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'
+  gem 'will_paginate', '~> 2.3'
 end
 
 group :development do

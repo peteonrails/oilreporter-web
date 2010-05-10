@@ -34,6 +34,8 @@
                 %td
                   = truncate(report.description, :length => 25)
                 %td
+                  = report.wildlife
+                %td
                   = report.oil
                 %td
                   = report.wetlands
@@ -48,3 +50,5 @@
           /     1
           /   %a{ :href => "#" }
           /     2
+        .clear
+        

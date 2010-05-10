@@ -75,47 +75,4 @@
     / end #content
   / end #main  
 
-  #foot
-    .container_12
-      .grid_3
-        %h4 The Team
-        %p
-          = link_to 'Intridea', 'http://intridea.com'
-          designs and develops simple, intuitive applications to help companies realize the power of social and business collaboration, cloud computing, and next-generation tools for the enterprise.
-      .grid_3
-        %h4{ :style => "color:#171717"} .
-        %p
-          = link_to 'Brendan Lim', 'http://twitter.com/brendanlim'
-          is Intridea's mobile application extraordinaire. Brendan spent his days as a systems architect at a mobile startup called kajeet, Inc. He also found the time to co-found, design, and lead development on Yappd, a microblogging social network, built on Rails, that was featured in such publications as PC Magazine, TechCrunch and Mashable.
-      .grid_3
-        %h4{ :style => "color:#171717"} .
-        %p
-          = link_to 'Chris Selmer', 'http://twitter.com/cselmer'
-          is an expert Ruby on Rails architect with over 10 years of project leadership and hands-on development experience. He specializes in leading small teams on fast-paced development projects as Director of Client Solutions at Intridea.
-      .grid_3
-        %h4{ :style => "color:#171717"} .
-        %p
-          = link_to 'Jonathan Nelson', 'http://twitter.com/jonathannelson'
-          is the Product Manager for Intridea after selling his previous company, TwitterMass, last year. ATL [Startup Digest] Curator, Startup King, Lover of All Things People, Hustle 2.0, Entrepreneur for Life, Aspiring Author & Tech Geek.
-      .clear
-      / end grid
-    
-      / second row
-      .grid_3
-        %h4{ :style => "color:#171717"} .
-        %p
-          = link_to 'Sean Soper', 'http://twitter.com/ssoper'
-          is a Software Architect at Intridea. A Ruby enthusiast for over five years, Sean brings a decade of software development experience in industries ranging from defense to health care. In addition, he is a registered iPhone developer with several apps to his name. An avid learner, Sean is constantly seeking out interesting languages and solving computer science-related problems.
-      .clear
-  
-      .grid_9
-        %p
-          Copyright ©2010
-          %a{ :href => "http://intridea.com", :title => "Intridea - Design, Development, and Strategy for the Enterprise Web" }
-            Intridea, Inc.
-      .grid_3
-        %a{ :href => "http://intridea.com" }
-          %img{ :src => "img/logo.foot.png", :alt => "" }
-      .clear
-      / end of grid row
-  / end footer
+  = render :partial => "shared/footer"

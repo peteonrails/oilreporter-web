@@ -40,8 +40,11 @@
                 %td
                   = report.wetlands
                 %td
-                  %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :title => "#{truncate(report.description, :length => 100)}" }
-                    = report.media? ? image_tag(report.media(:tiny), :alt => "") : image_tag('http://placehold.it/50x50')
+                  - if report.media?
+                    %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :title => "#{truncate(report.description, :length => 100)}" }
+                      = image_tag(report.media(:tiny), :alt => "")
+                  - else
+                    = image_tag('http://placehold.it/50x50')
           = will_paginate(@reports)
       .clear
         

@@ -1,1 +1,2 @@
-class ApiController < ApplicationController end
+class ApiController < ApplicationController 
+end

@@ -14,7 +14,4 @@ module ApplicationHelper
     end
     results.flatten.compact
   end
-  
-
-  
 end

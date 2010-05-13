@@ -22,7 +22,7 @@ module ApplicationHelper
     JS
 
     reports.each do |report|
-      buffer << %Q(map.addOverlay(new GMarker(new GLatLng('#{report.latitude}', '#{report.longitude}'), true));\n)
+      buffer << %Q(map.addOverlay(new GMarker(new GLatLng(#{report.latitude}, #{report.longitude}), true));\n)
     end
 
     buffer

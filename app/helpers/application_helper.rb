@@ -27,5 +27,5 @@ module ApplicationHelper
 
     buffer
   end
-  
+
 end

@@ -7,6 +7,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :reports, :only => [:create, :update, :index]
   
   # Documentation
-  map.resources :api, :only => [:create, :update, :index]
+  map.api '/api', :controller => 'api', :action => 'index'
   
 end

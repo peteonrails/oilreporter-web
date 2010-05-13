@@ -38,28 +38,36 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu metus est. Donec rhoncus ipsum id nisl ultricies non congue justo pellentesque. Fusce ut tellus mauris. Mauris tincidunt magna eget urna feugiat ultricies. Sed tellus velit, feugiat tempus adipiscing auctor, sollicitudin et mauris. Pellentesque sit amet condimentum sem.
             
             %h3 Code Examples
-            %p
-              Curl
+            %h4 Curl
             :coderay
-              #!bash
+              #!plaintext
               curl -d "param1=value1&param2=value2" http://oilreporter.org
-            %p
-              JSON
+            %h4 JSON
             :coderay
-              #!javascript
+              #!json
                 <script type="text/javascript" src="http://oilreporter.org/api/read/json"></script>
 
                 <script type="text/javascript">
                     // The variable "oilreporter_api_read" is now set.
                     document.write(
-                        '<a href="' + tumblr_api_read[1][0]['@url'] + 
+                        '<a href="' + oilreporter_api_read[1][0]['@url'] + 
                         '">Oil killed this seagull</a>'
                     );
                 </script>
-              
+          
           .postfoot
-          / end of postfoot  
-              
-    .clear
+          / end of postfoot
+            
+      .grid_4#sidebar
+        %h4 Navigation
+        %ul
+          %li
+            %a{ :href => "#" }
+              \/api/read
+            %a{ :href => "#" }
+              \/api/write
+            %a{ :href => "#" }
+              Code Examples
+      .clear
   
 = render :partial => "shared/footer"

@@ -20,16 +20,20 @@ dependencies:
     version: ~> 2.3.5
     require: []
 
+  haml-coderay: 
+    group: 
+    - :default
+    version: ">= 0"
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
   mysql: 
     group: 
     - :default
@@ -132,7 +136,9 @@ specs:
 - selenium-webdriver: 
     version: 0.0.18
 - capybara: 
-    version: 0.3.7
+    version: 0.3.8
+- coderay: 
+    version: 0.9.3
 - columnize: 
     version: 0.3.1
 - crack: 
@@ -159,6 +165,8 @@ specs:
     version: 1.2.4
 - haml: 
     version: 3.0.2
+- haml-coderay: 
+    version: 0.0.2
 - hashie: 
     version: 0.2.0
 - httparty: 
@@ -197,7 +205,7 @@ specs:
     version: 0.9.5
 - will_paginate: 
     version: 2.3.12
-hash: 5b26ca0675e58deda5eacf89005485241b29bb77
+hash: 62d231331affed0f829a977429890702b4c73fbc
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

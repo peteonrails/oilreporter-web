@@ -3,8 +3,63 @@
 #main
   #path
     You are here:
-    = link_to 'API Documentation', api_url
+    = link_to 'Home', root_url
     >>
-    %h1 API Documentation
+    %h1 API
+  / end path
+  
+  #content
+    .container_12
+      .grid_8
+        / start doc
+        .post
+          .posttop
+          / end .posttop
+          .postbody
+            %h2 What is the Oil Reporter API?
+            %p
+              The Oil Reporter API contains a series of methods for obtaining data through standard HTTP requests. This allows Oil Reporter to be integrated with just about any application that can connect to the web.
+              
+            %h3 Contents
+            %ul
+              %li
+                \/api/read: Reading posts as XML or JSON
+              %li
+                \/api/write: Creating posts
+              %li
+                Code Examples
+            
+            %h3 /api/read
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu metus est. Donec rhoncus ipsum id nisl ultricies non congue justo pellentesque. Fusce ut tellus mauris. Mauris tincidunt magna eget urna feugiat ultricies. Sed tellus velit, feugiat tempus adipiscing auctor, sollicitudin et mauris. Pellentesque sit amet condimentum sem.
+              
+            %h3 /api/write
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu metus est. Donec rhoncus ipsum id nisl ultricies non congue justo pellentesque. Fusce ut tellus mauris. Mauris tincidunt magna eget urna feugiat ultricies. Sed tellus velit, feugiat tempus adipiscing auctor, sollicitudin et mauris. Pellentesque sit amet condimentum sem.
+            
+            %h3 Code Examples
+            %p
+              Curl
+            :coderay
+              #!bash
+              curl -d "param1=value1&param2=value2" http://oilreporter.org
+            %p
+              JSON
+            :coderay
+              #!javascript
+                <script type="text/javascript" src="http://oilreporter.org/api/read/json"></script>
 
+                <script type="text/javascript">
+                    // The variable "oilreporter_api_read" is now set.
+                    document.write(
+                        '<a href="' + tumblr_api_read[1][0]['@url'] + 
+                        '">Oil killed this seagull</a>'
+                    );
+                </script>
+              
+          .postfoot
+          / end of postfoot  
+              
+    .clear
+  
 = render :partial => "shared/footer"

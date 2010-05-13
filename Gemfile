@@ -6,6 +6,7 @@ group :rails do
 end
 
 gem 'haml'
+gem 'haml-coderay'
 gem 'twitter'
 gem 'RedCloth'
 gem 'httparty'

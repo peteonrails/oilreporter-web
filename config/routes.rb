@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/map', :controller => 'reports', :action => 'map'
 
   # Developers
-  map.resources :developers, :only => [:new, :create]
+  map.resources :developers, :only => [:new, :create, :show]
   map.connect '/signup', :controller => 'developers', :action => 'new'
 
   # Documentation

@@ -24,3 +24,14 @@ Factory.define :pensacola, :class => Report do |s|
   s.latitude 30.41241
   s.longitude -87.219086
 end
+
+Factory.define :dilbert, :class => Developer do |s|
+  s.name 'Dilbert'
+  s.purpose 'An Android-based device'
+  s.email 'dilbert@company.com'
+end
+
+Factory.define :ratbert, :class => Developer do |s|
+  s.name 'Ratbert'
+  s.purpose 'To destroy the world'
+end

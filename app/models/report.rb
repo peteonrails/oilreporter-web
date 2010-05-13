@@ -6,9 +6,10 @@ class Report < ActiveRecord::Base
       :thumb  => "100x100#",
       :medium => "300x300>",
     },
-    :storage => :s3,
+    :storage => (RAILS_ENV == 'production' ? :s3 : :filesystem),
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => ":attachment/:id/:style.:extension",
+    :path => (RAILS_ENV == 'production' ? ':attachment/:id/:style.:extension' :
+                                          'public/system/:attachment/:id/:style/:basename.:extension'),
     :bucket => 'oilreporter_production'
 
   def hew

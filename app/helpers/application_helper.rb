@@ -14,7 +14,7 @@ module ApplicationHelper
     end
     results.flatten.compact
   end
-  
+
   def show_map(reports)
     buffer = <<-JS
       var map = new GMap2(document.getElementById('map'));
@@ -22,7 +22,7 @@ module ApplicationHelper
     JS
 
     reports.each do |report|
-      buffer << %Q(map.addOverlay(new GMarker(new GLatLng(#{report.latitude}, #{report.longitude}), true));\n)
+      buffer << %Q(map.addOverlay(createMarker(map, #{report.jsonify}));\n)
     end
 
     buffer

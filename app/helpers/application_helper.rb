@@ -15,6 +15,17 @@ module ApplicationHelper
     results.flatten.compact
   end
   
+  def show_map(reports)
+    buffer = <<-JS
+      var map = new GMap2(document.getElementById('map'));
+      map.setCenter(new GLatLng(29.25, -86.75), 7);
+    JS
 
+    reports.each do |report|
+      buffer << %Q(map.addOverlay(new GMarker(new GLatLng('#{report.latitude}', '#{report.longitude}'), true));)
+    end
+
+    buffer
+  end
   
 end

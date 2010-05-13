@@ -12,7 +12,7 @@ class Report < ActiveRecord::Base
     :bucket => 'oilreporter_production'
 
   def hew
-    fields = [:id, :oil, :wildlife, :description, :media, :latitude, :longitude]
+    fields = [:id, :organization_id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]
 
     hash = self.attributes.symbolize_keys.inject({}) do |a, (k, v)|
       fields.include?(k) ? a.merge(k => v) : a
@@ -21,7 +21,9 @@ class Report < ActiveRecord::Base
     if self.media(:thumb) =~ /missing/
       hash.merge!(:media => nil)
     else
-      hash.merge!(:media => self.media(:thumb))
+      hash.merge!(:media => { :tiny => self.media(:tiny),
+                              :thumb => self.media(:thumb),
+                              :medium => self.media(:medium) } )
     end
 
     [:latitude, :longitude].each do |k|

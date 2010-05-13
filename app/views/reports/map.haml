@@ -14,7 +14,7 @@
 
         maxHtml += '<strong>Description</strong> ' + report['description'] + '<br/>';
         if (report['media'])
-          maxHtml += '<img src="' + report['media'] + '" />';
+          maxHtml += '<img src="' + report['media']['thumb'] + '" />';
 
         map.openInfoWindowHtml(point, minHtml, { maxContent: maxHtml });
       });

@@ -1,6 +1,6 @@
 = content_for :head do
   = '<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAALIr9CgGSyKEGUvdJz6JbKhQq1UCU9SBkmSXBlazPa3yrPjWakBTWgEUybsIS-DVD0rD6Sw9GTwZC2Q" type="text/javascript"></script>'
-  = javascript_include_tag 'jquery', 'jquery.googlemaps'
+  = javascript_include_tag 'jquery'
   :javascript
     $(document).ready(function() {
       #{show_map(@reports)}

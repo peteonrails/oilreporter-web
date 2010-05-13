@@ -21,8 +21,8 @@ module ApplicationHelper
       map.setCenter(new GLatLng(29.25, -86.75), 7);
     JS
 
-    reports.each do |report|
-      buffer << %Q(map.addOverlay(createMarker(map, #{report.jsonify}));\n)
+    reports.collect(&:hew).each do |report|
+      buffer << %Q(map.addOverlay(createMarker(map, #{report.to_json}));\n)
     end
 
     buffer

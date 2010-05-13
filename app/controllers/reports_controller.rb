@@ -31,6 +31,14 @@ class ReportsController < ApplicationController
 
   def index
     @reports = Report.paginate(:page => params[:page], :order => 'created_at DESC')
+    respond_to do |format|
+      format.json {
+        render :json => @reports.collect(&:hew), :layout => false
+      }
+      format.html {
+        render
+      }
+    end
   end
 
   def map

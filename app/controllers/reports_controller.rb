@@ -32,13 +32,13 @@ class ReportsController < ApplicationController
   end
 
   def index
-    @reports = current_developer.reports.paginate(:page => params[:page], :order => 'created_at DESC')
-
     respond_to do |format|
       format.json {
+        @reports = current_developer.reports.paginate(:page => params[:page], :order => 'created_at DESC')
         render :json => @reports.collect(&:hew), :layout => false
       }
       format.html {
+        @reports = Report.all.paginate(:page => params[:page], :order => 'created_at DESC')
         render
       }
     end

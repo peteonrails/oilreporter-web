@@ -19,6 +19,7 @@ module ApplicationHelper
     buffer = <<-JS
       var map = new GMap2(document.getElementById('map'));
       map.setCenter(new GLatLng(29.25, -86.75), 7);
+      map.addControl(new GSmallMapControl());
     JS
 
     reports.collect(&:hew).each do |report|

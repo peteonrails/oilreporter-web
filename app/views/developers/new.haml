@@ -8,26 +8,39 @@
     %h1 Signup
   
   #content
-    #reports.container_12
-      .block
-        .block_head
-          %h2 Signup
-        .block_content
-          - form_for(:developer, :url => { :action => 'create' }) do |f|
-            %fieldset
-              %p
-                = f.label :name
-                = f.text_field :name
-              %p
-                = f.label :email
-                = f.text_field :email
-              %p
-                = f.label :website
-                = f.text_field :website
-              %p
-                = f.label :purpose
-                = f.text_area :purpose
-              = submit_tag('Submit')
+    .container_12
+      .grid_8
+        .post
+          .posttop
+          .postbody
+            %h2 Developer Sign Up
+            %p
+              Please use the form below to sign up for a new developers API key.
+            - form_for(:developer, :url => { :action => 'create' }, :html => { :id => 'contact' }) do |f|
+              %fieldset
+                %p
+                  = f.label :name
+                  %span.small (required)
+                  %br
+                  = f.text_field :name, :class => "round m input"
+                %p
+                  = f.label :email
+                  %span.small (required)
+                  %br
+                  = f.text_field :email, :class => "round m input"
+                %p
+                  = f.label :website
+                  %span.small (required)
+                  %br
+                  = f.text_field :website, :class => "round m input"
+                %p
+                  = f.label :purpose
+                  %span.small (required)
+                  %br
+                  = f.text_area :purpose, :class => "round l input"
+                %p
+                  = submit_tag('Submit', :class => "round s button")
+          .postfoot    
       .clear
 
 = render :partial => "shared/footer"

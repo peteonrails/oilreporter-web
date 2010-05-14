@@ -66,13 +66,14 @@ function validateInput(obj) {
 	var id = obj.attr("id");
 	var correct = false;
 
-	if (id == "email") { // email validator
+	if (id == "email") { // validate email
 		if (obj.val().match(/^[a-zA-Z0-9_\.\-]+\@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9]{2,4}$/))
 			correct = true;
 	}
-	else if (id == "message") { // message validator
+	else if (id == "contact") { // validate everything else
 		if (obj.val().replace(/(^\s+)|(\s+$)/g, "") != "")
 			correct = true;
+			
 	}
 
 	obj.removeClass("correct incorrect"); // clearing

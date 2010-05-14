@@ -92,7 +92,7 @@
                 Failure: empty text and HTTP status code 422
               :coderay
                 #!plaintext
-                curl -T seagull.jpg http://oilreporter.org/reports/8?api_key=YOUR_API_KEY
+                curl -X PUT -F "media=@seagull.jpg" http://oilreporter.org/reports/8?api_key=YOUR_API_KEY
                 Returns empty text and an HTTP status code of 200
                                            
             %a{ :name => "list" }

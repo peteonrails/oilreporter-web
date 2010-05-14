@@ -26,7 +26,7 @@ class ReportsTest < ActionController::IntegrationTest
     assert report.reload.media?
   end
 
-  test 'list reports' do
+  test 'list reports in json' do
     test_create_report
     report = Report.first
 
@@ -35,6 +35,14 @@ class ReportsTest < ActionController::IntegrationTest
     reports = JSON.parse(response.body)
     assert_equal reports.length, 1
     assert_equal reports.first['id'], report.id
+  end
+
+  test 'list reports in html' do
+    test_create_report
+    report = Report.first
+
+    get "/reports"
+    assert_response :success
   end
 
   private

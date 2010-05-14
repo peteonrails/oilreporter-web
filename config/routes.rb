@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Home
   map.root :controller => 'home'
+  map.api '/api', :controller => 'home', :action => 'api'
   
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]
@@ -11,8 +12,5 @@ ActionController::Routing::Routes.draw do |map|
   # Developers
   map.resources :developers, :only => [:new, :create, :show]
   map.connect '/signup', :controller => 'developers', :action => 'new'
-
-  # Documentation
-  map.api '/api', :controller => 'home', :action => 'api'
   
 end

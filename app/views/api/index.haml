@@ -53,6 +53,7 @@
                     is a string corresponding to the URL where the image is located.
                     
                     If media has not been set then the value is null.
+                    
                     On a call to update to upload a photo, then media accepts a binary stream.
             
             
@@ -72,7 +73,7 @@
                 Failure: array of errors and HTTP status code 422
               :coderay
                 #!plaintext
-                curl -d "api_key=YOUR_API_KEY&report[latitude]=29.964639&report[longitude]=-90.067763&report[oil]=5&report[wetlands]=7&report[description]=Distressed%20Wildlife&report[device_id]=UNIQUE_DEVICE_ID" http://oilreporter.org/reports
+                curl -d "api_key=YOUR_API_KEY&latitude=29.964639&longitude=-90.067763&oil=5&wetlands=7&description=Distressed%20Wildlife&device_id=UNIQUE_DEVICE_ID" http://oilreporter.org/reports
                 Returns {"id":8}
 
             %a{ :name => "media" }

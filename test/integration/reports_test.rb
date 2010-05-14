@@ -2,12 +2,11 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 class ReportsTest < ActionController::IntegrationTest
 
-  def setup
-    @developer = Factory.create(:dilbert)
-  end
-
   test 'create report' do
-    report = Factory.build(:new_orleans).attributes
+    factory = Factory.build(:new_orleans)
+    @developer = factory.developer
+    report = factory.attributes
+
     report.delete(:developer)
     report.merge!(:api_key => @developer.api_key)
 

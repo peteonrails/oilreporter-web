@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
 
-  before_filter :verify_api_key
+  before_filter :verify_api_key, :only => [:create, :update]
 
   def create
     report = current_developer.reports.new(filtered_params)
@@ -32,13 +32,14 @@ class ReportsController < ApplicationController
   end
 
   def index
-    @reports = current_developer.reports.paginate(:page => params[:page], :order => 'created_at DESC')
-
     respond_to do |format|
       format.json {
+        verify_api_key
+        @reports = current_developer.reports.paginate(:page => params[:page], :order => 'created_at DESC')
         render :json => @reports.collect(&:hew), :layout => false
       }
       format.html {
+        @reports = Report.all.paginate(:page => params[:page], :order => 'created_at DESC')
         render
       }
     end

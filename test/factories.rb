@@ -2,11 +2,13 @@ Factory.define :dilbert, :class => Developer do |s|
   s.name 'Dilbert'
   s.purpose 'An Android-based device'
   s.email 'dilbert@company.com'
+  s.volunteer true
 end
 
 Factory.define :ratbert, :class => Developer do |s|
   s.name 'Ratbert'
   s.purpose 'To destroy the world'
+  s.volunteer false # what did you expect? ;-)
 end
 
 Factory.define :new_orleans, :class => Report do |s|

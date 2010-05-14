@@ -15,7 +15,7 @@
           .postbody
             %h2 Developer Sign Up
             %p
-              Please use the form below to sign up for a new developers API key.
+              Please use the form below to sign up for a new developer's API key.
             - form_for(:developer, :url => { :action => 'create' }, :html => { :id => 'contact' }) do |f|
               %fieldset
                 %p
@@ -38,6 +38,9 @@
                   %span.small (required)
                   %br
                   = f.text_area :purpose, :class => "round l input"
+                %p
+                  = f.check_box :volunteer, :class => "input"
+                  = f.label :volunteer, 'Please contact me regarding volunteer development opportunities.'
                 %p
                   = submit_tag('Submit', :class => "round s button")
           .postfoot    

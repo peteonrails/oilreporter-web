@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class Developer < ActiveRecord::Base
+  has_many :reports
+
   after_create :generate_api_key
 
   validates_presence_of :email, :name

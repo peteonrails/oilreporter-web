@@ -1,4 +1,6 @@
 class Report < ActiveRecord::Base
+  belongs_to :developer
+
   validates_numericality_of :oil, :wetlands, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10
   has_attached_file :media,
     :styles => {

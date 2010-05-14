@@ -2,9 +2,16 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 class ReportsTest < ActionController::IntegrationTest
 
+  def setup
+    @developer = Factory.create(:dilbert)
+  end
+
   test 'create report' do
-    post_json '/reports', 
-              :report => Factory.build(:new_orleans).attributes
+    report = Factory.build(:new_orleans).attributes
+    report.delete(:developer)
+    report.merge!(:api_key => @developer.api_key)
+
+    post_json '/reports', report
     assert_response :success
   end
 
@@ -13,8 +20,8 @@ class ReportsTest < ActionController::IntegrationTest
     report = Report.last
     assert !report.media?
     media = fixture_file_upload('media/1.jpg', 'image/jpeg')
-    put "/reports/#{report.id}",
-        :report => { :media => media }
+
+    put "/reports/#{report.id}", { :media => media, :api_key => @developer.api_key }
     assert_response :success
     assert report.reload.media?
   end

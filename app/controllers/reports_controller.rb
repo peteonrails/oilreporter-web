@@ -1,7 +1,9 @@
 class ReportsController < ApplicationController
-  
+
+  before_filter :verify_api_key, :only => [:create, :update]
+
   def create
-    report = Report.new(params[:report])
+    report = current_developer.reports.new(filtered_params)
 
     respond_to do |format|
       format.json {
@@ -15,14 +17,14 @@ class ReportsController < ApplicationController
   end
 
   def update
-    report = Report.find(params[:id])
+    report = current_developer.reports.find(filtered_params.delete(:id))
 
     unless report
       render :nothing => true, :status => :not_found
       return
     end
 
-    if report.update_attributes(params[:report])
+    if report.update_attributes(filtered_params)
       render :nothing => true, :status => :ok
     else
       render :nothing => true, :status => :unprocessable_entity

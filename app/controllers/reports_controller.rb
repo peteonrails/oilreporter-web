@@ -39,7 +39,7 @@ class ReportsController < ApplicationController
         render :json => @reports.collect(&:hew), :layout => false
       }
       format.html {
-        @reports = Report.all.paginate(:page => params[:page], :order => 'created_at DESC')
+        @reports = Report.paginate(:page => params[:page], :order => 'created_at DESC')
         render
       }
     end

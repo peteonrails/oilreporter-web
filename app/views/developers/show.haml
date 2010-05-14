@@ -16,11 +16,14 @@
             %h2 API Key
           .block_content
             %p
-              Your API Key is: #{@developer.api_key}
+              Your API Key is: 
+              %b
+                #{@developer.api_key}
             %p
-              Here are some basic guidelines to follow in using it.
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero ipsum, hendrerit sit amet ornare ut, cursus et justo. Nunc lacinia  consectetur sapien, vel dapibus ipsum aliquet et. Morbi in auctor lorem. Morbi varius, justo ac porta eleifend, lectus libero ornare augue, nec molestie dui orci sit amet leo.
+              We have also sent you an e-mail with your API Key as well.  Now you can start working with the 
+              %a{ :href => "/api" }
+                Oil Reporter API
+              .
         .clear
 
   = render :partial => "shared/footer"

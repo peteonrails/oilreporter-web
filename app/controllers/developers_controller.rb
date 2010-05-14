@@ -26,5 +26,10 @@ class DevelopersController < ApplicationController
       return
     end
   end
+  
+  def notify
+    Notifications.deliver_notify(params[:name], params[:email], params[:message])
+    flash[:notice] = "Thanks for signing up!"
+  end
 
 end

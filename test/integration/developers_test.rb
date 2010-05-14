@@ -26,4 +26,14 @@ class DevelopersTest < ActionController::IntegrationTest
     assert_template :new
   end
 
+  test 'cannot create more than one developer with the same email' do
+    test_create_developer
+
+    developer = Factory.build(:dilbert).attributes
+
+    post '/developers', :developer => developer
+    assert_response :success
+    assert_template :new
+  end
+
 end

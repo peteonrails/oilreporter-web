@@ -1,21 +1,21 @@
-#flash p{
-	margin-bottom:10px;
-}
-#flash_error{
-	border:#d99d9d 1px solid;
+#flash_error {
+	border:#ffb2b2 1px solid;
 	background:url(../img/error.png) no-repeat left center;
 	max-width: 400px;
 	padding:10px 10px 10px 50px;
 }
-#flash_notice{
+#flash_notice {
 	border:#9bdea8 1px solid;
 	background:url(../img/notice.png) no-repeat left center;
 	max-width: 400px;
 	padding:10px 10px 10px 50px;
 }
-#flash_warning{
+#flash_warning {
 	border:#e8e657 1px solid;
 	background:url(../img/warning.png) no-repeat left center;
 	max-width: 400px;
 	padding:10px 10px 10px 50px;
+}
+#errorExplanation {
+  color: #cc0000;
 }

@@ -1,24 +1,26 @@
-= render :partial => 'shared/header'
+%body
 
-#main
-  #path
-    You are here:
-    = link_to 'Home', root_url
-    >>
-    %h1 API Key
+  = render :partial => 'shared/header'
+
+  #main
+    #path
+      You are here:
+      = link_to 'Home', root_url
+      >>
+      %h1 API Key
   
-  #content
-    #reports.container_12
-      .block
-        .block_head
-          %h2 API Key
-        .block_content
-          %p
-            Your API Key is: #{@developer.api_key}
-          %p
-            Here are some basic guidelines to follow in using it.
-          %p
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero ipsum, hendrerit sit amet ornare ut, cursus et justo. Nunc lacinia  consectetur sapien, vel dapibus ipsum aliquet et. Morbi in auctor lorem. Morbi varius, justo ac porta eleifend, lectus libero ornare augue, nec molestie dui orci sit amet leo.
-      .clear
+    #content
+      #reports.container_12
+        .block
+          .block_head
+            %h2 API Key
+          .block_content
+            %p
+              Your API Key is: #{@developer.api_key}
+            %p
+              Here are some basic guidelines to follow in using it.
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin libero ipsum, hendrerit sit amet ornare ut, cursus et justo. Nunc lacinia  consectetur sapien, vel dapibus ipsum aliquet et. Morbi in auctor lorem. Morbi varius, justo ac porta eleifend, lectus libero ornare augue, nec molestie dui orci sit amet leo.
+        .clear
 
-= render :partial => "shared/footer"
+  = render :partial => "shared/footer"

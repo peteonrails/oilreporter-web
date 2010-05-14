@@ -1,0 +1,23 @@
+<% %w(info notice error).each do |type|%>
+  <% if flash[type.to_sym] %>
+  <div id="flash_<%= type %>" class="flash <%= type %> flash_<%= type %>">
+  	<% if !flash[type.to_sym].is_a?(Array) %>
+  	  <p><%= flash[type.to_sym] %></p>
+  	<% elsif flash[type.to_sym].any? %>
+      <ul>
+        <% flash[type.to_sym].each do |item| %>
+        <li><%= item %></li>
+        <% end %>
+      </ul>
+  	<% end %>
+  </div>
+  <% end %>
+<% end %>
+
+<% if flash[:error_messages_for] %>
+  <% if flash[:error_messages_for].is_a?(Array) %>      
+    <%= error_messages_for(*flash[:error_messages_for]) %>
+  <% else %>
+   <%= error_messages_for(flash[:error_messages_for]) %>
+  <% end%>  
+<% end %>

@@ -1,10 +1,4 @@
-module ApplicationHelper
-  def body_class
-    [:notice, :warning, :message, :error].collect do |key|
-      content_tag(:div, content_tag(:p, flash[key]), :id => "flash", :class => "message message-#{key}") unless flash[key].blank?
-    end.join
-  end
-  
+module ApplicationHelper  
   def get_twitter_buzz
     results = []
     %w{#oilspill}.each do |q|
@@ -34,5 +28,4 @@ module ApplicationHelper
       content_tag("notextile", CodeRay.scan($3, $2).div(:css => :class))
     end
   end
-  
 end

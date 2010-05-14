@@ -13,9 +13,9 @@ $j(function() {
 
 	if ($j("form#contact").length > 0) contactForm(); // initialize javascript validators for the contact form
 
-	if ($j("#folio").length > 0) folio(500, 0.6); // portfolio sleek image shade (timer, opacity)
+	if ($j("#reports").length > 0) reports(500, 0.6); // reports sleek image shade (timer, opacity)
 
-	if ($j("div.item p.tags a", "#folio").length > 0) folioFilter(); // portfolio item filter
+	if ($j("div.item p.tags a", "#reports").length > 0) reportsFilter(); // reports item filter
 
 });
 
@@ -118,8 +118,8 @@ function lightBox() {
 
 //
 
-function folio(time, opacity) {
-	$j("img", "#folio")
+function reports(time, opacity) {
+	$j("img", "#reports")
 		.css("opacity", 1)
 		.hover(
 			function() {
@@ -131,7 +131,7 @@ function folio(time, opacity) {
 		);
 }
 
-function folioFilter() {
+function reportsFilter() {
 	var tags = getAllTags();
 	var ph = $j(".placeholder", "#filter");
 	$j(tags).each(function(i, tag) {
@@ -143,11 +143,11 @@ function folioFilter() {
 		$j(".placeholder a.active", "#filter").removeClass("active");
 		$j(this).addClass("active");
 
-		folioClick($j(this));
+		reportsClick($j(this));
 		return false;
 	});
 
-	$j("#filter", "#folio").show();
+	$j("#filter", "#reports").show();
 
 	// select by the #hash in the url
 	var hash = trim(window.location.hash.substring(1));
@@ -156,45 +156,45 @@ function folioFilter() {
 	}
 }
 
-{ // folioFilter functions:
+{ // reportsFilter functions:
 
-	function folioClick(obj) {
+	function reportsClick(obj) {
 		var tag = obj.text();
 		var rel = obj.attr("rel");
 
-		folioHideAll();
+		reportsHideAll();
 
 		if (rel == "Start")
-			folioShow();
+			reportsShow();
 		else
-			folioShow(tag);
+			reportsShow(tag);
 
-		folioClearer();
+		reportsClearer();
 	}
 
-	function folioClearer() {
-		var visibleItems = $j("div.item:visible", "#folio");
+	function reportsClearer() {
+		var visibleItems = $j("div.item:visible", "#reports");
 		var lastIndex = visibleItems.length - 1;
 		visibleItems.each(function(i, item) {
 			if (i % 3 == 2 && i != lastIndex) $j('<div class="clear"> </div>').insertAfter(item);
 		});
 	}
 
-	function folioShow(tag) {
+	function reportsShow(tag) {
 		if (tag)
-			$j("div.item:has(p.tags a:contains('" + tag + "'))", "#folio").show();
+			$j("div.item:has(p.tags a:contains('" + tag + "'))", "#reports").show();
 		else
-			$j("div.item", "#folio").show();
+			$j("div.item", "#reports").show();
 	}
 
-	function folioHideAll() {
-		$j("div.item", "#folio").hide();
-		$j("#folio > div.clear:not(:last)").remove();
+	function reportsHideAll() {
+		$j("div.item", "#reports").hide();
+		$j("#reports > div.clear:not(:last)").remove();
 	}
 
 	function getAllTags() {
 		var tags = [];
-		$j("div.item p.tags a", "#folio").each(function() { tags.push(trim($j(this).text())); });
+		$j("div.item p.tags a", "#reports").each(function() { tags.push(trim($j(this).text())); });
 		return tags.unique().sort();
 	}
 

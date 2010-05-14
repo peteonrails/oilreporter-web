@@ -1,15 +1,14 @@
-/ Start Header
 #top
   .container_12
     #logo.left
       %a{ :href => "/" }
         %img{ :class => "ie6fix", :src => "../img/logo.top.png", :alt => "Oil Reporter - Help Clean Up" }
-    / End Logo    
+    / end logo   
      
     %ul#nav.right
-      %li.selected
-        %a{ :href => "/" }
-          Home
+      %li
+        %a{ :href => "/signup" }
+          Sign Up
       %li 
         = link_to 'Latest Reports', reports_path
       %li 
@@ -23,4 +22,5 @@
       %li 
         %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
           GitHub    
-    / End Navigation
+    / end navigation
+/ end header

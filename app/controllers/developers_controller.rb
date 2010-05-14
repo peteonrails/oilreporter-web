@@ -25,7 +25,6 @@ class DevelopersController < ApplicationController
       render :nothing => true, :status => :not_found
       return
     end
-    flash[:notice] = "Thanks for signing up!"
   end
 
 end

@@ -1,11 +1,11 @@
 - @twitterbuzz = get_twitter_buzz
 %p
   %h2{ :style => "display:inline;" } Mentions on Twitter
-  %img{ :src => "/img/twitter_icon.png", :style => "display:inline;" }
+  %img{ :src => "/images/twitter_icon.png", :style => "display:inline;" }
 - if !@twitterbuzz.blank?
   - @twitterbuzz.each_with_index do |twitterbuzz, i|
     %ul{ :style => "list-style-type:none" }
-      %img{ :src => "/img/tweets.png" }
+      %img{ :src => "/images/tweets.png" }
         = twitterbuzz.text
         = link_to "tweeted by @#{twitterbuzz.from_user}", "http://twitter.com/#{twitterbuzz.from_user}" 
 - else

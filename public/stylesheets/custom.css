@@ -82,7 +82,7 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 
 /* reports */
 
-#reports .item { width: 300px; background: url('img/item.bg.png') no-repeat; }
+#reports .item { width: 50px; background: url('img/item.bg.png') no-repeat; }
 #reports .item:hover { background-position: top right; }
 
 #reports .item img { display: block; width: 266px; height: 150px; margin: 18px 17px 30px 17px; }

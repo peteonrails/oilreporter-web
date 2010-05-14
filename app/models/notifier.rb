@@ -6,7 +6,7 @@ class Notifier < ActionMailer::Base
 
   def api_key(developer)
     subject       "Your API Key"
-    from          "donotrepy@#{HOST}"
+    from          "Oil Reporter <noreply@#{HOST}>"
     recipients    developer.email
     sent_on       Time.now
     body          :api_key => developer.api_key

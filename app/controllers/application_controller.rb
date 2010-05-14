@@ -16,10 +16,12 @@ class ApplicationController < ActionController::Base
 
   def verify_api_key
     @developer = Developer.find_by_api_key(params.delete(:api_key))
+
     unless !!@developer
       render :json => { :error => 'Invalid API key' }, :status => :unprocessable_entity
       return false
     end
+    return true
   end
 
 end

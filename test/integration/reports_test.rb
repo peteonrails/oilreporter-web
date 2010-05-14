@@ -37,6 +37,13 @@ class ReportsTest < ActionController::IntegrationTest
     assert_equal reports.first['id'], report.id
   end
 
+  test 'list reports in json sans api key' do
+    get "/reports.json", { :api_key => 'gobbledygook' }
+    assert_response :unprocessable_entity
+    msg = JSON.parse(response.body)
+    assert msg['error']
+  end
+
   test 'list reports in html' do
     test_create_report
     report = Report.first

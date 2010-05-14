@@ -34,7 +34,7 @@ class ReportsController < ApplicationController
   def index
     respond_to do |format|
       format.json {
-        verify_api_key
+        return unless verify_api_key
         @reports = current_developer.reports.paginate(:page => params[:page], :order => 'created_at DESC')
         render :json => @reports.collect(&:hew), :layout => false
       }

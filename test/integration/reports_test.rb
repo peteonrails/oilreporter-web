@@ -26,6 +26,17 @@ class ReportsTest < ActionController::IntegrationTest
     assert report.reload.media?
   end
 
+  test 'list reports' do
+    test_create_report
+    report = Report.first
+
+    get "/reports.json", { :api_key => @developer.api_key }
+    assert_response :success
+    reports = JSON.parse(response.body)
+    assert_equal reports.length, 1
+    assert_equal reports.first['id'], report.id
+  end
+
   private
 
   def post_json(path, params)

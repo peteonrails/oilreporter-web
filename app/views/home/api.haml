@@ -104,14 +104,14 @@
               %li 
                 URL: /reports.format (format: json, xml)
               %li 
-                Required: None
+                Required: api_key
               %li 
                 Optional: page (default: 1)
               %li
                 Success: array of paginated results status code 200
               :coderay
                 #!plaintext
-                curl http://oilreporter.org/reports.json 
+                curl http://oilreporter.org/reports.json?api_key=YOUR_API_KEY
                 Returns
                 [
                   { "id": 8

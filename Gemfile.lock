@@ -6,11 +6,7 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
+  haml-coderay: 
     group: 
     - :default
     version: ">= 0"
@@ -20,24 +16,24 @@ dependencies:
     version: ~> 2.3.5
     require: []
 
-  haml-coderay: 
+  httparty: 
     group: 
     - :default
     version: ">= 0"
-  haml: 
+  mysql: 
     group: 
     - :default
-    version: ">= 0"
+    version: ~> 2.8.1
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
-  mysql: 
+  haml: 
     group: 
     - :default
-    version: ~> 2.8.1
+    version: ">= 0"
   sqlite3-ruby: 
     group: 
     - :development
@@ -181,8 +177,6 @@ specs:
     version: 0.4.0
 - paperclip: 
     version: 2.3.1.1
-- pg: 
-    version: 0.9.0
 - pickle: 
     version: 0.2.11
 - rails: 
@@ -205,7 +199,7 @@ specs:
     version: 0.9.5
 - will_paginate: 
     version: 2.3.12
-hash: 62d231331affed0f829a977429890702b4c73fbc
+hash: 4c87be8fa73cd812d97b64be18d4a3bebbb90b84
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

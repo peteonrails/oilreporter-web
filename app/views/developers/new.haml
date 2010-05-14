@@ -33,7 +33,7 @@
                     = f.label :name
                     %span.small (required)
                     %br
-                    = f.text_field :name, :class => "round m input", :id => "contact"
+                    = f.text_field :name, :class => "round m input", :id => "field"
                   %p
                     = f.label :email
                     %span.small (required)
@@ -43,12 +43,12 @@
                     = f.label :website
                     %span.small (required)
                     %br
-                    = f.text_field :website, :class => "round m input", :id => "contact"
+                    = f.text_field :website, :class => "round m input", :id => "url"
                   %p
                     = f.label :purpose
                     %span.small (required)
                     %br
-                    = f.text_area :purpose, :class => "round l input", :id => "contact"
+                    = f.text_area :purpose, :class => "round l input", :id => "field"
                   %p
                     = f.check_box :volunteer, :class => "input"
                     = f.label :volunteer, 'Please contact me regarding volunteer development opportunities.'

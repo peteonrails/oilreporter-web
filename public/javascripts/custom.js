@@ -70,7 +70,11 @@ function validateInput(obj) {
 		if (obj.val().match(/^[a-zA-Z0-9_\.\-]+\@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9]{2,4}$/))
 			correct = true;
 	}
-	else if (id == "contact") { // validate everything else
+	if (id == "url") { // validate URL
+		if (obj.val().match(/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/))
+			correct = true;
+	}
+	else if (id == "field") { // validate everything else
 		if (obj.val().replace(/(^\s+)|(\s+$)/g, "") != "")
 			correct = true;
 			

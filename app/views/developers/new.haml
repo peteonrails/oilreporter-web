@@ -10,13 +10,19 @@
       %h1 Signup
   
     #content
-      = render :partial => 'layouts/flash_display'
-      / end flash message
       .container_12
         .grid_8
           .post
             .posttop
             .postbody
+              - if flash.any?
+                #flash
+                  - flash.each do |key, value|
+                    %div{ :id => "flash_#{key}", :class => key }
+                      = value
+                .clear
+                / end flash
+              
               %h2 Developer Sign Up
               %p
                 = error_messages_for :developer

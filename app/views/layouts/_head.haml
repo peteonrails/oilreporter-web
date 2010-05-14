@@ -27,7 +27,4 @@
     
   = yield :javascript
 
-  - if flash[:notice] || flash[:warning] || flash[:message] || flash[:error]
-    = javascript_tag "$(document).ready(function(){setTimeout(\"$('#flash').fadeOut(1000);\", 6000)})"
-
   = yield :head

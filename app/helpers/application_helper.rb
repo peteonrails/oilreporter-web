@@ -1,4 +1,5 @@
-module ApplicationHelper  
+module ApplicationHelper
+  
   def get_twitter_buzz
     results = []
     %w{#oilspill}.each do |q|

@@ -12,7 +12,7 @@ class Report < ActiveRecord::Base
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => (RAILS_ENV == 'production' ? ':attachment/:id/:style.:extension' :
                                           'public/system/:attachment/:id/:style/:basename.:extension'),
-    :bucket => 'oilreporter_production'
+    :bucket => 'oilspill_photos'
 
   def hew
     fields = [:id, :organization_id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]

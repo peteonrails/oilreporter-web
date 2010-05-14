@@ -14,7 +14,6 @@ class DevelopersController < ApplicationController
       redirect_to :action => 'show', :id => Base64.encode64(@developer.email).strip
     else
       flash[:error] = "There was a problem trying to create your API key"
-      flash[:error_messages_for] = @developer.errors
       render :new
     end
   end

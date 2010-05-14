@@ -10,6 +10,7 @@ class DevelopersController < ApplicationController
     @developer = Developer.new(params[:developer])
 
     if @developer.save
+      Notifier.deliver_api_key(@developer)
       redirect_to :action => 'show', :id => Base64.encode64(@developer.email).strip
     else
       render :new

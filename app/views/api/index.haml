@@ -18,7 +18,7 @@
           .postbody
             %h2 What is the Oil Reporter API?
             %p
-              The Oil Reporter API contains a series of methods for obtaining data through standard HTTP requests. This allows Oil Reporter to be integrated with just about any application that can connect to the web.
+              The Oil Reporter API contains a series of methods for obtaining data through standard HTTP requests. This allows Oil Reporter to be integrated with just about any application that can connect to the web. 
               
             %h3 Contents
             %ul
@@ -59,39 +59,39 @@
             %a{ :name => "create" }
             %h3 Create a New Report
             %p
-              Allows you to create a new report.
+              Allows you to create a new report.  This request needs a unique device identifier (device_id).
               %li 
                 Method: POST
               %li 
                 URL: /reports
               %li 
-                Required: oil, wetlands, api_key
+                Required: oil, wetlands, api_key, device_id
               %li
                 Success: id returned and HTTP status code 200
               %li
                 Failure: array of errors and HTTP status code 422
               :coderay
                 #!plaintext
-                curl -d "api_key=YOUR_API_KEY&report[latitude]=29.964639&report[longitude]=-90.067763&report[oil]=5&report[wetlands]=7&report[description]=Distressed%20Wildlife" http://oilreporter.org/reports
+                curl -d "api_key=YOUR_API_KEY&deviceId=UNIQUE_DEVICE_ID&report[latitude]=29.964639&report[longitude]=-90.067763&report[oil]=5&report[wetlands]=7&report[description]=Distressed%20Wildlife" http://oilreporter.org/reports
                 Returns {"id":8}
 
             %a{ :name => "media" }
             %h3 Add Media to Report
             %p
-              Allows you to add media to an existing report.  You need the ID of the report you created to be able to call this url.
+              Allows you to add media to an existing report.  You need the ID of the report you created to be able to call this url.  This request needs a unique device identifier (device_id).
               %li 
                 Method: PUT
               %li 
                 URL: /reports/*ID*
               %li 
-                Required: id, api_key
+                Required: id, api_key, device_id
               %li
                 Success: empty text and HTTP status code 200
               %li
                 Failure: empty text and HTTP status code 422
               :coderay
                 #!plaintext
-                curl -T seagull.jpg http://oilreporter.org/reports/8?api_key=YOUR_API_KEY 
+                curl -T seagull.jpg http://oilreporter.org/reports/8?api_key=YOUR_API_KEY&device_id=UNIQUE_DEVICE_ID 
                 Returns empty text and an HTTP status code of 200
                                            
             %a{ :name => "list" }

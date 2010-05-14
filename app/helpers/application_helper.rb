@@ -10,7 +10,7 @@ module ApplicationHelper
     %w{#oilspill}.each do |q|
       tsearch = Twitter::Search.new(q)
       tresponse = tsearch.fetch
-      results << tresponse.results[1..3]
+      results << tresponse.results[1..3] if !tresponse.nil? && !tresponse.results.empty?
     end
     results.flatten.compact
   end

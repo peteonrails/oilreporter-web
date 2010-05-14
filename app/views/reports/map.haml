@@ -1,32 +1,32 @@
 %body
+  
+  = map_javascripts
 
-  = content_for :head do
-    = '<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAALIr9CgGSyKEGUvdJz6JbKhQq1UCU9SBkmSXBlazPa3yrPjWakBTWgEUybsIS-DVD0rD6Sw9GTwZC2Q" type="text/javascript"></script>'
-    :javascript
-      function createMarker(map, report) {
-        var point = new GLatLng(report['latitude'], report['longitude']);
-        var marker = new GMarker(point, true);
-        GEvent.addListener(marker, 'click', function() {
-          var minHtml = '';
-          minHtml += '<strong>Oil:</strong> ' + report['oil'] + '<br/>';
-          minHtml += '<strong>Wildlife:</strong> ' + report['wildlife'] + '<br/>';
-          minHtml += '<strong>Lat/Lng:</strong> ' + report['latitude'] + '/' + report['longitude'] + '<br/>';
+  :javascript
+    function createMarker(map, report) {
+      var point = new GLatLng(report['latitude'], report['longitude']);
+      var marker = new GMarker(point, true);
+      GEvent.addListener(marker, 'click', function() {
+        var minHtml = '';
+        minHtml += '<strong>Oil:</strong> ' + report['oil'] + '<br/>';
+        minHtml += '<strong>Wildlife:</strong> ' + report['wildlife'] + '<br/>';
+        minHtml += '<strong>Lat/Lng:</strong> ' + report['latitude'] + '/' + report['longitude'] + '<br/>';
 
-          var maxHtml = minHtml;
+        var maxHtml = minHtml;
 
-          maxHtml += '<strong>Description</strong> ' + report['description'] + '<br/>';
-          if (report['media'])
-            maxHtml += '<img src="' + report['media']['thumb'] + '" />';
+        maxHtml += '<strong>Description</strong> ' + report['description'] + '<br/>';
+        if (report['media'])
+          maxHtml += '<img src="' + report['media']['thumb'] + '" />';
 
-          map.openInfoWindowHtml(point, minHtml, { maxContent: maxHtml });
-        });
-
-        return marker;
-      }
-
-      jQuery(document).ready(function() {
-        #{show_map(@reports)}
+        map.openInfoWindowHtml(point, minHtml, { maxContent: maxHtml });
       });
+
+      return marker;
+    }
+
+    jQuery(document).ready(function() {
+      #{show_map(@reports)}
+    });
 
   = render :partial => 'shared/header'
 

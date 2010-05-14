@@ -16,6 +16,9 @@ defaults: &defaults
 
   # Default timezone
   time_zone: UTC
+  
+  # Google Api Key for http://localhost:3000
+  google_api_key: ABQIAAAAgtulYhIAj8uTCz3CP9LUkxRfPUmTrE-kGcSvX58SFCYQhb8lqxThXf53vEUDXIB5Aj7QLF6sCyL96Q
 
 development:
   <<: *defaults
@@ -23,6 +26,7 @@ development:
 
 production:
   <<: *defaults
+  google_api_key: ABQIAAAAv2kP9nkf-2Hm8WO7uocS5hQq1UCU9SBkmSXBlazPa3yrPjWakBTJvhnKvmEEeW71_sMHVod_VFD1rg
 
 test: &test
   <<: *defaults

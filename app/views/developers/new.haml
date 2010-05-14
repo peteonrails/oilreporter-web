@@ -1,0 +1,33 @@
+= render :partial => 'shared/header'
+
+#main
+  #path
+    You are here:
+    = link_to 'Home', root_url
+    >>
+    %h1 Signup
+  
+  #content
+    #reports.container_12
+      .block
+        .block_head
+          %h2 Signup
+        .block_content
+          - form_for(:developer, :url => { :action => 'create' }) do |f|
+            %fieldset
+              %p
+                = f.label :name
+                = f.text_field :name
+              %p
+                = f.label :email
+                = f.text_field :email
+              %p
+                = f.label :website
+                = f.text_field :website
+              %p
+                = f.label :purpose
+                = f.text_area :purpose
+              = submit_tag('Submit')
+      .clear
+
+= render :partial => "shared/footer"

@@ -398,3 +398,15 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 15px;
 	}
+	
+/* forms */
+textarea, input {
+  font-family: Trebuchet MS,Arial,Sans-Serif;
+  border: solid thin #aaa;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+textarea {
+  height: 50px;
+}

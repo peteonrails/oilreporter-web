@@ -13,6 +13,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/signup', :controller => 'developers', :action => 'new'
 
   # Documentation
-  map.api '/api', :controller => 'api', :action => 'index'
+  map.api '/api', :controller => 'home', :action => 'api'
   
 end

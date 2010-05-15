@@ -7,7 +7,6 @@ end
 
 gem 'haml'
 gem 'haml-coderay'
-gem 'twitter'
 gem 'RedCloth'
 gem 'httparty'
 gem 'mysql', '~> 2.8.1'

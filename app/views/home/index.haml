@@ -64,8 +64,13 @@
         .clear  
         / end of grid row
         .grid_12
-          / Start Tweets
-          = render :partial => "shared/twitterbuzz"
+          #container
+            %p
+              %h2 Search Results for: #oilspill 
+            #tweethash
+              \#oilspill
+            
+          / end tweets
         .clear
         / = render :partial => "shared/news"
         / end news

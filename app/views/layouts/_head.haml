@@ -14,16 +14,29 @@
   = stylesheet_link_tag 'style', :media => 'all'
   = stylesheet_link_tag 'pretty.photo.css', :media => 'all'
   = stylesheet_link_tag 'coderay'
+  = stylesheet_link_tag 'tweets.screen'
   / JavaScript
   = javascript_include_tag 'jquery'
   = javascript_include_tag 'pretty.photo'
   = javascript_include_tag 'custom'
+  = javascript_include_tag 'jquery.tweets.pack'
     
   /[if IE 6]
     = javascript_include_tag 'dd_belated_png'
     :javascript
       / PNG FIX
       DD_belatedPNG.fix('.ie6fix, #top, #nav a:hover, #nav li.selected a, #slides img, #path');
+    
+  :javascript
+    	jQuery(document).ready(function(){
+
+    		jQuery('#tweethash').tweetSync({
+    			width:'960px',
+    			tweetCount:'5',
+    			center: true
+    		});
+
+    	});
     
   = yield :javascript
 

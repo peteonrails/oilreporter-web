@@ -14,26 +14,26 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  haml-coderay: 
+    group: 
+    - :default
+    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  haml-coderay: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
   mysql: 
     group: 
     - :default
@@ -94,10 +94,6 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.3.5
-  twitter: 
-    group: 
-    - :default
-    version: ">= 0"
 specs: 
 - rake: 
     version: 0.8.7
@@ -167,8 +163,6 @@ specs:
     version: 3.0.3
 - haml-coderay: 
     version: 0.0.2
-- hashie: 
-    version: 0.2.0
 - httparty: 
     version: 0.5.2
 - linecache: 
@@ -177,8 +171,6 @@ specs:
     version: 1.8.3
 - mysql: 
     version: 2.8.1
-- oauth: 
-    version: 0.4.0
 - paperclip: 
     version: 2.3.1.1
 - pg: 
@@ -199,13 +191,9 @@ specs:
     version: 1.2.5
 - thin: 
     version: 1.2.7
-- yajl-ruby: 
-    version: 0.7.6
-- twitter: 
-    version: 0.9.5
 - will_paginate: 
     version: 2.3.12
-hash: 62d231331affed0f829a977429890702b4c73fbc
+hash: f45825d1d20d01e0c07e743f84825b45ababfb8c
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

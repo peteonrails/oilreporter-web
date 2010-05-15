@@ -3,8 +3,11 @@ module ApplicationHelper
   def show_map(reports)
     buffer = <<-JS
       var map = new GMap2(document.getElementById('map'));
-      map.setCenter(new GLatLng(29.25, -86.75), 7);
+      map.setCenter(new GLatLng(29.19042, -88.7649), 7);
       map.addControl(new GSmallMapControl());
+      map.addControl(new GMapTypeControl());
+      map.enableScrollWheelZoom();
+      map.setMapType(G_HYBRID_MAP);
     JS
 
     reports.collect(&:hew).each do |report|
@@ -12,6 +15,20 @@ module ApplicationHelper
     end
 
     buffer
+  end
+  
+  def google_maps_js
+    key_pair = "key=#{Oilreporter.config.google_api_key}" if Oilreporter.config.google_api_key   
+    "<script type='text/javascript' src='http://maps.google.com/maps?file=api&amp;#{key_pair}'></script>"
+  end
+
+  def map_javascripts
+    if @map_javascripts_displayed
+      return
+    else
+      @map_javascripts_displayed = true
+      return google_maps_js
+    end
   end
 
   def coderay(text)

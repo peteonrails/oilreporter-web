@@ -1,10 +1,7 @@
-
-/* theme background images */
-
 html { background: url('repeat.bg.jpg') repeat-x top; } /* background repeating image */
 body { background: url('center.bg.jpg') no-repeat center top; } /* background center image */
 
 /* links coloring */
 
 a { color: #3399ff; font-weight: bold; } /* text links color */
-a:hover { color: #0066cc; font-weight: bold; } /* hover color (you can remove this) */
+a:hover { color: #0066CC; font-weight: bold; } /* text links color hover */

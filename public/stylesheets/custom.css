@@ -172,12 +172,6 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 #commentform .input { background-color: #fdfdfd; }
 #commentform span.small { color: #666; }
 
-/* pagination */
-
-.pagination { margin-bottom: 1.5em; }
-.pagination a { width: 30px; display: inline-block; margin-left: 5px; }
-.pagination a.current { background-image: none; }
-
 /* search form */
 
 #searchform .input { height: 24px !iefix; }
@@ -331,6 +325,8 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 	vertical-align: middle;
 	outline: none;
 	}
+	
+/* pagination */
 
 .block .pagination {
 	font-size: 10px;
@@ -351,23 +347,23 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 
 .block .pagination a {
 	border: 1px solid #ccc;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	padding: 3px 6px;
-	margin: 0 1px;
+	-webkit-border-radius: 5%;
+	-moz-border-radius: 5%;
+	border-radius: 5%;
+	padding: 1px 11px;
+	margin: 0;
 	}
 
 .block .pagination a.active {
-	background: #39a3e6;
-	border: 1px solid #0082d5;
+	background: #3399FF;
+	border: 1px solid #3399FF;
 	color: #fff;
 	}
 
 .block .pagination a:hover {
 	color: #fff;
-	background: #ec8526;
-	border: 1px solid #d77011;
+	background: #0066CC;
+	border: 1px solid #0066CC;
 	}
 
 .block .block_content ul {

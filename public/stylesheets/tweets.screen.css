@@ -45,21 +45,3 @@
 	.tweetsync_container .tweetsync_search .tweetsync_content div{border-bottom:1px solid #e6e6e6; padding:8px 0px 8px 0px;}
 	
 	.tweetsync_container .tweetsync_content span.tweet_info{font-family:'Lucida Grande',sans-serif; font-size:22px; line-height:48px;}
-
-/* --------------------------------------------------------------------- */
-/* -- These are the styles to replace the user's Twitter Theme --------- */
-/* -- (for use with JS --> style:'custom') ----------------------------- */
-/* --------------------------------------------------------------------- */
-.tweetsync_container .tweetsync_custom{background:#c0deed url('http://a3.twimg.com/profile_background_images/101550241/oil_reporter_background.png') 0px 0px no-repeat;}
-	.tweetsync_container .tweetsync_custom .tweet_text{color:#000000;}
-	.tweetsync_container .tweetsync_custom .tweet_text a:link,
-	.tweetsync_container .tweetsync_custom .tweet_text a:visited,
-	.tweetsync_container .tweetsync_custom .tweet_text a:active{color:#3399FF; text-decoration:none;}
-	.tweetsync_container .tweetsync_custom .tweet_text a:hover{text-decoration:underline;}
-
-	.tweetsync_container .tweetsync_custom .tweet_author a:link,
-	.tweetsync_container .tweetsync_custom .tweet_author a:visited,
-	.tweetsync_container .tweetsync_custom .tweet_author a:active,
-	.tweetsync_container .tweetsync_custom .tweet_info a:link,
-	.tweetsync_container .tweetsync_custom .tweet_info a:visited,
-	.tweetsync_container .tweetsync_custom .tweet_info a:active{color:#3399FF;}

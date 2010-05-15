@@ -4,4 +4,4 @@ body { background: url('center.bg.jpg') no-repeat center top; } /* background ce
 /* links coloring */
 
 a { color: #3399ff; font-weight: bold; } /* text links color */
-a:hover { color: #0066CC; font-weight: bold; } /* text links color hover */
+a:hover { color: #0066CC; font-weight: bold; text-decoration:underline; } /* text links color hover */

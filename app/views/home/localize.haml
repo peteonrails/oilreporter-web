@@ -1,0 +1,106 @@
+= render :partial => 'shared/header'
+
+#main
+  #path
+    You are here:
+    = link_to 'Home', root_url
+    >>
+    %h1 Localization
+  / end path
+  
+  #content
+    .container_12
+      .grid_12
+        %div{ :id => "banner" }
+          %img{ :src => "/images/OIL_topimage.png" }
+          %div
+            %h3 Use Open Source and Open Data To Aid in the Clean Up
+            %p
+              Using your JavaScript skills, you can build an app in a matter of hours to mash up images,
+              video, and data from the Oil Reporter web service.
+            
+            %h3 What you'll need:
+            %p
+              The
+              %a{ :href => "http://www.appcelerator.com/download" } Titanium Mobile SDK
+              , the iPhone and/or Android Mobile SDKs, and a cool mashup idea.
+      .clear
+  
+    .container_12
+      .grid_8
+        / start doc
+        .post
+          .posttop
+          / end .posttop
+          .postbody
+            - if flash.any?
+              #flash
+                - flash.each do |key, value|
+                  %div{ :id => "flash_#{key}", :class => key }
+                    = value
+              .clear
+              / end flash
+            %h2 Getting Started
+            %div{ :class => "step-bubble" }
+              %img{ :src => "/images/1.png" }
+              %p
+                Obtain an API key which will allow you to consume Oil Reporter web services. 
+                You can get an API key by signing up for one 
+                %a{ :href => "/signup" } here.
+            %div{ :class => "step-bubble" }
+              %img{ :src => "/images/2.png" }
+              %p
+                Download and install the 
+                %a{ :href => "http://developer.apple.com/iphone" }iPhone 
+                and/or
+                %a{ :href => "http://developer.android.com" }Android 
+                SDKs for native mobile development.
+                %a{ :href => "http://vimeo.com/10038503" } This screencast shows you how to get set up.
+            %div{ :class => "step-bubble" }
+              %img{ :src => "/images/3.png" }
+              %p
+                %a{ :href => "http://www.appcelerator.com/download" } Download and install the Titanium Developer tool
+                , to create and manage your mobile projects.
+            %div{ :class => "step-bubble" }
+              %img{ :src => "/images/4.png" }
+              %p
+                Create a great mobile application, and lend a hand!
+            
+          .postfoot
+          / end of postfoot
+            
+      .grid_4#sidebar
+        %h4 Need Development Assistance?
+        %p
+          Please fill out the form below to be placed in contact with a developer
+          that can help your organization leverage Oil Reporter data.
+          - form_for(:organization, :url => "organizations", :html => { :id => 'contact', :class => 'sidebar_form' }) do |f|
+            %fieldset
+              %p
+                = f.label :name, "Organization Name"
+                %span.small (required)
+                %br
+                = f.text_field :name, :class => "round m input", :id => "field"
+              %p
+                = f.label :contact_person, "Contact Person"
+                %span.small (required)
+                %br
+                = f.text_field :contact_person, :class => "round m input", :id => "field"
+              %p
+                = f.label :email, "E-Mail"
+                %span.small (required)
+                %br
+                = f.text_field :email, :class => "round m input", :id => "email"
+              %p
+                = f.label :website
+                %br
+                = f.text_field :website, :class => "round m input", :id => "url"
+              %p
+                = f.label :purpose
+                %br
+                = f.text_area :purpose, :class => "round l input", :id => "field"
+              %p
+                = submit_tag('Submit', :class => "round s button")
+      .clear
+  
+= render :partial => "shared/footer"

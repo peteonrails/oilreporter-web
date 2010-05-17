@@ -60,6 +60,16 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 #index #content .container_12 { padding-top: 10em; }
 #index #content .text { width: 360px; }
 
+#banner { padding:10px; background-color:#fff; border:1px #e1e1e1 solid; -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; min-height:205px;}
+#banner img { float:left; margin-right:10px; }
+#banner div { margin-top:10px; color:#424242; }
+#banner h3 { font-weight:bold; font-size:22px; margin-bottom:10px; }
+#banner p { margin-bottom:20px; }
+
+.step-bubble { padding:10px;margin-bottom:10px;border:1px #e1e1e1 solid; background-color:#eeeeee; -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; min-height:80px;}
+.step-bubble img {float:left;margin-right:10px;}
+.step-bubble p { margin-top:10px; }
+
 /* newsline */
 
 #newsline { height: 55px; overflow: hidden; background-image: url('img/newsline.bg.png'); margin-bottom: 2em; }
@@ -171,6 +181,10 @@ h1, h2, h3, h4, #brief a { letter-spacing: -1px; font-weight: 800; }
 #commentform { vertical-align: top; margin: 1em; margin-top: 3em; padding: 0px; }
 #commentform .input { background-color: #fdfdfd; }
 #commentform span.small { color: #666; }
+
+.sidebar_form input[type=text], .sidebar_form textarea {
+  width:215px !important;
+}
 
 /* search form */
 

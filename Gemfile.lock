@@ -6,31 +6,17 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml-coderay: 
-    group: 
-    - :default
-    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  memcache-client: 
+  haml-coderay: 
     group: 
-    - :rails
-    version: ">= 1.7.4"
-    require: []
-
-  haml: 
+    - :default
+    version: ">= 0"
+  httparty: 
     group: 
     - :default
     version: ">= 0"
@@ -38,6 +24,16 @@ dependencies:
     group: 
     - :default
     version: ~> 2.8.1
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  memcache-client: 
+    group: 
+    - :rails
+    version: ">= 1.7.4"
+    require: []
+
   sqlite3-ruby: 
     group: 
     - :development
@@ -160,7 +156,7 @@ specs:
 - factory_girl: 
     version: 1.2.4
 - haml: 
-    version: 3.0.3
+    version: 3.0.4
 - haml-coderay: 
     version: 0.0.2
 - httparty: 
@@ -173,8 +169,6 @@ specs:
     version: 2.8.1
 - paperclip: 
     version: 2.3.1.1
-- pg: 
-    version: 0.9.0
 - pickle: 
     version: 0.2.11
 - rails: 
@@ -193,7 +187,7 @@ specs:
     version: 1.2.7
 - will_paginate: 
     version: 2.3.12
-hash: f45825d1d20d01e0c07e743f84825b45ababfb8c
+hash: 996952b5eb7aaadbcf06de67dd75fa9e5b125b13
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

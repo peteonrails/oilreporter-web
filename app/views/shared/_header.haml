@@ -16,8 +16,12 @@
             %li
               %a{ :href => "/signup" }
                 Sign Up
-            %li
-              = link_to 'API Documentation', api_path
+            %li 
+              %a{ :href => "/setup" }
+                Setup
+            %li 
+              %a{ :href => "/api" }
+                API Documentation
         %li 
           %a{ :hrf => "#" }
             Reports
@@ -27,8 +31,6 @@
             %li
               %a{ :href => "/map" }
                 View Map
-        %li 
-          = link_to 'Localization', localize_path
         %li
           %a{ :hrf => "#" }
             Community

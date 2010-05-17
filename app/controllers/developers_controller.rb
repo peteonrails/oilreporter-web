@@ -28,7 +28,7 @@ class DevelopersController < ApplicationController
       render :nothing => true, :status => :not_found
       return
     else
-      flash[:success] = "#{@developer.api_key}"
+      flash[:message] = "#{@developer.api_key}"
     end
   end
 

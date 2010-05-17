@@ -3,19 +3,17 @@ ActionController::Routing::Routes.draw do |map|
 
   # Home
   map.root :controller => 'home'
-  
+  map.connect '/api/', :controller => 'home', :action => 'api'
+  map.connect '/setup', :controller => 'home', :action => 'setup'
+
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]
-  map.data '/data', :controller => 'reports', :action => 'index'
   map.connect '/map', :controller => 'reports', :action => 'map'
-  map.localize '/localize', :controller => 'home', :action => 'localize'
+  map.data '/data', :controller => 'reports', :action => 'index'
 
   # Developers
   map.resources :developers, :only => [:new, :create, :show]
   map.connect '/signup', :controller => 'developers', :action => 'new'
-  
-  # API
-  map.api '/api', :controller => 'api', :action => 'index'
 
   # Organizations
   map.resources :organizations, :only => [:index, :create]

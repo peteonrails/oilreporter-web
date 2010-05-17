@@ -973,8 +973,8 @@ a.button_link:hover span {background-position:-2px -2px;}
 .gradient_box_bottom{background:transparent url(/images/gradient_box_bottom.gif) no-repeat scroll 0 bottom; padding:26px;position:relative;}
 .gradient_box_top{background:transparent url(/images/gradient_box_top.gif) no-repeat scroll 0 top;}
 
-.fancy_box,.success_box,.error_box,.info_box,.note_box{clear:both;padding:20px;margin: 20px 0px;-moz-border-radius:6px;-webkit-border-radius:6px;}
-.success_box,.error_box,.info_box,.note_box{padding-left:55px;background:#eee;padding-bottom:25px;
+.fancy_box,.message_box,.error_box,.info_box,.note_box{clear:both;padding:20px;margin: 20px 0px;-moz-border-radius:6px;-webkit-border-radius:6px;}
+.message_box,.error_box,.info_box,.note_box{padding-left:55px;background:#eee;padding-bottom:25px;
 padding-top:20px;}
 .fancy_box{
 	background:#F9F9F9 url(/images/form-gradient.gif) repeat-x scroll 0 -7px;

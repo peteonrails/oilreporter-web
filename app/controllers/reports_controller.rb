@@ -32,6 +32,7 @@ class ReportsController < ApplicationController
   end
 
   def index
+    add_crumb "reports", '/reports'
     respond_to do |format|
       format.json {
         return unless verify_api_key
@@ -46,6 +47,7 @@ class ReportsController < ApplicationController
   end
 
   def map
+    add_crumb "map", '/map'
     @reports = Report.all
   end
 

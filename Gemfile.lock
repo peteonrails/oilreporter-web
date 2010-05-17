@@ -6,17 +6,35 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
+  haml-coderay: 
+    group: 
+    - :default
+    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  haml-coderay: 
+  sprockets-rails: 
     group: 
-    - :default
-    version: ">= 0"
-  httparty: 
+    - :plugins
+    version: ~> 0.0.1
+  memcache-client: 
+    group: 
+    - :rails
+    version: ">= 1.7.4"
+    require: []
+
+  haml: 
     group: 
     - :default
     version: ">= 0"
@@ -24,16 +42,6 @@ dependencies:
     group: 
     - :default
     version: ~> 2.8.1
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
-  memcache-client: 
-    group: 
-    - :rails
-    version: ">= 1.7.4"
-    require: []
-
   sqlite3-ruby: 
     group: 
     - :development
@@ -54,14 +62,14 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.5.0
-  will_paginate: 
-    group: 
-    - :plugins
-    version: ~> 2.3
   paperclip: 
     group: 
     - :plugins
     version: ~> 2.3.1
+  will_paginate: 
+    group: 
+    - :plugins
+    version: ~> 2.3
   factory_girl: 
     group: 
     - :testing
@@ -90,6 +98,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.3.5
+  crummy: 
+    group: 
+    - :default
+    version: ">= 0"
 specs: 
 - rake: 
     version: 0.8.7
@@ -135,6 +147,8 @@ specs:
     version: 0.3.1
 - crack: 
     version: 0.1.6
+- crummy: 
+    version: 0.1.0
 - diff-lcs: 
     version: 1.1.2
 - trollop: 
@@ -169,6 +183,8 @@ specs:
     version: 2.8.1
 - paperclip: 
     version: 2.3.1.1
+- pg: 
+    version: 0.9.0
 - pickle: 
     version: 0.2.11
 - rails: 
@@ -181,13 +197,17 @@ specs:
     version: 0.10.3
 - ruby-debug: 
     version: 0.10.3
+- sprockets: 
+    version: 1.0.2
+- sprockets-rails: 
+    version: 0.0.1
 - sqlite3-ruby: 
     version: 1.2.5
 - thin: 
     version: 1.2.7
 - will_paginate: 
     version: 2.3.12
-hash: 996952b5eb7aaadbcf06de67dd75fa9e5b125b13
+hash: f3f7cd8e8b1bd5f00f1bf2a343844cc4394494ac
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

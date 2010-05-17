@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  add_crumb "home", '/'
 
   helper :all
 

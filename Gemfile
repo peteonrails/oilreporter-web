@@ -14,10 +14,12 @@ gem 'pg', '~> 0.9.0'
 gem 'thin'
 # gem 'libxml-ruby', '~> 1.1.3', :require => 'libxml'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
+gem 'crummy'
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'
   gem 'will_paginate', '~> 2.3'
+  gem 'sprockets-rails', '~> 0.0.1'
 end
 
 group :development do

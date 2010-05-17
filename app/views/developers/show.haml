@@ -1,29 +1,39 @@
-%body
+.clearboth
 
-  = render :partial => 'shared/header'
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
 
-  #main
-    #path
-      You are here:
-      = link_to 'Home', root_url
-      >>
-      %h1 API Key
-  
-    #content
-      #reports.container_12
-        .block
-          .block_head
-            %h2 API Key
-          .block_content
-            %p
-              Your API Key is: 
-              %b
-                #{@developer.api_key}
-            %p
-              We have also sent you an e-mail with your API Key as well.  Now you can start working with the 
-              %a{ :href => "/api" }
-                Oil Reporter API.
-              
-        .clear
+#body_block
+  .inner
+    .primary_full
+      .content
+        .entry
+          %h1 
+            Hey
+            = @developer.name.camelcase
+            here's your new API key:
+          - if flash.any?
+            - flash.each do |key, value|
+              %div{ :class => "#{key}_box" }
+                = value
+          %h3
+            P.S. We also sent an e-mail to 
+            = @developer.email.downcase
+            with your API Key.
+        .clearboth
+        / end entry
+      / end content
+    / end primary_full
+  /end inner
+/ end body_block
+          
+#call_to_action
+  .inner
+    #blurb
+      Click the button to view the Oil Reporter API and get started!
+      #call_to_action_button2
+        = link_to "", api_url
 
-  = render :partial => "shared/footer"
+.clearboth

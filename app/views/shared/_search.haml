@@ -1,0 +1,7 @@
+.widget.widget_search
+  .search-box
+    / real search logic to go here
+    - form_for(:search, :url => { :action => 'index' } ) do |f|
+      = f.text_field :name, :size => "15", :class => "search-field", :id => "s", :value => "Search", :onfocus => "if(this.value == 'Search') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'Search';}"
+      = submit_tag('', :class => "search-go")
+/ end widget_search

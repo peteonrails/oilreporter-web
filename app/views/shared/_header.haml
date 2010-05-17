@@ -1,28 +1,47 @@
-#top
-  .container_12
-    #logo.left
-      %a{ :href => "/" }
-        %img{ :class => "ie6fix", :src => "/images/logo.top.png", :alt => "Oil Reporter - Help Clean Up" }
-    / end logo   
-     
-    %ul#nav.right
-      %li
-        %a{ :href => "/signup" }
-          Sign Up
-      %li 
-        = link_to 'Reports', reports_path
-      %li
-        %a{ :href => "/map" }
-          Map
-      %li 
-        = link_to 'API', api_path
-      %li 
-        = link_to 'Localization', localize_path
-      %li 
-        %a{ :href => "http://twitter.com/oilreporter" }
-          Twitter
-      %li 
-        %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
-          GitHub    
-    / end navigation
+#header
+  .inner
+    #logo
+      #default_logo
+        = link_to '', root_path
+    / end logo
+    
+    #main_navigation.jqueryslidemenu
+      %ul
+        %li
+          = link_to 'Home', root_path
+        %li
+          %a{ :hrf => "#" }
+            Developers
+          %ul
+            %li
+              %a{ :href => "/signup" }
+                Sign Up
+            %li
+              = link_to 'API Documentation', api_path
+        %li 
+          %a{ :hrf => "#" }
+            Reports
+          %ul
+            %li
+              = link_to "View Reports", reports_path
+            %li
+              %a{ :href => "/map" }
+                View Map
+        %li 
+          = link_to 'Localization', localize_path
+        %li
+          %a{ :hrf => "#" }
+            Community
+          %ul
+            %li 
+              %a{ :href => "http://twitter.com/oilreporter" }
+                Twitter
+            %li 
+              %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
+                GitHub
+            %li 
+              %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response" }
+                Wiki
+    / end top navigation
+  / end inner
 / end header

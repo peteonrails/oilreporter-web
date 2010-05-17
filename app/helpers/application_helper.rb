@@ -37,4 +37,28 @@ module ApplicationHelper
     end
   end
   
+  def footer
+    render :partial => 'shared/footer'
+  end
+  
+  def header
+    render :partial => 'shared/header'
+  end
+
+  def javascripts
+    render :partial => 'shared/javascripts'
+  end
+  
+  def twitter
+    render :partial => 'shared/twitter'
+  end
+  
+  def search
+    render :partial => 'shared/search'
+  end
+  
+  def markers
+    render :partial => 'shared/markers'
+  end
+  
 end

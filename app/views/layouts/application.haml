@@ -1,7 +1,44 @@
 !!!
 %html
-  = render :partial => 'layouts/head'
+  %head
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
+    %meta{ :content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible" }
+    == <meta name="keywords" content="oil spill, oil cleanup, oil reporting" />
+    == <meta name="description" content="Oil Reporter was built by Intridea for Crisis Commons for the Gulf of Mexico Oil Spill." />
+    == <meta name="google-site-verification" content="" />
+
+    %title
+      = @title || "Oil Reporter - People Helping Clean Up the Gulf of Mexico Oil Spill"
+
+    %link{ :href => 'favicon.ico', :type => 'image/x-icon', :rel => 'icon' }
+
+    = stylesheet_link_tag 'prettyPhoto', :media => 'screen'
+    = stylesheet_link_tag 'coderay', :media => 'screen'
+    = stylesheet_link_tag 'style', :media => 'screen'
+    = stylesheet_link_tag 'oilreporter', :media => 'screen'
+
+    = sprockets_include_tag
+    = yield :js_includes
+    - javascript_tag do
+      = yield :js_templates
+
+    /[if IE 6]
+      = stylesheet_link_tag 'new/ie6', :type => "text/css", :media => "screen"
+      = javascript_include_tag 'DD_belatedPNG_0.0.8a-min'
+      :javascript
+        / PNG FIX
+        DD_belatedPNG.fix('#default_logo');
+
+    / TODO: activate later
+    / = stylesheet_link_tag 'tweets.screen'
+    / = javascript_include_tag 'jquery.tweets.pack'
+    / = twitter
   
-  = yield
+  %body.inset
+    = header
   
-  = render :partial => 'shared/google_analytics'
+    = yield
+    
+    = footer
+  
+    = javascripts

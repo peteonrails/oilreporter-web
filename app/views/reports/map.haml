@@ -1,50 +1,29 @@
-%body
-  
-  = map_javascripts
+= map_javascripts
 
-  :javascript
-    function createMarker(map, report) {
-      var point = new GLatLng(report['latitude'], report['longitude']);
-      var marker = new GMarker(point, true);
-      GEvent.addListener(marker, 'click', function() {
-        var minHtml = '';
-        minHtml += '<strong>Oil:</strong> ' + report['oil'] + '<br/>';
-        minHtml += '<strong>Wildlife:</strong> ' + report['wildlife'] + '<br/>';
-        minHtml += '<strong>Lat/Lng:</strong> ' + report['latitude'] + '/' + report['longitude'] + '<br/>';
+= markers
 
-        var maxHtml = minHtml;
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Map
+    #blurb
+      Latest Oil Reports Mapped in Real-Time
+/ end intro
 
-        maxHtml += '<strong>Description</strong> ' + report['description'] + '<br/>';
-        if (report['media'])
-          maxHtml += '<img src="' + report['media']['thumb'] + '" />';
+.clearboth
 
-        map.openInfoWindowHtml(point, minHtml, { maxContent: maxHtml });
-      });
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
 
-      return marker;
-    }
-
-    jQuery(document).ready(function() {
-      #{show_map(@reports)}
-    });
-
-  = render :partial => 'shared/header'
-
-  #main
-    #path
-      You are here:
-      = link_to 'Home', root_url
-      >>
-      %h1 Map
-  
-    #content
-      #reports.container_12
-        .block
-          .block_head
-            %h2 Oil Report Map
-          .block_content
-            %div{:id => 'map', :style => 'width: 100%; height: 600px; border: thin solid black;'}
-        .clear
-
-
-  = render :partial => "shared/footer"
+#body_block
+  .inner
+    #primary_full
+      .content
+        %div{:id => 'map', :style => "height: 600px;" }
+      / end content
+      .clear
+    / end primary_full
+  / end inner
+/ body_block

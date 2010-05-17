@@ -1,0 +1,13 @@
+:asset_root: public
+:load_path:
+  - app/javascripts
+  - vendor/sprockets/*/src
+  - vendor/plugins/*/javascripts
+  - vendor/plugins/*/app/javascripts
+:source_files:
+  - app/javascripts/jquery.js
+  - app/javascripts/jquery.easing.js
+  - app/javascripts/cufon-yui.js
+  - app/javascripts/ColaborateLight_400.font.js
+  - app/javascripts/jquery.prettyPhoto.js
+  - app/javascripts/application.js

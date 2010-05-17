@@ -1,60 +1,55 @@
-%body
-  
-  = render :partial => 'shared/header'
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Developers Sign Up
+    #blurb
+      Complete the form to get your key
+/ end intro
 
-  #main
-    #path
-      You are here:
-      = link_to 'Home', root_url
-      >>
-      %h1 Signup
-  
-    #content
-      .container_12
-        .grid_8
-          .post
-            .posttop
-            .postbody
-              - if flash.any?
-                #flash
-                  - flash.each do |key, value|
-                    %div{ :id => "flash_#{key}", :class => key }
-                      = value
-                .clear
-                / end flash
-              
-              %h2 Developer Sign Up
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary_full
+      .content
+        .two_third
+          %h2 Developer Sign Up
+          - if flash.any?
+            - flash.each do |key, value|
+              %div{ :class => "#{key}_box" }
+                = value
+          %p
+            = error_messages_for :developer
+            Please use the form below to sign up for a new developers API key.
+          - form_for(:developer, :url => { :action => 'create' }, :html => { :id => 'contact_form' }) do |f|
+            %fieldset
               %p
-                = error_messages_for :developer
-                Please use the form below to sign up for a new developer's API key.
-              - form_for(:developer, :url => { :action => 'create' }, :html => { :id => 'contact' }) do |f|
-                %fieldset
-                  %p
-                    = f.label :name
-                    %span.small (required)
-                    %br
-                    = f.text_field :name, :class => "round m input", :id => "field"
-                  %p
-                    = f.label :email
-                    %span.small (required)
-                    %br
-                    = f.text_field :email, :class => "round m input", :id => "email"
-                  %p
-                    = f.label :website
-                    %span.small (required)
-                    %br
-                    = f.text_field :website, :class => "round m input", :id => "url"
-                  %p
-                    = f.label :purpose
-                    %span.small (required)
-                    %br
-                    = f.text_area :purpose, :class => "round l input", :id => "field"
-                  %p
-                    = f.check_box :volunteer, :class => "input"
-                    = f.label :volunteer, 'Please contact me regarding volunteer development opportunities.'
-                  %p
-                    = submit_tag('Submit', :class => "round s button")
-            .postfoot    
-        .clear
-
-  = render :partial => "shared/footer"
+                = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field"
+                = f.label :name
+                (required)
+              %p
+                = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email"
+                = f.label :email
+                (required)
+              %p
+                = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url"
+                = f.label :website
+                (required)
+              %p
+                = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field", :value => "Briefly describe why you are signing up for the Oil Reporter API.", :onfocus => "if(this.value == 'Briefly describe why you are signing up for the Oil Reporter API.') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'Briefly describe why you are signing up for the Oil Reporter API.';}"
+              %p
+                = f.check_box :volunteer, :class => "input"
+                = f.label :volunteer, 'Please contact me regarding volunteer development opportunities.'
+              %p
+                = submit_tag('Submit', :class => "round s button")
+        .clearboth
+        / end two_third
+      /end content 
+    / end primary_full
+  / end inner
+/ end body_block      

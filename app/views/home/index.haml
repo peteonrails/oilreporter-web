@@ -1,82 +1,109 @@
-%body{ :id => "index" }
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span To the Gulf of Mexico with Love
+    #blurb
+      An Open Source Clean Up
+/ end intro
+        
+.clearboth
 
-  = render :partial => 'shared/header'
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
 
-  #main
-    #intro
-      .container_12
-        #slides
-          %img{ :src => "/images/slide.1.png", :alt => "Oil Reporter for iPhone", :class => "active" }
-          %img{ :src => "/images/slide.2.png", :alt => "Oil Reporter - What do you see?" }
-          %img{ :src => "/images/slide.3.png", :alt => "Oil Reporter Twitter feed" }
-          %img{ :src => "/images/slide.4.png", :alt => "About Oil Reporter", :class => "last" }
-        / end slides
-        #brief.prefix_6.grid_6
-          %h1{ :style => "position:relative;left:45px;" } Help Clean Up
-          %h3{ :style => "color:white;position:relative;left:80px;" }
-            Oil Reporter App Available for
-          %a{ :href => "", :class => "signup ie6fix" }
-            iPhone
-          %a{ :href => "", :class => "more ie6fix" }
-            Android  
-        .clear
-        / end of #brief
-    / end of #intro
-    #content
-      .container_12
-        .grid_6
-          %a{ :href => "http://intridea.com" }
-            %img{ :src => "/images/intridea_small.png", :alt => "", :class => "left" }
-          .right.text
-            %h3 To the Gulf of Mexico with Love
-            %p.compact
-              Oil Reporter was built by 
-              = link_to 'Intridea', 'http://intridea.com'
-              for the Gulf of Mexico Oil Spill.  On April 20, 2010, an explosion occurred on the semi-submersible offshore drilling rig Deepwater Horizon in the Gulf of Mexico killing 11 rig workers and injuring 17 others.  On April 24, it was found that the wellhead was damaged and was leaking oil into the Gulf.  Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more.
-        .grid_6
-          %a{ :href => "http://crisiscommons.org" }
-            %img{ :src => "/images/crisiscommons_small.png", :alt => "", :class => "left" }
-          .right.text
-            %h3 Crisis Commons
-            %p.compact
-              = link_to 'Crisis Commons', 'http://crisiscommons.org'
-              is an international volunteer network of professionals drawn together by a call to service. We create technological tools and resources for responders to use in mitigating disasters and crises around the world.
-        .clear
-        .grid_6
-          %a{ :href => "http://www.appcelerator.com/products/titanium-mobile/" }
-            %img{ :src => "/images/appcelerator_small.png", :alt => "", :class => "left" }
-          .right.text
-            %h3 Built on Titanium
-            %p.compact
-              Oil Reporter was built with 
-              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
-              in a matter of days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Learn more about
-              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
-              for mobile development.
-        .grid_6
-          %a{ :href => "" }
-            %img{ :src => "/images/github_small.png", :alt => "", :class => "left" }
-          .right.text
-            %h3 Open Source
-            %p.compact
-              Oil Reporter for iPhone and Android has been released as open source on GitHub. If you're a developer and would like to contribute then please 
-              = link_to 'join the social coding!', 'http://github.com/intridea/oilreporter-mobile'
-        .clear  
-        / end of grid row
-        .grid_12
-          #container
+#body_block
+  .inner
+    #primary_full
+      .content
+        .entry
+          %h1 Architecture
+          .one_fourth
+            %h6 Report
             %p
-              %h2 Search Results for: #oilspill 
-            #tweethash
-              \#oilspill
-            
-          / end tweets
-        .clear
-        / = render :partial => "shared/news"
-        / end news
-        .clear      
-        / end grid
-    / end #content
-  / end #main  
+              %span.dropcap1
+                1
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
+            %img{ :src => "/images/front_report.png", :style => "margin-top:-10px;" }
+                
+          .one_fourth
+            %h6 Local
+            %p
+              %span.dropcap1
+                2
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
+            %img{ :src => "/images/front_localization.png", :style => "margin-top:-10px;" }
+          .one_fourth
+            %h6 Data
+            %p
+              %span.dropcap1
+                3
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
+            %img{ :src => "/images/front_data.png", :style => "margin-top:-10px;" }
+          .one_fourth.last
+            %h6 Tools
+            %p
+              %span.dropcap1
+                4
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
+            %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
+          
+          .clearboth
+          
+          .divider.top
+            %a{ :href => "#" }
+              Top
 
-  = render :partial => "shared/footer"
+#call_to_action
+  .inner
+    #blurb
+      Download the iPhone or Android app for Oil Reporter.
+      #call_to_action_button1
+        %a{ :href => "#" }
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        .entry
+          
+          .one_half
+            %h3 Intridea
+            %h6 Building better applications.
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum. 
+          
+          .one_half.last
+            %h3 Crisis Commons
+            %h6 some tagline here.
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum. 
+          
+          .one_half
+            %h3 Appcelerator
+            %h6 Built with Titanium.
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum. 
+          
+          .one_half.last
+            %h3 Github
+            %h6 Social Coding.
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum. 
+          
+          .clearboth
+          
+          
+          .divider.top
+            %a{ :href => "#" }
+              Top
+        
+        / end entry
+      / end content
+    / end primary_full
+    
+    .clearboth
+    
+  / end inner
+/ end body_block

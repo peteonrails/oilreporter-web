@@ -1,0 +1,25 @@
+:javascript
+  function createMarker(map, report) {
+    var point = new GLatLng(report['latitude'], report['longitude']);
+    var marker = new GMarker(point, true);
+    GEvent.addListener(marker, 'click', function() {
+      var minHtml = '';
+      minHtml += '<strong>Oil:</strong> ' + report['oil'] + '<br/>';
+      minHtml += '<strong>Wildlife:</strong> ' + report['wildlife'] + '<br/>';
+      minHtml += '<strong>Lat/Lng:</strong> ' + report['latitude'] + '/' + report['longitude'] + '<br/>';
+
+      var maxHtml = minHtml;
+
+      maxHtml += '<strong>Description</strong> ' + report['description'] + '<br/>';
+      if (report['media'])
+        maxHtml += '<img src="' + report['media']['thumb'] + '" />';
+
+      map.openInfoWindowHtml(point, minHtml, { maxContent: maxHtml });
+    });
+
+    return marker;
+  }
+
+  jQuery(document).ready(function() {
+    #{show_map(@reports)}
+  });

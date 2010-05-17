@@ -9,13 +9,13 @@ class PrettyPaginationRenderer < WillPaginate::LinkRenderer
     links.push(page_link_or_span(@collection.next_page, nil, @options[:next_label]))
 
     html = links.join(@options[:separator])
-    @options[:container] ? @template.content_tag(:div, html, html_attributes.merge(:class => 'pagination right')) : html
+    @options[:container] ? @template.content_tag(:div, html, html_attributes.merge(:class => 'pagination')) : html
   end
 
   protected
 
   def windowed_links
-    visible_page_numbers.map { |n| page_link_or_span(n, (n == current_page ? 'active' : nil)) }
+    visible_page_numbers.map { |n| page_link_or_span(n, (n == current_page ? 'current' : nil)) }
   end
 
   def page_link_or_span(page, span_class, text = nil)

@@ -20,33 +20,53 @@
         .entry
           %h1 Architecture
           .one_fourth
-            %h6 Report
-            %p
+            %p.fancy_header
+              %span Report
+            %p  
               %span.dropcap1
                 1
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
-            %img{ :src => "/images/front_report.png", :style => "margin-top:-10px;" }
-                
+              Download the app for iPhone or Android and start helping out today. 
+              = link_to 'View reports', reports_path
+              submitted by users in real-time. Check out our 
+              %a{ :href => "/map" }
+                map
+              showing each check-in too. 
+            %a{ :href => "/reports" }
+              %img{ :src => "/images/front_report.png", :style => "margin-top:-10px;" }
           .one_fourth
-            %h6 Local
+            %p.fancy_header
+              %span Local
             %p
               %span.dropcap1
                 2
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
-            %img{ :src => "/images/front_localization.png", :style => "margin-top:-10px;" }
+              Find out how to use our API by reading our
+              %a{ :href => "/api" }
+                documentation
+              Get started 
+              %a{ :href => "/signup" }
+                developing your own application
+              and help out the cause. 
+              %a{ :href => "http://twitter.com/oilreporter" }
+                Let us know
+              if you need any help!
+            %a{ :href => "/setup" }
+              %img{ :src => "/images/front_localization.png", :style => "margin-top:-10px;" }
           .one_fourth
-            %h6 Data
+            %p.fancy_header
+              %span Data
             %p
               %span.dropcap1
                 3
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
-            %img{ :src => "/images/front_data.png", :style => "margin-top:-10px;" }
+              View data, photos, and videos that have been submitted from individuals on the ground near the Gulf Coast. Reports have been sent to us via our mobile application.
+            %a{ :href => "/map" }
+              %img{ :src => "/images/front_data.png", :style => "margin-top:-10px;" }
           .one_fourth.last
-            %h6 Tools
+            %p.fancy_header
+              %span Tools
             %p
               %span.dropcap1
                 4
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod rhoncus gravida. Mauris at tellus lacus, non accumsan arcu. Ut vitae lectus sed nunc sodales posuere ut id justo. Fusce vitae lorem nec ante rhoncus mollis sit amet vel ipsum.
+              Soon you will be able to view, download and interact with other tools submitted by developers using the Oil Reporter API. Coming Soon.
             %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
           
           .clearboth

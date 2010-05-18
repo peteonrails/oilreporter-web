@@ -12,10 +12,10 @@
 
     %link{ :href => 'favicon.ico', :type => 'image/x-icon', :rel => 'icon' }
 
-    = stylesheet_link_tag 'prettyPhoto', :media => 'screen'
-    = stylesheet_link_tag 'coderay', :media => 'screen'
-    = stylesheet_link_tag 'style', :media => 'screen'
-    = stylesheet_link_tag 'oilreporter', :media => 'screen'
+    = stylesheet_link_tag 'prettyPhoto', :type => "text/css", :media => "screen"
+    = stylesheet_link_tag 'coderay', :type => "text/css", :media => "screen"
+    = stylesheet_link_tag 'style', :type => "text/css", :media => "screen"
+    = stylesheet_link_tag 'oilreporter', :type => "text/css", :media => "screen"
 
     = sprockets_include_tag
     = yield :js_includes

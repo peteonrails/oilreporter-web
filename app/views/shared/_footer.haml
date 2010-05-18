@@ -37,13 +37,21 @@
           %li
             = link_to 'Home', root_url
           %li
-            %a{ :href => "#" }
-              link 2
+            %a{ :href => "/signup" }
+              Sign Up
+          %li 
+            %a{ :href => "/setup" }
+              Setup
+          %li 
+            %a{ :href => "/api" }
+              API Documentation
           %li
-            %a{ :href => "#" }
-              link 3
+            = link_to "View Reports", reports_path
           %li
-            %a{ :href => "#" }
-              link 4
+            %a{ :href => "/map" }
+              View Map
+          %li 
+            %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
+              GitHub
     / end inner
 / end sub_footer

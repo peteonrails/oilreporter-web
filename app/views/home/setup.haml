@@ -3,7 +3,7 @@
     #intro_blurb_title
       %span Setup
     #blurb
-      Getting Your Development Environment Setup
+      Developing Applications with Oil Reporter Data
 / end intro
 
 .clearboth
@@ -22,9 +22,9 @@
             = value
       #primary
         .content
-          %h1 Helping Clean Up 
+          %h1 For Developers
           %p
-            With Titanium Appcelerator and your JavaScript skills, you can build an app in a matter of hours to mash up images, video, and data from the Oil Reporter web service.
+            Oil Reporter produces data that can be used to build custom tracking applications.  With Titanium Appcelerator and your JavaScript skills, you can quickly localize the images, video, and data from the Oil Reporter web service into your own iPhone, Android, or iPad application.  If you are an organization that needs development expertise, please complete the form on the right to be paired with a volundeer developer.
           %p
             %span.frame.alignleft
               %img{ :src => "/images/appcelerator.png"}
@@ -37,21 +37,19 @@
           %p
             %ul
               %li
+                %a{ :href => "/signup" }
+                  API Key
+              %li
                 %a{ :href => "http://www.appcelerator.com/download" }
                   Titanium Mobile SDK
               %li
-                %a{ :href => "/signup" }
-                  API Key
+                iPhone SDK and/or Android SDK
+              %li
+                Reference Oil Tracker application
               %li
                 %a{ :href => "http://github.com" }
                   Github 
                 (recommended)
-              %li
-                %a{ :href => "http://twitter.com/oilreporter" }
-                  Follow Us on Twitter 
-                (stay updated)
-              %li
-                A Great Idea
           
           .divider.top
             %a{ :href => "#" }
@@ -68,10 +66,22 @@
           .divider.top
             %a{ :href => "#" }
               Top
-
+          
           %p
             %span.dropcap2
               2
+            Learn more about Titanium application development with this
+            %a{ :href => "http://www.appcelerator.com/download" }
+              Getting Started 
+            guide.
+          
+          .divider.top
+            %a{ :href => "#" }
+              Top
+          
+          %p
+            %span.dropcap2
+              3
             Download and install the
             %a{ :href => "http://developer.apple.com/iphone" }
               iPhone 
@@ -86,23 +96,28 @@
           .divider.top
             %a{ :href => "#" }
               Top
-          
-          %p
-            %span.dropcap2
-              3
-            %a{ :href => "http://www.appcelerator.com/download" }
-              Download and install 
-            the Titanium Developer tool,
-            to create and manage your mobile projects.
-          
-          .divider.top
-            %a{ :href => "#" }
-              Top
 
           %p
             %span.dropcap2
               4
-            Create a great mobile application, and lend a hand!
+            %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
+              Download the sample Oil Tracker iPhone/Android Titanium project
+            to see how you can build a mobile application that consumes Oil Reporter data.
+          
+          .divider.top
+            %a{ :href => "#" }
+              Top
+          
+          %p
+            %span.dropcap2
+              5
+            Push your new application to
+            %a{ :href => "http://github.com" }
+            Github
+            and then 
+            %a{ :href => "http://twitter.com/oilreporter" }
+            let us know
+            about it!
           
           .divider.top
             %a{ :href => "#" }
@@ -110,11 +125,14 @@
         / end content
       /end primary
             
-      %h2 Request Help
+      %h2 For Organizations
+      
+      = error_messages_for :organization
 
       %p
-        = error_messages_for :developer
-        Use this form below to request assistance.
+        Are you an organization that needs development assistance?  
+      %p
+        Please complete this form and we will match you with a volunteer developer.
         - form_for(:organization, :url => "organizations", :html => { :id => 'contact_form' }) do |f|
           %fieldset
             %p

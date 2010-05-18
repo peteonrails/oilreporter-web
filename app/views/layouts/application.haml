@@ -40,5 +40,6 @@
     = yield
     
     = footer
-  
-    = javascripts
+    
+    - if RAILS_ENV = 'production'
+      = javascripts

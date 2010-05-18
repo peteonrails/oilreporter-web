@@ -25,7 +25,13 @@
             %p  
               %span.dropcap1
                 1
-              Download the app for iPhone or Android and start helping out today. 
+              Download the app for 
+              %a{ :href => "#", :title => "Coming Soon: We're waiting on app store approval." }
+                iPhone
+              or 
+              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html", :target => "_blank" }
+                Android
+              and start helping out today. 
               = link_to 'View reports', reports_path
               submitted by users in real-time. Check out our 
               %a{ :href => "/map" }
@@ -78,9 +84,15 @@
 #call_to_action
   .inner
     #blurb
-      Download the iPhone or Android app for Oil Reporter.
+      Download the 
+      %a{ :href => "#", :title => "Coming Soon: We're waiting on app store approval." }
+        iPhone 
+      or 
+      %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html", :title => "Download Oil Reporter for the Android mobile device.", :target => "_blank" }
+        Android 
+      app for Oil Reporter.
       #call_to_action_button1
-        %a{ :href => "#" }
+        %a{ :href => "#", :title => "This page is coming soon." }
 
 #body_block
   .inner

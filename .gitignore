@@ -8,8 +8,6 @@ coverage
 db/*.sqlite3
 log/*.log
 tmp
-public/stylesheets/*.css
-public/stylesheets/**/*.css
 uploads
 webrat-*
 capybara-*

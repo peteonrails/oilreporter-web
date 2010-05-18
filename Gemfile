@@ -5,6 +5,7 @@ group :rails do
   gem 'memcache-client', '>= 1.7.4', :require => nil
 end
 
+gem 'SystemTimer', '~> 1.2.0', :require => 'system_timer'
 gem 'haml'
 gem 'haml-coderay'
 gem 'RedCloth'
@@ -12,7 +13,6 @@ gem 'httparty'
 gem 'mysql', '~> 2.8.1'
 gem 'pg', '~> 0.9.0'
 gem 'thin'
-# gem 'libxml-ruby', '~> 1.1.3', :require => 'libxml'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
 gem 'crummy'
 

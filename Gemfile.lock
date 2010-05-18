@@ -28,6 +28,12 @@ dependencies:
     group: 
     - :plugins
     version: ~> 0.0.1
+  SystemTimer: 
+    group: 
+    - :default
+    version: ~> 1.2.0
+    require: 
+    - system_timer
   memcache-client: 
     group: 
     - :rails
@@ -107,6 +113,8 @@ specs:
     version: 0.8.7
 - RedCloth: 
     version: 4.2.3
+- SystemTimer: 
+    version: "1.2"
 - activesupport: 
     version: 2.3.5
 - rack: 
@@ -154,11 +162,11 @@ specs:
 - trollop: 
     version: 1.16.2
 - gherkin: 
-    version: 1.0.26
+    version: 1.0.27
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
-    version: 0.7.2
+    version: 0.7.3
 - cucumber-rails: 
     version: 0.3.1
 - daemons: 
@@ -207,7 +215,7 @@ specs:
     version: 1.2.7
 - will_paginate: 
     version: 2.3.12
-hash: f3f7cd8e8b1bd5f00f1bf2a343844cc4394494ac
+hash: 0224c8e6a86d93b30d0b49aa71b51eac05b08f98
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

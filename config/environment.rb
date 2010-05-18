@@ -6,8 +6,8 @@ Bundler.require(:default, RAILS_ENV)
 Oilreporter::Initializer.run do |config|
   config.load_paths << Rails.root
   
-  # config.after_initialize do
-  #   SprocketsApplication.use_page_caching = !config.heroku?
-  # end
+  config.after_initialize do
+    SprocketsApplication.use_page_caching = !config.heroku?
+  end
 end
 

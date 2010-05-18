@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
   map.connect '/api/', :controller => 'home', :action => 'api'
   map.connect '/setup', :controller => 'home', :action => 'setup'
+  map.connect '/tools', :controller => 'home', :action => 'tools'
 
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]

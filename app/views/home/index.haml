@@ -1,13 +1,10 @@
 #intro_blurb
   .inner
     #intro_blurb_title
-      %span An Open Source Clean Up
+      %span Using Technology To Help Clean Up the Oil Spill
     #blurb
-      %a{ :href => "/images/iphone/slide.4.png", :rel => "prettyPhoto[iphone]", :style => "height:502px;width:272px;", :title => "Oil Reporter for iPhone" }
-      %a{ :href => "/images/iphone/slide.3.png", :rel => "prettyPhoto[iphone]", :style => "height:502px;width:272px;", :title => "What do you see?" }
-      %a{ :href => "/images/iphone/slide.2.png", :rel => "prettyPhoto[iphone]", :style => "height:502px;width:272px;", :title => "Twitter feed" }
-      %a{ :href => "/images/iphone/slide.1.png", :rel => "prettyPhoto[iphone]", :style => "height:502px;width:272px;", :title => "About Oil Reporter" }
-        Click to view iPhone application
+      %a{ :href => "/tools" }
+        Download Apps
 / end intro
         
 .clearboth
@@ -22,7 +19,7 @@
     #primary_full
       .content
         .entry
-          %h1 Architecture
+          %h1 Getting Started
           .one_fourth
             %p.fancy_header
               %span Report
@@ -75,8 +72,12 @@
             %p
               %span.dropcap1
                 4
-              Soon you will be able to view, download and interact with other tools submitted by developers using the Oil Reporter API. Coming Soon.
-            %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
+              View, download and interact with other tools submitted by developers using the Oil Reporter API. Be sure to 
+              %a{ :href => "/setup" }
+                send us
+              your own app, so we can display it in this section.
+            %a{ :href => "/tools" }
+              %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
           
           .clearboth
           
@@ -86,15 +87,10 @@
 
 #call_to_action
   .inner
-    #blurb
-      Download the 
-      = link_to 'iPhone', '#', :confirm => "Coming Soon: We're waiting on app store approval."
-      or 
-      %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html", :title => "Download Oil Reporter for the Android mobile device.", :target => "_blank" }
-        Android 
-      app for Oil Reporter.
+    #blurb{ :style => "padding:54px 230px 80px 0;" }
+      Download the new iPhone or Android application for Oil Reporter
       #call_to_action_button1
-        %a{ :href => "#", :title => "This page is coming soon." }
+        %a{ :href => "/tools" }
 
 #body_block
   .inner

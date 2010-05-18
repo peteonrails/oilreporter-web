@@ -8,4 +8,8 @@ class HomeController < ApplicationController
     add_crumb "api", '/api'
   end
   
+  def tools
+    add_crumb "tools", '/tools'
+  end
+  
 end

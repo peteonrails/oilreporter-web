@@ -27,14 +27,14 @@
       = javascript_include_tag 'DD_belatedPNG_0.0.8a-min'
       :javascript
         / PNG FIX
-        DD_belatedPNG.fix('.inset, #default_logo');
+        DD_belatedPNG.fix('.png_fix');
 
     / TODO: activate later
     / = stylesheet_link_tag 'tweets.screen'
     / = javascript_include_tag 'jquery.tweets.pack'
     / = twitter
   
-  %body.inset
+  %body
     = header
   
     = yield

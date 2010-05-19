@@ -177,8 +177,8 @@ body {min-width:960px;background-color:#f9f9f9;}
 
 #header{z-index:10;height:100px;position:relative;background:#111 url(/images/header.jpg) repeat-x scroll center top}
 /* logo & sitename */
-#default_logo a,
-#default_logo a:hover{background:transparent url(/images/logo.png) no-repeat scroll center top;height:77px;width:246px;}
+#default_logo {background:transparent url(/images/logo.png) no-repeat scroll center top;height:77px;width:246px;}
+#default_logo a{display:block;height:100%;width:100%;}
 #logo{left:0px;position:absolute;top:12px;width:200px;font-size:32px;}
 #site_name{left:0px;position:absolute;top:32px;font-size:32px;}
 #site_name a{color:#eee;}

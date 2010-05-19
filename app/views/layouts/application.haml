@@ -26,14 +26,14 @@
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
       :javascript
         / PNG FIX
-        DD_belatedPNG.fix('.png_bg');
+        DD_belatedPNG.fix('.inset, #default_logo');
 
     / TODO: activate later
     / = stylesheet_link_tag 'tweets.screen'
     / = javascript_include_tag 'jquery.tweets.pack'
     / = twitter
   
-  %body.inset.png_bg
+  %body.inset
     = header
   
     = yield

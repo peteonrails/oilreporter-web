@@ -10,7 +10,7 @@
         %li
           = link_to 'Home', root_path
         %li
-          %a{ :hrf => "#" }
+          %a{ :hrf => "/setup" }
             Developers
           %ul
             %li
@@ -26,8 +26,7 @@
               %a{ :href => "/tools" }
                 Tools
         %li 
-          %a{ :hrf => "#" }
-            Reports
+          = link_to "Reports", reports_path
           %ul
             %li
               = link_to "View Reports", reports_path
@@ -35,8 +34,8 @@
               %a{ :href => "/map" }
                 View Map
         %li
-          %a{ :hrf => "#" }
-            Community
+          %a{ :hrf => "http://twitter.com/oilreporter" }
+            Resources
           %ul
             %li 
               %a{ :href => "http://twitter.com/oilreporter" }

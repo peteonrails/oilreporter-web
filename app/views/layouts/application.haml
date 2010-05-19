@@ -24,10 +24,10 @@
 
     /[if IE 6]
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
-      = javascript_include_tag 'dd_belated_png'
+      = javascript_include_tag 'DD_belatedPNG_0.0.8a-min'
       :javascript
         / PNG FIX
-        DD_belatedPNG.fix('#default_logo');
+        DD_belatedPNG.fix('.png_bg');
 
     / TODO: activate later
     / = stylesheet_link_tag 'tweets.screen'

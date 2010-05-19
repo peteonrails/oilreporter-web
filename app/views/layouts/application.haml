@@ -24,19 +24,16 @@
 
     /[if IE 6]
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
-      = javascript_include_tag 'jquery.ifixpng'
       :javascript
-        // apply to all png images 
-        $('img[@src$=.png]').ifixpng(); 
-        // apply to all png images and to div#logo 
-        $('img[@src$=.png], div#default_logo').ifixpng();
+        / PNG FIX
+        DD_belatedPNG.fix('.png_bg');
 
     / TODO: activate later
     / = stylesheet_link_tag 'tweets.screen'
     / = javascript_include_tag 'jquery.tweets.pack'
     / = twitter
   
-  %body.inset
+  %body.inset.png_bg
     = header
   
     = yield

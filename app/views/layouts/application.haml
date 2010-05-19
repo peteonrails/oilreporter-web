@@ -24,6 +24,7 @@
 
     /[if IE 6]
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
+      = javascript_include_tag 'jquery.ifixpng'
       :javascript
         // apply to all png images 
         $('img[@src$=.png]').ifixpng(); 

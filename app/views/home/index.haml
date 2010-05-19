@@ -1,10 +1,63 @@
+- content_for :js_templates do
+  jQuery.preloadImages("/stylesheets/img/home_feature.jpg","/stylesheets/img/stage.jpg","/stylesheets/img/header.jpg","/images/slider_inactive.png","/images/buttons.gif","/stylesheets/img/buttons.gif","/images/slider_active.png","/stylesheets/img/drop.png","/stylesheets/img/dropR.png","/stylesheets/img/drop_sub.png");
+
+#home_feature
+  .background
+    .inner
+      #slider_thumbnails
+        #slider_preview_img
+      #loading_slider
+      #slider_img
+        / slide 1
+        .image_loader.slider_cropped
+          .slider_content
+            %h2 iPhone & Android
+            %p 
+              Oil Reporter was built with 
+              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
+              in a matter of days! Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. Download the app for iPhone or Android and start helping out today.
+          .slider_img_cropped
+            %a.load_slider_img{ :href => "/tools" }
+              %span.rm_img
+                %img{ :src => "/images/slides/1.jpg" }
+        / slide 2
+        .image_loader.slider_cropped
+          .slider_content
+            %h2 Send Reports
+            %p Oil Reporter makes it easy for people to upload personal reports on the ground.
+          .slider_img_cropped
+            %a.load_slider_img{ :href => "/reports" }
+              %span.rm_img
+                %img{ :src => "/images/slides/2.jpg" }
+        / slide 3
+        .image_loader.slider_cropped
+          .slider_content
+            %h2 Twitter Feed
+            %p Stay in touch with what's happening on the ground with the Oil Reporter Twitter feed. 
+          .slider_img_cropped
+            %a.load_slider_img{ :href => "http://search.twitter.com/search?q=%23oilspill", :target => "_blank" }
+              %span.rm_img
+                %img{ :src => "/images/slides/3.jpg" }
+        / slide 4
+        .image_loader.slider_cropped
+          .slider_content
+            %h2 About
+            %p 
+              Oil Reporter was built by 
+              = link_to 'Intridea', 'http://intridea.com'
+              for the Gulf of Mexico Oil Spill. Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more.
+          .slider_img_cropped
+            %a.load_slider_img{ :href => "http://intridea.com" }
+              %span.rm_img
+                %img{ :src => "/images/slides/4.jpg" }
+
 #intro_blurb
   .inner
     #intro_blurb_title
       %span Using Technology To Help Clean Up The Oil Spill
     #blurb
-      %a{ :href => "/tools" }
-        Download Apps
+      %a{ :href => "/setup" }
+        Get Started!
 / end intro
         
 .clearboth
@@ -61,7 +114,7 @@
             %p
               %span.dropcap1
                 3
-              Use data, photos, and videos that have been submitted from individuals on the ground near the Gulf Coast. Check out how we're using this data with 
+              Access to data, photos, and videos that have been submitted from individuals on the ground near the Gulf Coast. Check out how we're using this data with 
               %a{ :href => "/map" } 
                 Google Maps.
             %a{ :href => "/api" }
@@ -105,7 +158,7 @@
             %p
               Oil Reporter was built by 
               = link_to 'Intridea', 'http://intridea.com'
-              for the Gulf of Mexico Oil Spill.  On April 20, 2010, an explosion occurred on the semi-submersible offshore drilling rig Deepwater Horizon in the Gulf of Mexico killing 11 rig workers and injuring 17 others.  On April 24, it was found that the wellhead was damaged and was leaking oil into the Gulf.  Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. 
+              for the Gulf of Mexico Oil Spill. On April 20, 2010, an explosion occurred on the semi-submersible offshore drilling rig Deepwater Horizon in the Gulf of Mexico killing 11 rig workers and injuring 17 others. On April 24, it was found that the wellhead was damaged and was leaking oil into the Gulf. Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. 
           
           .one_half.last
             %a{ :href => "http://crisiscommons.org" }

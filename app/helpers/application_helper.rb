@@ -61,4 +61,8 @@ module ApplicationHelper
     render :partial => 'shared/markers'
   end
   
+  def welcome_popup
+    render :partial => 'shared/welcome_popup'
+  end
+  
 end

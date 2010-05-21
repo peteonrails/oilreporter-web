@@ -32,11 +32,11 @@
           - for organization in @organizations do
             %tr{:class => cycle("even", "odd")}
               %td
-                = report.name
+                = organization.name
               %td
-                = report.website
+                = organization.website
               %td
-                = truncate(report.purpose)
+                = truncate(organization.purpose)
         = will_paginate(@organizations)
       / end content
       .clearboth

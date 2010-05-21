@@ -1,6 +1,7 @@
 #footer
   .background
     .inner
+      %h2{ :style => "position:relative;left:-3px;margin-bottom:40px;" } Contributors
       .one_fourth
         %h3.widgettitle Brendan Lim
         %p
@@ -22,8 +23,17 @@
           = link_to 'Jonathan Nelson', 'http://twitter.com/jonathannelson'
           is the Product Manager for Intridea. A Ruby on Rails expert and web design artisan with over 10 years of professional experience in launching new products and turning emerging business opportunities into profitable, mature businesses.
       .one_fourth
-        %a{ :href => "http://intridea.com" }
-          %img{ :src => "/images/companies/built_by_intridea.png"}
+        %h3.widgettitle Intridea
+        %p
+          %a{ :href => "http://intridea.com" }
+            %img{ :src => "/images/companies/built_by_intridea.png"}
+      .one_fourth
+        %h3.widgettitle Crisis Commons
+        %p
+          %a{ :href => "http://crisiscommons.org" }
+            %img{ :src => "/images/companies/crisiscommons_logo.png"}
+        
+        
       
       .clearboth
     / end inner
@@ -32,29 +42,22 @@
 
 #sub_footer
   .inner
-    .one_half
-      Privacy Policy | Terms and Conditions
     .one_half.last{ :style => "text-align:right;" }
       #footer_nav
         %ul
           %li
             = link_to 'Home', root_url
           %li 
-            %a{ :href => "/tools" }
-              Tools
+            %a{ :href => "#" }
+              About
           %li
-            %a{ :href => "/signup" }
-              Sign Up
+            %a{ :href => "#" }
+              Privacy
           %li 
-            %a{ :href => "/setup" }
-              Setup
+            %a{ :href => "#" }
+              Terms of Service
           %li 
-            %a{ :href => "/api" }
-              API Documentation
-          %li
-            = link_to "View Reports", reports_path
-          %li
-            %a{ :href => "/map" }
-              View Map
+            %a{ :href => "#" }
+              Contact Us
     / end inner
 / end sub_footer

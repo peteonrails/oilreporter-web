@@ -19,10 +19,25 @@ defaults: &defaults
   
   # Google Api Key for http://localhost:3000
   google_api_key: ABQIAAAAgtulYhIAj8uTCz3CP9LUkxRfPUmTrE-kGcSvX58SFCYQhb8lqxThXf53vEUDXIB5Aj7QLF6sCyL96Q
+  
+  # By default, outgoing email is enabled in production but not in development
+  allow_outgoing_email: true
+  
+  # By default, incoming email is enabled in production but not in development
+  allow_incoming_email: true
+
+  # Incoming email settings
+  incoming_email_settings:
+    :type:           POP
+    :address:        mail.oilreporter.org
+    :user_name:      USER
+    :password:       PASSWORD
 
 development:
   <<: *defaults
   app_domain: oilreporter.local
+  allow_outgoing_email: false
+  allow_incoming_email: false
 
 production:
   <<: *defaults
@@ -31,6 +46,8 @@ production:
 test: &test
   <<: *defaults
   app_domain: 127.0.0.1
+  allow_outgoing_email: false
+  allow_incoming_email: false
   asset_max_file_size: 1
   amazon_s3: false
 

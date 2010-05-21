@@ -46,4 +46,16 @@ class OrganizationsTest < ActionController::IntegrationTest
     assert_template :index
   end
 
+  test 'list reports for an organization' do
+    report = Factory.create(:new_orleans)
+    report.organization = Factory.create(:shield)
+    report.save!
+
+    get "/organizations/#{report.organization.pin}?api_key=#{report.developer.api_key}"
+    assert_response :success
+    reports = JSON.parse(response.body)
+    assert_equal reports.length, 1
+    assert_equal reports.first['id'], report.id
+  end
+
 end

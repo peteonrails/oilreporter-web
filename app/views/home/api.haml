@@ -49,6 +49,10 @@
             %li
               %a{ :href => "#list" }
                 Retrieve a List of Reports
+            %li
+              %a{ :href => "#organization" }
+                Retrieve a List of Reports by Organization
+
 
           .divider.top
             %a{ :href => "#" }
@@ -62,7 +66,7 @@
             :coderay
               #!plaintext
               - id (integer, read-only)
-              - organization_id (integer)
+              - organization_pin (integer, optional)
               - oil (integer, 0-10)
               - wetlands (integer, 0-10)
               - description (text)
@@ -134,7 +138,7 @@
           %a{ :name => "list" }
           %h2 Retrieve a List of Reports
           %p
-            Allows you to add media to an existing report.  You need the ID of the report you created to be able to call this url.
+            Allows you to retrieve a list of reports.
             %li 
               Method: GET
             %li 
@@ -151,8 +155,7 @@
               curl http://oilreporter.org/reports.json?api_key=YOUR_API_KEY
               Returns
               [
-                { "id": 8
-                  "organization_id": null,
+                { "id": 8,
                   "oil": 5,
                   "wetlands": 7,
                   "description": "Distressed Wildlife",
@@ -169,13 +172,52 @@
           .divider.top
             %a{ :href => "#" }
               Top
+
+          %a{ :name => "organization" }
+          %h2 List reports by organization
+          %p
+            Allows you to retrieve a list of an organization's reports
+            %li
+              Method: GET
+            %li
+              URL: /organizations/*PIN*
+            %li
+              Required: pin (#{link_to('Sign up', new_organization_path)}), api_key
+            %li
+              Optional: page (default: 1)
+            %li
+              Success: List of reports and HTTP status code 200
+            %li
+              Failure: Error message and HTTP status code 404
+          %p
+            :coderay
+              #!plaintext
+              curl -d "api_key=YOUR_API_KEY" http://oilreporter.org/organizations/1001
+              [
+                { "id": 8,
+                  "oil": 5,
+                  "wetlands": 7,
+                  "description": "Distressed Wildlife",
+                  "wildlife": "Dead",
+                  "latitude":"29.9646",
+                  "longitude": "-90.0678",
+                  "created_at": "2010-05-13T19:29:54Z",
+                  "media": { "tiny":"http://s3.amazonaws.com/oilreporter_production/medias/7/tiny.jpg?1273722135",
+                             "thumb":"http://s3.amazonaws.com/oilreporter_production/medias/7/thumb.jpg?1273722135",
+                             "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" }
+                }
+              ]
+
+          .divider.top
+            %a{ :href => "#" }
+              Top
         / end content
       / end primary
       
       #secondary
         .content
           / = search # disabled for now
-          
+
           .widget.link_list
             %h3.widgettitle Navigation
             %ul
@@ -191,3 +233,6 @@
               %li
                 %a{ :href => "#list" }
                   Retrieve a List of Reports
+              %li
+                %a{ :href => "#organization" }
+                  Retrieve a List of Reports by Organization

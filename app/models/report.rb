@@ -1,5 +1,6 @@
 class Report < ActiveRecord::Base
   belongs_to :developer
+  belongs_to :organization
 
   validates_numericality_of :oil, :wetlands, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10
   has_attached_file :media,
@@ -15,7 +16,7 @@ class Report < ActiveRecord::Base
     :bucket => 'oilspill_photos'
 
   def hew
-    fields = [:id, :organization_id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]
+    fields = [:id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]
 
     hash = self.attributes.symbolize_keys.inject({}) do |a, (k, v)|
       fields.include?(k) ? a.merge(k => v) : a

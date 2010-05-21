@@ -10,8 +10,39 @@ class ReportsTest < ActionController::IntegrationTest
     report.delete(:developer)
     report.merge!(:api_key => @developer.api_key)
 
-    post_json '/reports', report
+    post '/reports', report
     assert_response :success
+  end
+
+  test 'create report for organization' do
+    factory = Factory.build(:new_orleans)
+    developer = factory.developer
+    organization = Factory.create(:shield)
+    report = factory.attributes
+
+    report.delete(:developer)
+    report.merge!(:api_key => developer.api_key)
+    report.merge!(:organization_pin => organization.pin)
+
+    post '/reports', report
+    assert_response :success
+    assert Report.last.organization == organization
+    assert organization.reload.reports.include?(Report.last)
+  end
+
+  test 'create report with bad organization pin' do
+    factory = Factory.build(:new_orleans)
+    developer = factory.developer
+    report = factory.attributes
+
+    report.delete(:developer)
+    report.merge!(:api_key => developer.api_key)
+    report.merge!(:organization_pin => 0000)
+
+    post '/reports', report
+    assert_response :unprocessable_entity
+    msg = JSON.parse(response.body)
+    assert msg['error']
   end
 
   test 'upload photo' do

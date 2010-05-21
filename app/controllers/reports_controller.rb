@@ -1,18 +1,16 @@
 class ReportsController < ApplicationController
 
   before_filter :verify_api_key, :only => [:create, :update]
+  before_filter :extract_organization_pin, :only => [:create, :update]
 
   def create
     report = current_developer.reports.new(filtered_params)
 
-    respond_to do |format|
-      format.json {
-        if report.save
-          render :json => { :id => report.id }, :status => :ok
-        else
-          render :json => report.errors, :status => :unprocessable_entity
-        end
-      }
+    if report.save
+      report.update_attribute(:organization, current_organization) if current_organization
+      render :json => { :id => report.id }, :status => :ok
+    else
+      render :json => report.errors, :status => :unprocessable_entity
     end
   end
 
@@ -25,6 +23,7 @@ class ReportsController < ApplicationController
     end
 
     if report.update_attributes(filtered_params)
+      report.update_attribute(:organization, current_organization) if current_organization
       render :nothing => true, :status => :ok
     else
       render :nothing => true, :status => :unprocessable_entity

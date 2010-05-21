@@ -1,4 +1,6 @@
 class Organization < ActiveRecord::Base
+  has_many :reports
+
   before_create :generate_pin
 
   validates_presence_of :email, :name, :contact_person

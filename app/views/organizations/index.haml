@@ -1,0 +1,45 @@
+- content_for :js_templates do
+  = "document.write(\'<style type=\"text/css\">.noscript { display:none; }</style>\'); jQuery.preloadImages(\"images/new/ajax-loader.gif\");"
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Organizations
+    #blurb
+      Who's using Oil Reporter
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        %h2#tables
+          Organizations
+        %table{ :cellpadding => "0", :cellspacing => "0", :border => "0" }
+          %tr
+            %th
+              Name
+            %th
+              Website
+            %th
+              Purpose
+          - for organization in @organizations do
+            %tr{:class => cycle("even", "odd")}
+              %td
+                = report.name
+              %td
+                = report.website
+              %td
+                = truncate(report.purpose)
+        = will_paginate(@organizations)
+      / end content
+      .clearboth
+    / end primary_full
+  / end inner
+/ end body_block

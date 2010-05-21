@@ -11,3 +11,4 @@ tmp
 uploads
 webrat-*
 capybara-*
+public/system

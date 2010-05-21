@@ -1,5 +1,7 @@
 class OrganizationsController < ApplicationController
+
   def index
+    @organizations = Organization.paginate(:page => params[:page])
   end
 
   def create
@@ -7,9 +9,12 @@ class OrganizationsController < ApplicationController
 
     if @organization.save
       flash[:info] = "Thank you! We'll be getting in touch with you shortly."
+      Notifier.deliver_organization_pin(@organization)
+      redirect_to :controller => 'home', :action => 'setup'
     else
       flash[:error] = "There was a problem trying to save your information. Please complete all fields."
+      render :new
     end
-    redirect_to(:controller => "home", :action => "setup")
   end
+
 end

@@ -11,4 +11,13 @@ class Notifier < ActionMailer::Base
     sent_on       Time.now
     body          :api_key => developer.api_key
   end
+
+  def organization_pin(organization)
+    subject       "Your organization pin"
+    from          "Oil Reporter <noreply@#{HOST}>"
+    recipients    organization.email
+    sent_on       Time.now
+    body          :pin => organization.pin
+  end
+
 end

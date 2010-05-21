@@ -17,6 +17,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/signup', :controller => 'developers', :action => 'new'
 
   # Organizations
-  map.resources :organizations, :only => [:index, :create]
-  
+  map.resources :organizations, :only => [:index, :create, :new]
+
 end

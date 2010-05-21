@@ -126,30 +126,10 @@
       /end primary
             
       %h2 For Organizations
-      
-      = error_messages_for :organization
 
       %p
         Are you an organization that needs development assistance?  
       %p
         Please complete this form and we will match you with a volunteer developer.
-        - form_for(:organization, :url => "organizations", :html => { :id => 'contact_form' }) do |f|
-          %fieldset
-            %p
-              = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field"
-              = f.label :name, "Organization Name"
-            %p
-              = f.text_field :contact_person, :class => "requiredFieldContact textfield", :id => "field"
-              = f.label :contact_person, "Contact Person"
-            %p
-              = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email"
-              = f.label :email, "&nbsp;E-mail Address"
-            %p
-              = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url"
-              = f.label :website
-            %p
-              = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field"
-            %p.loadingImgWidgetFt
-            %p
-              = submit_tag('Submit', :class => "round s button")
+        = render :partial => 'organizations/form'
     .clearboth

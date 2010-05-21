@@ -11,6 +11,28 @@ Factory.define :ratbert, :class => Developer do |s|
   s.volunteer false # what did you expect? ;-)
 end
 
+Factory.define :shield, :class => Organization do |s|
+  s.name 'Shield'
+  s.purpose 'Strategic Homeland Intervention, Enforcement and Logistics Division'
+  s.contact_person 'Nick Fury'
+  s.email 'nick.fury@shield.org'
+  s.website 'http://shield.org'
+end
+
+Factory.define :super_friends, :class => Organization do |s|
+  s.name 'Super Friends'
+  s.purpose 'Protect Humanity'
+  s.contact_person 'Superman'
+  s.email 'superman@superfriends.org'
+  s.website 'http://superfriends.org'
+end
+
+Factory.define :legion_of_doom, :class => Organization do |s|
+  s.name 'Legion of Doom'
+  s.purpose 'Evil'
+  s.contact_person 'Lex Luthor'
+end
+
 Factory.define :new_orleans, :class => Report do |s|
   s.description 'Oily seagulls, dead fish washed up on shore'
   s.oil 9

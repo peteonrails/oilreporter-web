@@ -37,4 +37,13 @@ class OrganizationsTest < ActionController::IntegrationTest
     assert_template :new
   end
 
+  test 'list organizations' do
+    Factory.create(:shield)
+    Factory.create(:super_friends)
+
+    get '/organizations'
+    assert_response :success
+    assert_template :index
+  end
+
 end

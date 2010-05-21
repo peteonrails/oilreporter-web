@@ -1,12 +1,12 @@
 development:
-  adapter: mysql
+  adapter: sqlite3
   server: localhost
   username: root 
   password:
-  database: oilreporter
+  database: oilreporter_development
   
 test: &TEST
-  adapter: mysql
+  adapter: sqlite3
   server: localhost
   username: root 
   password:

@@ -24,10 +24,16 @@ class ApplicationController < ActionController::Base
     # return true unless params[:organization_pin]
 
     # Supporting organization_id for the older version of the mobile app
-    if params[:organization_id] && params[:organization_pin].nil?
-      @organization = Organization.find_by_pin(params.delete(:organization_id))
-    else
-      @organization = Organization.find_by_pin(params.delete(:organization_pin))
+
+    begin
+      if params[:organization_id] && params[:organization_pin].nil?
+        @organization = Organization.find_by_pin(params.delete(:organization_id))
+      else
+        @organization = Organization.find_by_pin(params.delete(:organization_pin))
+      end
+    rescue Exception => e
+      logger.error("#{e.class}: #{e.message}")
+      logger.error(e.backtrace.join("\n"))
     end
     
     unless !!@organization

@@ -39,6 +39,7 @@ class ApplicationController < ActionController::Base
     rescue Exception => e
       logger.error("#{e.class}: #{e.message}")
       logger.error(e.backtrace.join("\n"))
+      return true
     end
     
     unless !!@organization

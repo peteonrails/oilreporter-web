@@ -10,42 +10,57 @@
         %li
           = link_to 'Home', root_path
         %li
-          %a{ :href => "/setup" }
-            Developers
+          %a{ :href => "" }
+            Social Media
           %ul
             %li
-              %a{ :href => "/signup" }
-                Sign Up
+              %a{ :href => "http://www.youtube.com/OilReporter" }
+                YouTube
             %li 
-              %a{ :href => "/setup" }
-                Setup
-            %li 
-              %a{ :href => "/api" }
-                API Documentation
-            %li 
-              %a{ :href => "/tools" }
-                Tools
-        %li 
-          = link_to "Reports", reports_path
-          %ul
-            %li
-              = link_to "View Reports", reports_path
-            %li
-              %a{ :href => "/map" }
-                View Map
-        %li
-          %a{ :hrf => "http://twitter.com/oilreporter" }
-            Resources
-          %ul
+              %a{ :href => "http://www.flickr.com/photos/49994449@N05/" }
+                Flickr
             %li 
               %a{ :href => "http://twitter.com/oilreporter" }
                 Twitter
+            %li 
+              %a{ :href => "http://www.facebook.com/group.php?gid=124499387563120&ref=ts" }
+                Facebook
+        %li
+          = link_to "RSS Feed", formatted_reports_url(:rss)
+        %li
+          %a{ :href => "" }
+            Download
+          %ul
+            %li
+              %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8" }
+                iPhone Reporter
+            %li
+              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html" }
+                Android Reporter
+            %li
+              %a{ :href => "/organizations/new" }
+                Create your own
+        %li
+          %a{ :href => "" }
+            Resources
+          %ul
             %li 
               %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
                 GitHub
             %li 
               %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response" }
                 Wiki
+        %li
+          %a{ :href => "" }
+            More
+          %ul
+            %li
+              = link_to "View Organizations", organizations_path
+            %li
+              = link_to "View Reports", reports_path
+            %li
+              %a{ :href => "/map" }
+                View Map
     / end top navigation
   / end inner
 / end header

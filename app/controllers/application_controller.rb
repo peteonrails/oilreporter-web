@@ -20,22 +20,27 @@ class ApplicationController < ActionController::Base
   end
 
   def extract_organization_pin
-    # Supporting organization_id for the older version of the mobile app
 
+    # Supporting organization_id for the older version of the mobile app
+    if params[:organization_pin]
+      pin = params.delete(:organization_pin)
+      params.delete(:organization_id)
+    elsif params[:organization_id]
+      pin = params.delete(:organization_id)
+      params.delete(:organization_pin)
+    else
+      return true
+    end
+
+    return true if pin.blank?
+    
     begin
-      if params[:organization_id] && params[:organization_pin].nil?
-        @organization = Organization.find_by_pin(params.delete(:organization_id))
-      else
-        @organization = Organization.find_by_pin(params.delete(:organization_pin))
-      end
+      @organization = Organization.find_by_pin(pin)
     rescue Exception => e
       logger.error("#{e.class}: #{e.message}")
       logger.error(e.backtrace.join("\n"))
     end
-
-    return true if pin.blank?
-    @organization = Organization.find_by_pin(pin)
-
+    
     unless !!@organization
       render :json => { :error => 'Invalid organization pin' }, :status => :unprocessable_entity
       return false

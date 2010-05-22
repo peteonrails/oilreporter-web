@@ -1,5 +1,30 @@
 jQuery.noConflict();
 
+// load welcome popup and set cookie on acceptance
+jQuery(function() {
+    jQuery("#welcome_popup").dialog({
+        bgiframe: true,
+        modal:true,
+        resizable:false,
+        autoOpen:false,
+        height:500,
+        width:600,
+        close: function() {
+            jQuery.cookie("welcome", "closed", { expires: 9999 });
+        },
+        buttons: {
+            "I have read the above, take me to OilReporter.org": function() {
+                jQuery(this).dialog("close");
+            }
+        }
+    });
+    if (jQuery.cookie("welcome") == "closed"){ 
+        jQuery("#welcome_popup").dialog("destroy"); 
+    }else{ 
+        jQuery("#welcome_popup").dialog("open"); 
+    } 
+});
+
 // preload image function
 jQuery.preloadImages = function() {
   for(var i = 0; i<arguments.length; i++) {

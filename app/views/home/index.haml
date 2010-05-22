@@ -1,6 +1,8 @@
+= welcome_popup
+    
 - content_for :js_templates do
   jQuery.preloadImages("/stylesheets/img/home_feature.jpg","/stylesheets/img/stage.jpg","/stylesheets/img/header.jpg","/images/slider_inactive.png","/images/buttons.gif","/stylesheets/img/buttons.gif","/images/slider_active.png","/stylesheets/img/drop.png","/stylesheets/img/dropR.png","/stylesheets/img/drop_sub.png");
-
+  
 #home_feature
   .background
     .inner
@@ -54,10 +56,10 @@
 #intro_blurb
   .inner
     #intro_blurb_title
-      %span Using Technology To Help Clean Up The Oil Spill
+      %span Does your organization need a customized app?
     #blurb
-      %a{ :href => "/setup" }
-        Get Started!
+      %a{ :href => "/organizations/new" }
+        Request one now!
 / end intro
         
 .clearboth
@@ -72,63 +74,56 @@
     #primary_full
       .content
         .entry
-          %h1 Instructions
+          %h1 Getting Started:
           .one_fourth
             %p.fancy_header
-              %span Report
+              %span
+                = link_to "Report", reports_path
             %p  
               %span.dropcap1
                 1
-              Download the app for 
-              %a{ :href => "#", :title => "Coming Soon: We're waiting on app store approval." }
-                iPhone
-              or 
-              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html", :target => "_blank" }
-                Android
-              and start helping out today. 
-              = link_to 'View reports', reports_path
-              submitted by users in real-time. Check out our 
-              %a{ :href => "/map" }
-                map
-              showing each check-in too. 
+              Report oiled beaches and animals directly from your phone. Volunteer to help with the response. Start uploading your pictures and videos by 
+              %a{ :href => "/tools" }
+                downloading
+              the Oil Reporter app for iPhone and Android today. Share with your networks.  
             %a{ :href => "/reports" }
               %img{ :src => "/images/front_report.png", :style => "margin-top:-10px;" }
           .one_fourth
             %p.fancy_header
-              %span Setup
+              %span Customize
             %p
               %span.dropcap1
                 2
-              Find out how to use our API by reading our
+              Are you a non-profit who wants to create your own Oil Reporter? Are you a 
               %a{ :href => "/api" }
-                documentation.
-              Get started 
-              %a{ :href => "/signup" }
-                developing your own application
-              and help out the cause. Let us know if you need any help!
+                mobile developer 
+              wanting to help response organizations with our API?
+              %a{ :href => "/setup" }
+                Create your own
+              version of Oil Reporter, volunteer to code and contribute to the API today! 
             %a{ :href => "/setup" }
-              %img{ :src => "/images/front_setup.png", :style => "margin-top:-10px;" }
+              %img{ :src => "/images/front_customize.png", :style => "margin-top:-10px;" }
           .one_fourth
             %p.fancy_header
-              %span Data
+              %span Adopt-A-Beach
             %p
               %span.dropcap1
                 3
-              Access to data, photos, and videos that have been submitted from individuals on the ground near the Gulf Coast. See how we're using this data with 
-              %a{ :href => "/map" } 
-                Google Maps.
-            %a{ :href => "/api" }
-              %img{ :src => "/images/front_data.png", :style => "margin-top:-10px;" }
+              COMING SOON: Get trained to map imagery of beaches and wetlands, provide visual context and local knowledge. No experience necessary. You just need access to the internet & commitment to monitor a section of beach with your expertise. 
+              %a{ :href => "http://adoptabeach.eventbrite.com" }
+                Sign up today!
+            %a{ :href => "" }
+              %img{ :src => "/images/front_adopt.png", :style => "margin-top:-10px;" }
           .one_fourth.last
             %p.fancy_header
               %span Tools
             %p
               %span.dropcap1
                 4
-              View, download and interact with other tools submitted by developers using the Oil Reporter API. Be sure to 
-              %a{ :href => "/setup" }
-                send us
-              your own app, so we can display it in this section.
+              View, download and interact with other tools submitted by developers using the 
+              %a{ :href => "/api" }
+                Oil Reporter API.
+              If you're a response organization, do you need reports of your data? Check out open tools you can use to map Oil Reporter data and other open data feeds.  
             %a{ :href => "/tools" }
               %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
           

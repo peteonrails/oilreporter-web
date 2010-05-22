@@ -1,9 +1,9 @@
 #intro_blurb
   .inner
     #intro_blurb_title
-      %span Setup
+      %span New Customization Request
     #blurb
-      Developing Applications with Oil Reporter Data
+      Apply Below to Get Your Own
 / end intro
 
 .clearboth
@@ -13,16 +13,15 @@
     %p.breadcrumb
       = render_crumbs :seperator => '<span class="breadarrow">/</span>'
 
-#has_sidebar
-  #body_block
-    .inner
-      - if flash.any?
-        - flash.each do |key, value|
-          %div{ :class => "#{key}_box", :style => "max-width:500px;margin-bottom:20px;" }
-            = value
-
-      %h2 For Organizations
-      
-      = error_messages_for :organization
-      = render :partial => 'form'
-    .clearboth
+#body_block
+  .inner
+    #primary_full
+      .content
+        - if flash.any?
+          - flash.each do |key, value|
+            %div{ :class => "#{key}_box", :style => "max-width:500px;margin-bottom:20px;" }
+              = value
+        %h2 Please complete this form
+        = error_messages_for :organization
+        = render :partial => 'form'
+      .clearboth

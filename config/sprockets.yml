@@ -6,6 +6,8 @@
   - vendor/plugins/*/app/javascripts
 :source_files:
   - app/javascripts/jquery.js
+  - app/javascripts/jquery-ui-1.7.2.js
+  - app/javascripts/jquery.cookie.js
   - app/javascripts/jquery.easing.js
   - app/javascripts/cufon-yui.js
   - app/javascripts/ColaborateLight_400.font.js

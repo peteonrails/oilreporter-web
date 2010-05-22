@@ -44,3 +44,36 @@ h3.toggle,h3.active,#secondary .widget_recent_comments ul li.recentcomments span
 /* ------- 6. Preloaders ------- */
 #loading_slider{background:transparent url(img/slider_loader.gif) no-repeat scroll center top;}
 #contactFormWidget .loadingImgWidgetFt{background:transparent url(img/loader_widget_ft.gif) no-repeat scroll 0 0;}
+
+/* ------- 7. Dialog ------- */
+.ui-widget-overlay {
+	background:#000;
+	position:absolute;
+	top:0;
+	opacity: .80;
+	filter:Alpha(Opacity=80);
+}
+.ui-dialog { position: relative; padding: .2em; width: 300px; background:white; }
+.ui-dialog .ui-dialog-titlebar { padding: .5em .3em .3em 1em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 0 .2em; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-content p { line-height:1.4em; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-corner-all  {
+-moz-border-radius:3px 3px 3px 3px;
+}
+.ui-widget-header {
+font-size:0.9em;
+font-weight:bold;
+margin:0.4em;
+padding:7px;
+}
+.ui-widget-header {
+background:url("img/ui-bg_highlight-soft_50_dddddd_1x100.png") repeat-x scroll 50% 50% #DDDDDD;
+border:1px solid #DDDDDD;
+color:#444444;
+text-transform:uppercase;
+}

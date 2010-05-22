@@ -42,6 +42,12 @@ class ReportsController < ApplicationController
       format.html {
         render
       }
+      format.rss { 
+        render :layout => false
+      }
+      format.xml { 
+        render :xml => @reports.to_xml
+      }
     end
   end
 

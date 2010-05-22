@@ -7,15 +7,15 @@
     == <meta name="google-site-verification" content="" />
 
     %title
-      = @title || "Oil Reporter - An Open Source Clean Up"
+      = @title || "Oil Reporter Platform"
 
     %link{:rel => 'shortcut icon', :href => '/images/favicon.ico'}
 
     = stylesheet_link_tag 'prettyPhoto', :type => "text/css", :media => "screen"
     = stylesheet_link_tag 'coderay', :type => "text/css", :media => "screen"
     = stylesheet_link_tag 'style', :type => "text/css", :media => "screen"
+    = stylesheet_link_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css'
     = stylesheet_link_tag 'oilreporter', :type => "text/css", :media => "screen"
-
     = sprockets_include_tag
     = yield :js_includes
     - javascript_tag do

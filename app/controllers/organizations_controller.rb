@@ -8,6 +8,7 @@ class OrganizationsController < ApplicationController
   end
 
   def create
+    add_crumb "new", '/organizations/new'
     @organization = Organization.new(params[:organization])
 
     if @organization.save

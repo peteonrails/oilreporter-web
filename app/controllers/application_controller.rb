@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     
     unless !!@organization
       # render :json => { :error => 'Invalid organization pin' }, :status => :unprocessable_entity
-      return false
+      return true
     end
     return true
   end

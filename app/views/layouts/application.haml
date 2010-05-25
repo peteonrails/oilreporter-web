@@ -2,12 +2,9 @@
 %html
   %head{ :profile => "http://gmpg.org/xfn/11" }
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "content-type" }
-    == <meta name="keywords" content="oil spill, oil cleanup, oil reporting, oil reporter" />
-    == <meta name="description" content="Oil Reporter is an open source effort to help aid in the relief efforts for the Gulf of Mexico Oil Spill." />
     == <meta name="google-site-verification" content="" />
 
-    %title
-      = @title || "Oil Reporter Platform"
+    = display_meta_tags :site => 'Oil Reporter Platform'
 
     %link{:rel => 'shortcut icon', :href => '/images/favicon.ico'}
 

@@ -10,7 +10,7 @@ jQuery(function() {
         height:500,
         width:600,
         close: function() {
-            jQuery.cookie("welcome", "closed", { expires: 9999 });
+            jQuery.cookie("welcome", "closed", { expires: 30, path: '/', domain: 'oilreporter.org' });
         },
         buttons: {
             "I have read the above, take me to OilReporter.org": function() {

@@ -1,3 +1,6 @@
+- content_for :head do
+  = set_meta_tags :title => 'Reports'
+
 - content_for :js_templates do
   = "document.write(\'<style type=\"text/css\">.noscript { display:none; }</style>\'); jQuery.preloadImages(\"images/new/ajax-loader.gif\");"
 #intro_blurb

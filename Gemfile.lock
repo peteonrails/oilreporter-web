@@ -6,48 +6,48 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml-coderay: 
-    group: 
-    - :default
-    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
-  sprockets-rails: 
-    group: 
-    - :plugins
-    version: ~> 0.0.1
-  SystemTimer: 
+  haml-coderay: 
     group: 
     - :default
-    version: ~> 1.2.0
-    require: 
-    - system_timer
+    version: ">= 0"
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
+  mysql: 
+    group: 
+    - :default
+    version: ~> 2.8.1
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
-  haml: 
+  SystemTimer: 
     group: 
     - :default
-    version: ">= 0"
-  mysql: 
+    version: ~> 1.2.0
+    require: 
+    - system_timer
+  sprockets-rails: 
     group: 
-    - :default
-    version: ~> 2.8.1
+    - :plugins
+    version: ~> 0.0.1
   sqlite3-ruby: 
     group: 
     - :development
@@ -60,6 +60,12 @@ dependencies:
     version: ~> 1.3.2
     require: 
     - spec/rails
+  meta-tags: 
+    group: 
+    - :plugins
+    version: ">= 0"
+    require: 
+    - meta_tags
   thin: 
     group: 
     - :default
@@ -68,14 +74,14 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.5.0
-  paperclip: 
-    group: 
-    - :plugins
-    version: ~> 2.3.1
   will_paginate: 
     group: 
     - :plugins
     version: ~> 2.3
+  paperclip: 
+    group: 
+    - :plugins
+    version: ~> 2.3.1
   factory_girl: 
     group: 
     - :testing
@@ -90,16 +96,16 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.2.1
+  RedCloth: 
+    group: 
+    - :default
+    version: ">= 0"
   aws-s3: 
     group: 
     - :default
     version: ~> 0.6.2
     require: 
     - aws/s3
-  RedCloth: 
-    group: 
-    - :default
-    version: ">= 0"
   capybara: 
     group: 
     - :testing
@@ -116,17 +122,17 @@ specs:
 - SystemTimer: 
     version: "1.2"
 - activesupport: 
-    version: 2.3.5
+    version: 2.3.8
 - rack: 
-    version: 1.0.1
+    version: 1.1.0
 - actionpack: 
-    version: 2.3.5
+    version: 2.3.8
 - actionmailer: 
-    version: 2.3.5
+    version: 2.3.8
 - activerecord: 
-    version: 2.3.5
+    version: 2.3.8
 - activeresource: 
-    version: 2.3.5
+    version: 2.3.8
 - builder: 
     version: 2.1.2
 - mime-types: 
@@ -138,7 +144,7 @@ specs:
 - culerity: 
     version: 0.2.10
 - nokogiri: 
-    version: 1.4.1
+    version: 1.4.2
 - rack-test: 
     version: 0.5.3
 - ffi: 
@@ -162,7 +168,7 @@ specs:
 - trollop: 
     version: 1.16.2
 - gherkin: 
-    version: 1.0.27
+    version: 1.0.30
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
@@ -178,7 +184,7 @@ specs:
 - factory_girl: 
     version: 1.2.4
 - haml: 
-    version: 3.0.4
+    version: 3.0.6
 - haml-coderay: 
     version: 0.0.2
 - httparty: 
@@ -187,6 +193,8 @@ specs:
     version: "0.43"
 - memcache-client: 
     version: 1.8.3
+- meta-tags: 
+    version: 1.1.1
 - mysql: 
     version: 2.8.1
 - paperclip: 
@@ -196,7 +204,7 @@ specs:
 - pickle: 
     version: 0.2.11
 - rails: 
-    version: 2.3.5
+    version: 2.3.8
 - rspec: 
     version: 1.3.0
 - rspec-rails: 
@@ -215,7 +223,7 @@ specs:
     version: 1.2.7
 - will_paginate: 
     version: 2.3.12
-hash: 0224c8e6a86d93b30d0b49aa71b51eac05b08f98
+hash: 2ac93599b39f0754cda569ada0248f9bffcd51ef
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

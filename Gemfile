@@ -20,6 +20,7 @@ group :plugins do
   gem 'paperclip', '~> 2.3.1'
   gem 'will_paginate', '~> 2.3'
   gem 'sprockets-rails', '~> 0.0.1'
+  gem 'meta-tags', :require => 'meta_tags'
 end
 
 group :development do

@@ -1,0 +1,87 @@
+- content_for :head do
+  = set_meta_tags :title => 'About'
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        %h1
+          About
+        %p
+          Oil Reporter is a pretty simple idea. We want people to share what they see and to allow that information to be shared with everyone. We believe that if people share what they see and that information can be placed on a map, it can help organizations and communities with their response efforts.  
+        %p
+          Oil Reporter is available 
+          = link_to 'here', root_path
+          as well as from the 
+          %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8" }
+            Apple App Store 
+          and the 
+          %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html" }
+            Google Android App Store. 
+          Data from these mobile applications will be stored by 
+          %a{ :href => "http://www.sdsu.edu/" }
+            San Diego State University
+          and provided back to the public via 
+          %a{ :href => "api" }
+            Oil Reporter’s open API.  
+        %p
+          Oil Reporter’s Adopt-A-Beach initiative will provide the opportunity for virtual volunteers to review high resolutions imagery of the Gulf Coast and to map data elements such as perimeters of oil presence and injured wildlife in remote areas where physical assessment access is limited. This also provides an opportunity for Oil Reporter photographs and video to be joined with high resolution imagery to provide greater understanding and provide an ability to share data from these sources back to the public. 
+        %p
+          Oil Reporter data is open and available to anyone via its 
+          %a{ :href => "api" }
+            open API. 
+          Response organizations may need assistance in turning that data into products, placing information on maps. Dr. Eric Frost and the team San Diego State University’s Visualization Center will be the data repository for Oil Reporter and will be leading a team of academic partners to provide technical assistance and products to response organizations by request.
+        %p  
+          Oil Reporter web application for iPhone and Android was built for 
+          %a{ :href => "http://crisiscommons.org" }
+            CrisisCommons
+          by 
+          %a{ :href => "http://intridea.com/about/people/brendan" }
+            Brendan Lim, 
+          %a{ :href => "http://intridea.com/about/people/chris" }
+            Chris Selmer, 
+          %a{ :href => "http://intridea.com/about/people/jonathan" }
+            Jonathan Nelson
+          and 
+          %a{ :href => "http://intridea.com/about/people/sean" }
+            Sean Soper 
+          from
+          %a{ :href => "http://intridea.com" }
+            Intridea
+          a web products and service company based in Washington, D.C., specializing in agile application development, user interface design, and custom mobile app solutions. Their team created the open API, mobile application and the website you see here. Just this past January the Intridea team also built the first Kreyol to English web application diction for Haiti relief efforts called 
+          %a{ :href => "http://traduiapp.com" }
+            Tradui.
+          Want to know more about them? Visit 
+          %a{ :href => "http://intridea.com" }
+            Intridea
+          today!
+        %p
+          Through Intridea, CrisisCommons met 
+          %a{ :href => "http://twitter.com/jhaynie" }
+            Jeff Haynee 
+          and Scott Schwarhoff from 
+          %a{ :href => "http://www.appcelerator.com" }
+            Appcelerator 
+          who volunteered the use of its open source mobile development applications such the Titanium Developer. This was the product which was used to create Oil Reporter. Appcelerator’s team created 
+          %a{ :href => "http://github.com/kwhinnery/OilTracker" }
+            Oil Tracker, 
+          the companion app to Oil Reporter, to enable real time mapping of Oil Reporter data. Appcelerator has volunteered to lead a mobile developer matching program to team mobile developers with response organizations to create their own Oil Reporter app with custom features and data elements. We are thrilled to be working with Jeff, Scott and the entire community at Appcelerator. Check out their 
+          %a{ :href => "http://www.appcelerator.com" }
+            open source development community 
+          today!
+        %p
+          Oil Reporter could not have been made with out the many volunteers within CrisisCommons as well as organizations such as Emicus and Edgecase who have contributed their thoughts and perspectives to the development of this team and contributions to open data collaboration.
+
+        .divider.top
+          %a{ :href => "#" }
+            Top
+      / end content
+    .clearboth
+    / end primary

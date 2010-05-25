@@ -12,4 +12,8 @@ class HomeController < ApplicationController
     add_crumb "tools", '/tools'
   end
   
+  def about
+    add_crumb "about", '/about'
+  end
+  
 end

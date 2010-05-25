@@ -16,4 +16,8 @@ class HomeController < ApplicationController
     add_crumb "about", '/about'
   end
   
+  def privacy
+    add_crumb "privacy", '/privacy'
+  end
+  
 end

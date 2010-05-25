@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/setup', :controller => 'home', :action => 'setup'
   map.connect '/tools', :controller => 'home', :action => 'tools'
   map.connect '/about', :controller => 'home', :action => 'about'
+  map.connect '/privacy', :controller => 'home', :action => 'privacy'
 
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]

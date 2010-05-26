@@ -44,6 +44,10 @@ dependencies:
     version: ~> 1.2.0
     require: 
     - system_timer
+  unindentable: 
+    group: 
+    - :default
+    version: ">= 0"
   sprockets-rails: 
     group: 
     - :plugins
@@ -96,6 +100,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.2.1
+  rack-test: 
+    group: 
+    - :default
+    version: ">= 0"
   RedCloth: 
     group: 
     - :default
@@ -221,9 +229,11 @@ specs:
     version: 1.2.5
 - thin: 
     version: 1.2.7
+- unindentable: 
+    version: 0.0.3
 - will_paginate: 
     version: 2.3.12
-hash: 2ac93599b39f0754cda569ada0248f9bffcd51ef
+hash: 0b2719b09a64ab2830bc942d32018987912c3474
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

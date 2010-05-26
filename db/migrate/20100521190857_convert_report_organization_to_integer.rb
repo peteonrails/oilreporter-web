@@ -1,9 +1,11 @@
 class ConvertReportOrganizationToInteger < ActiveRecord::Migration
   def self.up
-    change_column :reports, :organization_id, :integer
+    # we can do this because right now (5/26/10) there are no reports with organization ids
+    remove_column :reports, :organization_id
+    add_column :reports, :organization_id, :integer
   end
 
   def self.down
-    change_column :reports, :organization_id, :string
+    raise ActiveRecord::IrreversibleMigration
   end
 end

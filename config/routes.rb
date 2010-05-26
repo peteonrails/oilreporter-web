@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/tools', :controller => 'home', :action => 'tools'
   map.connect '/about', :controller => 'home', :action => 'about'
   map.connect '/privacy', :controller => 'home', :action => 'privacy'
+  map.connect '/data-sources', :controller => 'home', :action => 'data_sources'
+  map.connect '/tos', :controller => 'home', :action => 'tos'
 
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]

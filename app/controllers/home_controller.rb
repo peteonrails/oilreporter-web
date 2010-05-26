@@ -20,4 +20,12 @@ class HomeController < ApplicationController
     add_crumb "privacy", '/privacy'
   end
   
+  def data_sources
+    add_crumb "data sources", '/data-sources'
+  end
+  
+  def tos
+    add_crumb "terms of service", '/tos'
+  end
+  
 end

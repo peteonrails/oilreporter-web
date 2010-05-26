@@ -1,0 +1,74 @@
+- content_for :head do
+  = set_meta_tags :title => 'Data Sources'
+
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Data Sources
+    #blurb
+      Updated Frequently
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        %h2 Federal Government (Verified)
+        %ul
+          %li
+            %h4
+              %a{ :href => "http://www.epa.gov/bpspill" }
+                U.S. Environmental Protection Agency
+          %li
+            %h4
+              %a{ :href => "http://www.usgs.gov/deepwater_horizon" }
+                U.S. Geological Survey
+          %li
+            %h4
+              %a{ :href => "http://response.restoration.noaa.gov/topic_subtopic_entry.php?RECORD_KEY(entry_subtopic_topic)=entry_id,subtopic_id,topic_id&entry_id(entry_subtopic_topic)=809&subtopic_id(entry_subtopic_topic)=2&topic_id(entry_subtopic_topic)=1" }
+                National Oceanic and Atmospheric Administration
+          %li
+            %h4
+              %a{ :href => "http://www.incidentnews.gov/map" }
+                National Oceanic and Atmospheric Administration’s Office of Response and Restoration
+        %h2 State Government (Verified)
+        %ul
+          %li
+            %h4
+              %a{ :href => "http://www.wlf.louisiana.gov/oilspill" }
+                State of Louisiana Department of Wildlife and Fisheries
+          %li
+            %h4
+              %a{ :href => "http://www.governorbarbour.com/features/Oilspillresourcesindex.html" }
+                State of Mississippi
+          %li
+            %h4
+              %a{ :href => "http://www.alabama.gov/sliverheader/Welcome.do?url=http://ema.alabama.gov/" }
+                State of Alabama
+          %li
+            %h4
+              %a{ :href => "http://www.dep.state.fl.us/deepwaterhorizon/" }
+                State of Florida
+        %h2 Europe (Verified)
+        %ul
+          %li
+            %h4
+              %a{ :href => "http://www.zki.dlr.de/applications/2010/louisiana/191_en.html/t_blank" }
+                Center for Satellite Based Crisis Information
+          %li
+            %h4
+              %a{ :href => "http://miravi.eo.esa.int/en/" }
+                Envisat MERIS Image Rapid Visualization
+        %h2 Google Crisis Response Collection
+        %ul
+          %li
+            %h4
+              %a{ :href => "http://www.google.com/crisisresponse/oilspill/" }
+                Gulf of Mexico Oil Spill Maps

@@ -77,3 +77,5 @@ border:1px solid #DDDDDD;
 color:#444444;
 text-transform:uppercase;
 }
+
+div.recaptcha_error_box {display:none;}

@@ -22,6 +22,7 @@ group :plugins do
   gem 'sprockets-rails', '~> 0.0.1'
   gem 'meta-tags', :require => 'meta_tags'
   gem 'rack-recaptcha', :require => 'rack/recaptcha'
+  gem 'rakismet'
 end
 
 group :development do

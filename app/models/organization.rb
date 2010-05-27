@@ -1,4 +1,11 @@
 class Organization < ActiveRecord::Base
+  include Rakismet::Model
+
+  rakismet_attrs :author => :name,
+                 :author_email => :email,
+                 :author_url => :website,
+                 :content => :purpose
+
   has_many :reports
 
   before_create :generate_pin

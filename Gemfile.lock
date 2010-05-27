@@ -6,17 +6,9 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
+  rakismet: 
     group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml-coderay: 
-    group: 
-    - :default
+    - :plugins
     version: ">= 0"
   rails: 
     group: 
@@ -24,30 +16,42 @@ dependencies:
     version: ~> 2.3.5
     require: []
 
-  sprockets-rails: 
-    group: 
-    - :plugins
-    version: ~> 0.0.1
-  SystemTimer: 
+  haml-coderay: 
     group: 
     - :default
-    version: ~> 1.2.0
-    require: 
-    - system_timer
+    version: ">= 0"
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
+  mysql: 
+    group: 
+    - :default
+    version: ~> 2.8.1
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
-  haml: 
+  SystemTimer: 
     group: 
     - :default
-    version: ">= 0"
-  mysql: 
+    version: ~> 1.2.0
+    require: 
+    - system_timer
+  sprockets-rails: 
     group: 
-    - :default
-    version: ~> 2.8.1
+    - :plugins
+    version: ~> 0.0.1
   sqlite3-ruby: 
     group: 
     - :development
@@ -60,34 +64,34 @@ dependencies:
     version: ~> 1.3.2
     require: 
     - spec/rails
-  thin: 
-    group: 
-    - :default
-    version: ">= 0"
   meta-tags: 
     group: 
     - :plugins
     version: ">= 0"
     require: 
     - meta_tags
+  thin: 
+    group: 
+    - :default
+    version: ">= 0"
   database_cleaner: 
     group: 
     - :testing
     version: ~> 0.5.0
+  will_paginate: 
+    group: 
+    - :plugins
+    version: ~> 2.3
+  paperclip: 
+    group: 
+    - :plugins
+    version: ~> 2.3.1
   rack-recaptcha: 
     group: 
     - :plugins
     version: ">= 0"
     require: 
     - rack/recaptcha
-  paperclip: 
-    group: 
-    - :plugins
-    version: ~> 2.3.1
-  will_paginate: 
-    group: 
-    - :plugins
-    version: ~> 2.3
   factory_girl: 
     group: 
     - :testing
@@ -102,16 +106,16 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.2.1
+  RedCloth: 
+    group: 
+    - :default
+    version: ">= 0"
   aws-s3: 
     group: 
     - :default
     version: ~> 0.6.2
     require: 
     - aws/s3
-  RedCloth: 
-    group: 
-    - :default
-    version: ">= 0"
   capybara: 
     group: 
     - :testing
@@ -215,6 +219,8 @@ specs:
     version: 0.2.0
 - rails: 
     version: 2.3.8
+- rakismet: 
+    version: 0.4.0
 - rspec: 
     version: 1.3.0
 - rspec-rails: 
@@ -233,7 +239,7 @@ specs:
     version: 1.2.7
 - will_paginate: 
     version: 2.3.14
-hash: 253ccadb2a395755d36cc84383c1487cef06e7ce
+hash: 3c7095b23f824e966df39c2caa85a3c7a04d6fb7
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

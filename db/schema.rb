@@ -9,17 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100521190857) do
+ActiveRecord::Schema.define(:version => 20100526204040) do
 
   create_table "developers", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "website"
-    t.string   "purpose"
+    t.text     "purpose",    :limit => 255
     t.string   "api_key"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "volunteer",  :default => false
+    t.boolean  "volunteer",                 :default => false
   end
 
   create_table "organizations", :force => true do |t|

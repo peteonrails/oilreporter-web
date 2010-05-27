@@ -7,6 +7,8 @@ class OrganizationsTest < ActionController::IntegrationTest
 
     post '/organizations', :organization => organization
     assert_response :redirect
+    assert !flash[:info].empty?
+    assert flash[:error].nil?
     assert_redirected_to :controller => 'home', :action => 'setup'
   end
 

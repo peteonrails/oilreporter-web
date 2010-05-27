@@ -7,6 +7,7 @@ class Developer < ActiveRecord::Base
 
   validates_presence_of :email, :name
   validates_uniqueness_of :email
+  validates_length_of :email, :name, :maximum => 255
   validates_format_of :email, :with => Validations::Email, :on => :create
   validates_format_of :website, :with => Validations::URL,
                                 :unless => Proc.new { |record| record.website.blank? }

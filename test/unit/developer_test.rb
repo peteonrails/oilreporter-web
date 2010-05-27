@@ -19,4 +19,15 @@ class DeveloperTest < ActiveSupport::TestCase
     assert /[\d\w]{40}/ === developer.reload.api_key
   end
 
+  test 'cannot create developer with extraordinarily long name or email' do
+    data = (1..256).collect { 'a' }.join('')
+    [:name, :email].each do |field|
+      developer = Factory.build(:dilbert)
+      assert developer.valid?
+      value = field == :email ? "#{data}@test.com" : data
+      developer.send("#{field}=", value)
+      assert !developer.valid?
+    end
+  end
+
 end

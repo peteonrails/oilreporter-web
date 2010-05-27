@@ -1,6 +1,6 @@
 class Organization < ActiveRecord::Base
   include Rakismet::Model
-  attr_accessor :name, :website, :purpose
+
   rakismet_attrs :author => :name,
                  :author_url => :website,
                  :content => :purpose

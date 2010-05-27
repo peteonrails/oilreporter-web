@@ -15,14 +15,13 @@ gem 'pg', '~> 0.9.0'
 gem 'thin'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
 gem 'crummy'
-gem 'unindentable'
-gem 'rack-test'
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'
   gem 'will_paginate', '~> 2.3'
   gem 'sprockets-rails', '~> 0.0.1'
   gem 'meta-tags', :require => 'meta_tags'
+  gem 'rakismet'
 end
 
 group :development do

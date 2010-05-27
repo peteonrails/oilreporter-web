@@ -10,7 +10,9 @@ class DevelopersController < ApplicationController
   def create
     @developer = Developer.new(params[:developer])
 
-    if @developer.save
+    if @developer.valid? &
+      (RAILS_ENV == 'production' ? verify_recaptcha(:model => @developer, :message => 'Captcha is invalid') : true)
+      @developer.save
       Notifier.deliver_api_key(@developer)
       redirect_to :action => 'show', :id => Base64.encode64(@developer.email).strip
     else

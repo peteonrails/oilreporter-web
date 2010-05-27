@@ -11,7 +11,9 @@ class OrganizationsController < ApplicationController
     add_crumb "new", '/organizations/new'
     @organization = Organization.new(params[:organization])
 
-    if !@organization.spam? and @organization.save
+    if @organization.valid? &
+       (RAILS_ENV == 'production' ? verify_recaptcha(:model => @organization, :message => 'Captcha is invalid') : true)
+      @organization.save
       flash.now[:info] = "Thank you! We'll be getting in touch with you shortly. Your PIN is #{@organization.pin}"
       Notifier.deliver_organization_pin(@organization)
       redirect_to :controller => 'home', :action => 'setup'

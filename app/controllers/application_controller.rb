@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Rack::Recaptcha::Helpers
+
   add_crumb "home", '/'
 
   helper :all

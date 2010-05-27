@@ -21,7 +21,7 @@ group :plugins do
   gem 'will_paginate', '~> 2.3'
   gem 'sprockets-rails', '~> 0.0.1'
   gem 'meta-tags', :require => 'meta_tags'
-  gem 'rakismet'
+  gem 'rack-recaptcha', :require => 'rack/recaptcha'
 end
 
 group :development do

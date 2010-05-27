@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Rack::Recaptcha::Helpers
 
   def show_map(reports)
     buffer = <<-JS

@@ -14,6 +14,8 @@
       = f.label :website
     %p
       = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field"
+    %p
+      = recaptcha_tag(:challenge)
     %p.loadingImgWidgetFt
     %p
       = submit_tag('Submit', :class => "round s button")

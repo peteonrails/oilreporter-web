@@ -4,11 +4,10 @@ class ReportsTest < ActionController::IntegrationTest
 
   test 'create report' do
     factory = Factory.build(:new_orleans)
-    @developer = factory.developer
     report = factory.attributes
 
     report.delete(:developer)
-    report.merge!(:api_key => @developer.api_key)
+    report.merge!(:api_key => factory.developer.api_key)
 
     post '/reports', report
     assert_response :success
@@ -53,16 +52,16 @@ class ReportsTest < ActionController::IntegrationTest
     assert !report.media?
     media = fixture_file_upload('media/1.jpg', 'image/jpeg')
 
-    put "/reports/#{report.id}", { :media => media, :api_key => @developer.api_key }
+    put "/reports/#{report.id}", { :media => media, :api_key => report.developer.api_key }
     assert_response :success
     assert report.reload.media?
   end
 
   test 'list reports in json' do
     test_create_report
-    report = Report.first
+    report = Report.last
 
-    get "/reports.json", { :api_key => @developer.api_key }
+    get "/reports.json", { :api_key => report.developer.api_key }
     assert_response :success
     reports = JSON.parse(response.body)
     assert_equal reports.length, 1

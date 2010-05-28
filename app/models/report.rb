@@ -1,8 +1,17 @@
+require 'oil_spill'
+
 class Report < ActiveRecord::Base
   belongs_to :developer
   belongs_to :organization
 
   validates_numericality_of :oil, :wetlands, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10
+  validates_presence_of :latitude, :longitude
+  validates_numericality_of :latitude, :longitude
+
+  after_create :verify_location
+
+  named_scope :within_oil_spill, :conditions => { :within_oil_spill => true }
+
   has_attached_file :media,
     :styles => {
       :tiny  => "50x50#",
@@ -14,6 +23,10 @@ class Report < ActiveRecord::Base
     :path => (RAILS_ENV == 'production' ? ':attachment/:id/:style.:extension' :
                                           'public/system/:attachment/:id/:style/:basename.:extension'),
     :bucket => 'oilspill_photos'
+
+  def verify_location
+    self.update_attribute(:within_oil_spill, OilSpill.instance.contains?(self.latitude, self.longitude))
+  end
 
   def hew
     fields = [:id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]

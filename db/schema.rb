@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100526204040) do
+ActiveRecord::Schema.define(:version => 20100528190831) do
 
   create_table "developers", :force => true do |t|
     t.string   "name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20100526204040) do
     t.integer  "organization_id",    :limit => 255
     t.string   "device_id"
     t.integer  "developer_id"
+    t.boolean  "within_oil_spill",                  :default => false
   end
 
 end

@@ -33,7 +33,7 @@ class ReportsController < ApplicationController
   def index
     add_crumb "reports", '/reports'
     respond_to do |format|
-      @reports = Report.paginate(:page => params[:page], :order => 'created_at DESC')
+      @reports = Report.within_oil_spill.paginate(:page => params[:page], :order => 'created_at DESC')
 
       format.json {
         return unless verify_api_key

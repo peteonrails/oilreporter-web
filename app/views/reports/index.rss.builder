@@ -1,5 +1,5 @@
 xml.instruct! :xml, :version => "1.0" 
-xml.rss (:version => "2.0", "xmlns:georss" => "http://www.georss.org/georss") do
+xml.rss(:version => "2.0", "xmlns:georss" => "http://www.georss.org/georss") do
   xml.channel do
     xml.title "Latest Oil Reports"
     xml.description "The most recent updates from people reporting near the Gulf of Mexico."

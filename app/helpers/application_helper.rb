@@ -14,6 +14,9 @@ module ApplicationHelper
       buffer << %Q(map.addOverlay(createMarker(map, #{report.to_json}));\n)
     end
 
+    buffer << %Q(var oilSpill = new GGeoXml("http://mw1.google.com/mw-earth-vectordb/disaster/gulf_oil_spill/kml/noaa/nesdis_anomaly_rs2.kml");\n);
+    buffer << %Q(map.addOverlay(oilSpill);\n)
+
     buffer
   end
   

@@ -53,7 +53,7 @@ class ReportsController < ApplicationController
 
   def map
     add_crumb "map", '/map'
-    @reports = Report.all
+    @reports = Report.within_oil_spill
   end
 
 end

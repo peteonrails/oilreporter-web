@@ -127,12 +127,14 @@
               Top
         / end content
       /end primary
-            
-      %h2 For Organizations
+      
+      .secondary
+        .content
+          %h2 For Organizations
 
-      %p
-        Are you an organization that needs development assistance?  
-      %p
-        Please complete this form and we will match you with a volunteer developer.
-        = render :partial => 'organizations/form'
-    .clearboth
+          %p
+            Are you an organization that needs development assistance?  
+          %p
+            Please complete this form and we will match you with a volunteer developer.
+            = render :partial => 'organizations/form'
+          .clearboth

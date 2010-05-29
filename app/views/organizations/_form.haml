@@ -2,20 +2,24 @@
   %fieldset
     %p
       = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field"
+      %br
       = f.label :name, "Organization Name"
     %p
       = f.text_field :contact_person, :class => "requiredFieldContact textfield", :id => "field"
+      %br
       = f.label :contact_person, "Contact Person"
     %p
       = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email"
+      %br
       = f.label :email, "&nbsp;E-mail Address"
     %p
       = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url"
+      %br
       = f.label :website
     %p
       = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field"
     %p
-      = recaptcha_tags(:display => {:theme => 'white'})
+      = recaptcha_tags(:display => {:theme => 'white' })
     %p.loadingImgWidgetFt
     %p
       = submit_tag('Submit', :class => "round s button")

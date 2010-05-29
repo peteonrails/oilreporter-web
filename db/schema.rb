@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100528190831) do
+ActiveRecord::Schema.define(:version => 20100529161338) do
 
   create_table "developers", :force => true do |t|
     t.string   "name"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20100528190831) do
   end
 
   create_table "reports", :force => true do |t|
-    t.string   "description"
+    t.text     "description",        :limit => 255
     t.integer  "oil"
     t.string   "media_file_name"
     t.string   "media_content_type"

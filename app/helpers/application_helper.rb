@@ -3,7 +3,7 @@ module ApplicationHelper
   def show_map(reports)
     buffer = <<-JS
       var map = new GMap2(document.getElementById('map'));
-      map.setCenter(new GLatLng(29.19042, -88.7649), 7);
+      map.setCenter(new GLatLng(27.897349, -86.923828), 6);
       map.addControl(new GSmallMapControl());
       map.addControl(new GMapTypeControl());
       map.enableScrollWheelZoom();

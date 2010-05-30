@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/privacy', :controller => 'home', :action => 'privacy'
   map.connect '/data-sources', :controller => 'home', :action => 'data_sources'
   map.connect '/tos', :controller => 'home', :action => 'tos'
+  map.connect '/news', :controller => 'home', :action => 'news'
 
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]

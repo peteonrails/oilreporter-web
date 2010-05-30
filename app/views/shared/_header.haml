@@ -13,6 +13,9 @@
           %a{ :href => "/about" }
             About
         %li
+          %a{ :href => "/news" }
+            News
+        %li
           %a{ :href => "" }
             Sign Up
           %ul
@@ -22,6 +25,43 @@
             %li
               %a{ :href => "/signup" }
                 Developers
+        %li
+          %a{ :href => "" }
+            Download
+          %ul
+            %li
+              %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8" }
+                iPhone Reporter
+            %li
+              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html" }
+                Android Reporter
+        %li
+          %a{ :href => "" }
+            View Latest
+          %ul
+            %li
+              = link_to "Organizations", organizations_path
+            %li
+              = link_to "Reports", reports_path
+            %li
+              %a{ :href => "/map" }
+                Map
+            %li
+              %a{ :href => "/tools" }
+                Tools
+            %li
+              %a{ :href => "/data-sources" }
+                Data Sources
+        %li
+          %a{ :href => "" }
+            Open Source
+          %ul
+            %li 
+              %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
+                Mobile (GitHub)
+            %li
+              %a{ :href => "http://github.com/kwhinnery/OilTracker" }
+                Desktop (Github)
         %li
           %a{ :href => "" }
             Social Media
@@ -38,45 +78,11 @@
             %li 
               %a{ :href => "http://www.facebook.com/group.php?gid=124499387563120&ref=ts" }
                 Facebook
-        %li
-          = link_to "RSS Feed", reports_url(:format => :rss)
-        %li
-          %a{ :href => "" }
-            Download
-          %ul
-            %li
-              %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8" }
-                iPhone Reporter
-            %li
-              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html" }
-                Android Reporter
-        %li
-          %a{ :href => "" }
-            Resources
-          %ul
-            %li 
-              %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
-                GitHub
             %li 
               %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response" }
                 Wiki
         %li
-          %a{ :href => "" }
-            More
-          %ul
-            %li
-              = link_to "View Organizations", organizations_path
-            %li
-              = link_to "View Reports", reports_path
-            %li
-              %a{ :href => "/map" }
-                View Map
-            %li
-              %a{ :href => "/tools" }
-                View Tools
-            %li
-              %a{ :href => "/data-sources" }
-                View Data Sources
+          = link_to "RSS", reports_url(:format => :rss)
     / end top navigation
   / end inner
 / end header

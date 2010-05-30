@@ -1,0 +1,54 @@
+<script type="text/javascript">
+
+var twitter_id = 'oilreporter';
+var twitter_count = 1;
+var twitter_elem_id = 'twitter_data';
+
+window.onload = function() {
+  var url = 'http://twitter.com/statuses/user_timeline.json?screen_name='
+    + twitter_id
+    + '&callback=twitterCallback&count='
+    + twitter_count;
+  var script = document.createElement('script');
+  script.setAttribute('src', url);
+  document.body.appendChild(script);
+}
+function twitterCallback(obj) {
+  var html = "";
+  for (var i = 0 ; i < twitter_count && i != obj.length ; i++) {
+    text = obj[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+      return '<a target="_blank" href="'+url+'">'+url+'</a>';
+    }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
+      return '<a target="_blank" href="http://www.twitter.com/'+reply.substring(1)+'">@'+reply.substring(1)+'</a>';
+    });
+    html += "<blockquote style='margin:-10px;'>" + text + "</span><cite><a target='_blank' href='http://twitter.com/" + twitter_id + "/status/" + obj[i].id + "'>&nbsp;" + relative_time(obj[i].created_at) + "</a></cite></blockquote>";
+  }
+  document.getElementById(twitter_elem_id).innerHTML = html;
+}
+
+function relative_time(time_value) {
+  var values = time_value.split(" ");
+  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+  var parsed_date = Date.parse(time_value);
+  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+  delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+  if (delta < 60) {
+    return 'less than a minute ago via Twitter';
+  } else if(delta < 120) {
+    return 'about a minute ago via Twitter';
+  } else if(delta < (60*60)) {
+    return (parseInt(delta / 60)).toString() + ' minutes ago via Twitter';
+  } else if(delta < (120*60)) {
+    return 'about an hour ago via Twitter';
+  } else if(delta < (24*60*60)) {
+    return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago via Twitter';
+  } else if(delta < (48*60*60)) {
+    return '1 day ago via Twitter';
+  } else {
+    return (parseInt(delta / 86400)).toString() + ' days ago via Twitter';
+  }
+}
+
+</script>

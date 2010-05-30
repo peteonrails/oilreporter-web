@@ -28,4 +28,8 @@ class HomeController < ApplicationController
     add_crumb "terms of service", '/tos'
   end
   
+  def news
+    add_crumb "news", '/news'
+  end
+  
 end

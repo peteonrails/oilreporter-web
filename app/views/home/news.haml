@@ -1,0 +1,57 @@
+- content_for :head do
+  = set_meta_tags :title => 'News'
+
+= twitter
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span News
+    #blurb
+      #twitter_data
+        %p.tweet
+          %em retrieving tweets...
+      / end tweets
+/ end intro
+
+.clearboth
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        .entry
+          .one_fourth
+            %a{ :href => "http://www.cnn.com/video/#/video/tech/2010/05/29/nr.armstrong.oil.spill.tech.cnn", :title => "Tech expert Mario Armstrong explains how new technology can enable Gulf Coast residents to become mobile oil reporters." }
+              %img{ :src => "/images/pr/cnn_small.png"}
+            %p
+              Tech expert 
+              %a{ :href => "http://twitter.com/marioarmstrong" }
+                Mario Armstrong
+              explains how new technology can enable Gulf Coast residents to become mobile oil reporters with 
+              %a{ :href => "/tools" }
+                Oil Reporter.
+          .one_fourth
+            %a{ :href => "http://www.npr.org/blogs/alltechconsidered/2010/05/26/127135431/oil-spill-iphone-android-app", :title => "Want To Help Report The Oil Spill? There's An App For That" }
+              %img{ :src => "/images/pr/npr_small.png"}
+            %p
+              Want To Help Report The Oil Spill? There's An App For That - NPR's 
+              %a{ :href => "http://twitter.com/acarvin" }
+                Andy Carvin 
+              reports.
+          .one_fourth
+            %a{ :href => "http://radar.oreilly.com/2010/05/crisis-commons-releases-open-s.html", :title => "Crisis Commons releases open source oil spill reporting" }
+              %img{ :src => "/images/pr/oreilly_small.png"}
+            %p
+              Crisis Commons releases open source oil spill reporting - O'Reilly's 
+              %a{ :href => "https://twitter.com/digiphile" }
+                Alex Howards
+              reports.
+          .one_fourth.last
+            %a{ :href => "http://www.cbsnews.com/8301-504464_162-20006197-504464.html?tag=contentMain;contentBody", :title => "Online Resources to Drill into the BP Oil Disaster" }
+              %img{ :src => "/images/pr/cbs_news_small.png"}
+            %p
+              Online Resources to Drill into the BP Oil Disaster - CBS News 
+              %a{ :href => "http://twitter.com/shiralazar" }
+                Shira Lazar
+              reports.

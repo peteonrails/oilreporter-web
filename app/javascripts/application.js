@@ -1,6 +1,6 @@
 jQuery.noConflict();
 
-// load welcome popup and set cookie on acceptance
+// load welcome popup and set 30 day cookie on acceptance
 jQuery(function() {
     jQuery("#welcome_popup").dialog({
         bgiframe: true,

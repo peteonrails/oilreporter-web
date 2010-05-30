@@ -11,7 +11,7 @@
 
 .tweetsync_container .tweetsync_background{position:absolute; top:0px; left:0px; width:100%; background-color:#9ae4e8; background-repeat:no-repeat; background-position: -50px -100px; -moz-border-radius:9px; -webkit-border-radius:9px;}
 
-.tweetsync_container .tweetsync_content{font-family:Georgia, "Times New Roman", Times, serif; width:55%; background:#ffffff; position:relative; -moz-border-radius:5px; -webkit-border-radius:5px; margin:23px auto 20px auto; padding:10px 15px 10px 15px; filter:alpha(opacity=90); opacity: 0.9; -moz-opacity:0.9;}
+.tweetsync_container .tweetsync_content{font-family:font-family:"Lucida Sans Unicode","Lucida Grande","Trebuchet MS", Helvetica, Arial, sans-serif; width:55%; background:#ffffff; position:relative; -moz-border-radius:5px; -webkit-border-radius:5px; margin:23px auto 20px auto; padding:10px 15px 10px 15px; filter:alpha(opacity=90); opacity: 0.9; -moz-opacity:0.9;}
 
 .tweetsync_container .tweetsync_content span.tweetsync_speech-bubble{display:block; width:21px; height:11px; position:absolute; top:-11px; left:10px; background:url('img/arrow.gif') 0px 0px no-repeat; filter:alpha(opacity=90);}
 .tweetsync_container .tweetsync_content span{display:block;}
@@ -26,15 +26,15 @@
 	.tweetsync_container .tweetsync_content span.tweet_meta a:visited{color:#999999; text-decoration:none; font-style:italic; font-size:12px;}
 	.tweetsync_container .tweetsync_content span.tweet_meta a:hover{color:#000000; text-decoration:none; font-style:italic; font-size:12px;}
 	
-.tweetsync_container .tweetsync_content span.tweet_author{font-family:'Lucida Grande',sans-serif;}
+.tweetsync_container .tweetsync_content span.tweet_author{font-family:font-family:"Lucida Sans Unicode","Lucida Grande","Trebuchet MS", Helvetica, Arial, sans-serif;}
 	.tweetsync_container .tweetsync_content span.tweet_author a:link,
 	.tweetsync_container .tweetsync_content span.tweet_author a:visited{display:block; font-size:28px; line-height:48px; text-indent:60px;}
 	.tweetsync_container .tweetsync_content span.tweet_author a:hover{text-decoration:underline;}
 
 .tweetsync_container .tweetsync_search{background:#c0deed url('http://a3.twimg.com/profile_background_images/101550241/oil_reporter_background.png') 0px 0px no-repeat;}
 		.tweetsync_container .tweetsync_search a:link,
-		.tweetsync_container .tweetsync_search a:visited{color:#3399FF; text-decoration:none; font-weight: bold;}
-		.tweetsync_container .tweetsync_search a:hover{color:#0066CC; text-decoration:underline; font-weight: bold;}
+		.tweetsync_container .tweetsync_search a:visited{color:#3399FF; text-decoration:none;}
+		.tweetsync_container .tweetsync_search a:hover{color:#0066CC; text-decoration:underline;}
 	.tweetsync_container .tweetsync_search .tweetsync_content span.tweet_author{float:left; margin:0px 10px 0px 0px;}
 		.tweetsync_container .tweetsync_search .tweetsync_content span.tweet_author a:link,
 		.tweetsync_container .tweetsync_search .tweetsync_content span.tweet_author a:visited{width:48px; height:48px;}
@@ -44,4 +44,4 @@
 	.tweetsync_container .tweetsync_search .tweetsync_content span.clear{clear:both;}
 	.tweetsync_container .tweetsync_search .tweetsync_content div{border-bottom:1px solid #e6e6e6; padding:8px 0px 8px 0px;}
 	
-	.tweetsync_container .tweetsync_content span.tweet_info{font-family:'Lucida Grande',sans-serif; font-size:22px; line-height:48px;}
+	.tweetsync_container .tweetsync_content span.tweet_info{font-family:font-family:"Lucida Sans Unicode","Lucida Grande","Trebuchet MS", Helvetica, Arial, sans-serif; font-size:18px; line-height:48px;}

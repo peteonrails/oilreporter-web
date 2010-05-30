@@ -1,7 +1,9 @@
 = welcome_popup
-    
+
 - content_for :js_templates do
   jQuery.preloadImages("/stylesheets/img/home_feature.jpg","/stylesheets/img/stage.jpg","/stylesheets/img/header.jpg","/images/slider_inactive.png","/images/buttons.gif","/stylesheets/img/buttons.gif","/images/slider_active.png","/stylesheets/img/drop.png","/stylesheets/img/dropR.png","/stylesheets/img/drop_sub.png");
+  
+  jQuery(document).ready(function(){ jQuery('#tweethash').tweetSync({ width:'960px', tweetCount:'5', center: true }); });
   
 #home_feature
   .background
@@ -187,10 +189,15 @@
           
           .clearboth
           
-          
           .divider.top
             %a{ :href => "#" }
               Top
+          
+          .one_half
+            = stylesheet_link_tag 'tweets.screen'
+            %h3 Twitter
+            #tweethash
+              \@oilreporter
         
         / end entry
       / end content

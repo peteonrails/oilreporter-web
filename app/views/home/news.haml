@@ -16,11 +16,18 @@
 
 .clearboth
 
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+
 #body_block
   .inner
     #primary_full
       .content
         .entry
+          %h3 Articles
           .one_fourth
             %a{ :href => "http://www.cnn.com/video/#/video/tech/2010/05/29/nr.armstrong.oil.spill.tech.cnn", :title => "Tech expert Mario Armstrong explains how new technology can enable Gulf Coast residents to become mobile oil reporters." }
               %img{ :src => "/images/pr/cnn_small.png"}
@@ -55,3 +62,11 @@
               %a{ :href => "http://twitter.com/shiralazar" }
                 Shira Lazar
               reports.
+          .clearboth
+          .divider.top
+            %a{ :href => "#" }
+              Top
+          %h3 Videos
+          .one_half
+            :erb
+              <object width="416" height="374" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="ep"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="http://i.cdn.turner.com/cnn/.element/apps/cvp/3.0/swf/cnn_416x234_embed.swf?context=embed&videoId=tech/2010/05/29/nr.armstrong.oil.spill.tech.cnn" /><param name="bgcolor" value="#000000" /><embed src="http://i.cdn.turner.com/cnn/.element/apps/cvp/3.0/swf/cnn_416x234_embed.swf?context=embed&videoId=tech/2010/05/29/nr.armstrong.oil.spill.tech.cnn" type="application/x-shockwave-flash" bgcolor="#000000" allowfullscreen="true" allowscriptaccess="always" width="416" wmode="transparent" height="374"></embed></object>

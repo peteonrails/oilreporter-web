@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def filtered_params
-    @filtered_params ||= params.symbolize_keys.reject { |k, v| [:action, :controller, :_method].include?(k) }
+    @filtered_params ||= params.symbolize_keys.reject { |k, v| [:action, :controller, :_method, :organization_pin, :organization_id].include?(k) }
   end
 
   def current_developer

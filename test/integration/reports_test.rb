@@ -39,7 +39,9 @@ class ReportsTest < ActionController::IntegrationTest
     report.merge!(:organization_pin => 0000)
 
     # For the time being we are not throwing any issues if the organization pin is invalid
-    assert true
+    post '/reports', report
+    assert_response :success
+
     # post '/reports', report
     # assert_response :unprocessable_entity
     # msg = JSON.parse(response.body)

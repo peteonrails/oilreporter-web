@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20100529161338) do
     t.string   "device_id"
     t.integer  "developer_id"
     t.integer  "organization_id"
-    t.boolean  "within_oil_spill",   :default => false
+    t.boolean  "within_oil_spill",                  :default => false
   end
 
 end

@@ -40,7 +40,7 @@
                 = f.label :email
                 (required)
               %p
-                = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url"
+                = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url", :value => "http://example.com", :onfocus => "if(this.value == 'http://example.com') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'http://example.com';}"
                 = f.label :website
                 (required)
               %p

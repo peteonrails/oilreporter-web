@@ -9,6 +9,8 @@
   - app/javascripts/jquery-ui-1.7.2.js
   - app/javascripts/jquery.cookie.js
   - app/javascripts/jquery.easing.js
+  - app/javascripts/jquery.gtrack.min.js
+  - app/javascripts/jquery.gtrack_events.js
   - app/javascripts/cufon-yui.js
   - app/javascripts/ColaborateLight_400.font.js
   - app/javascripts/jquery.prettyPhoto.js

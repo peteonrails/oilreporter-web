@@ -10,82 +10,82 @@
         %li
           = link_to 'Home', root_path
         %li
-          %a{ :href => "/about" }
+          %a{ :href => "/about", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "about#label" }
             About
         %li
-          %a{ :href => "/news" }
+          %a{ :href => "/news", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "news#label" }
             News
         %li
-          %a{ :href => "" }
+          %a{ :href => "", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "nil#label" }
             Sign Up
           %ul
             %li
-              %a{ :href => "/organizations/new" }
+              %a{ :href => "/organizations/new", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "organizations_signup#label" }
                 Organizations
             %li
-              %a{ :href => "/signup" }
+              %a{ :href => "/signup", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "developers_signup#label" }
                 Developers
         %li
-          %a{ :href => "" }
+          %a{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "headers", "gt-lbl" => "tools#label" }
             Download
           %ul
             %li
-              %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8" }
+              %a{ :href => "http://itunes.apple.com/app/oil-reporter/id372961637?mt=8", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "download_iphone_oilreporter_app#label" }
                 iPhone Reporter
             %li
-              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html" }
+              %a{ :href => "http://www.androidzoom.com/android_applications/news_and_weather/oil-reporter_gxif.html", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "download_iphone_oilreporter_app#label" }
                 Android Reporter
         %li
           %a{ :href => "" }
             View Latest
           %ul
             %li
-              = link_to "Organizations", organizations_path
+              = link_to "Organizations", organizations_path, "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "view_organizations#label"
             %li
-              = link_to "Reports", reports_path
+              = link_to "Reports", reports_path, "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "view_reports#label"
             %li
-              %a{ :href => "/map" }
+              %a{ :href => "/map", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "view_map#label" }
                 Map
             %li
-              %a{ :href => "/tools" }
+              %a{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "view_tools#label" }
                 Tools
             %li
-              %a{ :href => "/data-sources" }
+              %a{ :href => "/data-sources", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "view_data_sources#label" }
                 Data Sources
         %li
           %a{ :href => "" }
             Open Source
           %ul
             %li 
-              %a{ :href => "http://github.com/intridea/oilreporter-mobile" }
+              %a{ :href => "http://github.com/intridea/oilreporter-mobile", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "download_oil_reporter_source#label" }
                 Oil Reporter
             %li
-              %a{ :href => "http://github.com/kwhinnery/OilTracker" }
+              %a{ :href => "http://github.com/kwhinnery/OilTracker", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "download_oil_tracker_source#label" }
                 Oil Tracker
         %li
           %a{ :href => "" }
             Social Media
           %ul
             %li
-              %a{ :href => "http://www.youtube.com/OilReporter" }
+              %a{ :href => "http://www.youtube.com/OilReporter", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "youtube#label" }
                 YouTube
             %li 
-              %a{ :href => "http://www.flickr.com/photos/49994449@N05/" }
+              %a{ :href => "http://www.flickr.com/photos/49994449@N05/", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "flickr#label" }
                 Flickr
             %li 
-              %a{ :href => "http://twitter.com/oilreporter" }
+              %a{ :href => "http://twitter.com/oilreporter", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "twitter#label" }
                 Twitter
             %li 
-              %a{ :href => "http://www.facebook.com/group.php?gid=124499387563120&ref=ts" }
+              %a{ :href => "http://www.facebook.com/group.php?gid=124499387563120&ref=ts", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "facebook#label" }
                 Facebook
             %li 
-              %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response" }
+              %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "wiki#label" }
                 Wiki
         %li
-          %a{ :href => "/api" }
+          %a{ :href => "/api", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "api#label" }
             API
         %li
-          = link_to "RSS", reports_url(:format => :rss)
+          = link_to "RSS", reports_url(:format => :rss), "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "rss#label"
     / end top navigation
   / end inner
 / end header

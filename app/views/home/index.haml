@@ -18,10 +18,10 @@
             %h2 iPhone & Android
             %p 
               Oil Reporter was built with 
-              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
+              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/', "gt-cat" => "appcelerator", "gt-lbl" => "titanium#label"
               in a matter of days! Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. Download the app for iPhone or Android and start helping out today.
           .slider_img_cropped
-            %a.load_slider_img{ :href => "/tools" }
+            %a.load_slider_img{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "download"  }
               %span.rm_img
                 %img{ :src => "/images/slides/1.jpg" }
         / slide 2
@@ -30,7 +30,7 @@
             %h2 Send Reports
             %p Oil Reporter makes it easy for people to upload personal reports on the ground.
           .slider_img_cropped
-            %a.load_slider_img{ :href => "/reports" }
+            %a.load_slider_img{ :href => "/reports", "gt-evt" => "click", "gt-cat" => "reports" }
               %span.rm_img
                 %img{ :src => "/images/slides/2.jpg" }
         / slide 3
@@ -39,7 +39,7 @@
             %h2 Twitter Feed
             %p Stay in touch with what's happening on the ground with the Oil Reporter Twitter feed. 
           .slider_img_cropped
-            %a.load_slider_img{ :href => "http://search.twitter.com/search?q=%23oilspill", :target => "_blank" }
+            %a.load_slider_img{ :href => "http://search.twitter.com/search?q=%23oilspill", :target => "_blank", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "twitter,a twitter", "gt-act" => "entering twitter, leaving twitter", "gt-lbl" => "twitter!!" }
               %span.rm_img
                 %img{ :src => "/images/slides/3.jpg" }
         / slide 4
@@ -48,10 +48,10 @@
             %h2 About
             %p 
               Oil Reporter was built by 
-              = link_to 'Intridea', 'http://intridea.com'
+              = link_to 'Intridea', 'http://intridea.com', "gt-evt" => "click", "gt-cat" => "intridea"
               for the Gulf of Mexico Oil Spill. Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more.
           .slider_img_cropped
-            %a.load_slider_img{ :href => "http://intridea.com" }
+            %a.load_slider_img{ :href => "http://intridea.com", "gt-evt" => "click", "gt-cat" => "intridea" }
               %span.rm_img
                 %img{ :src => "/images/slides/4.jpg" }
 
@@ -60,7 +60,7 @@
     #intro_blurb_title
       %span Does your organization need a customized app?
     #blurb
-      %a{ :href => "/organizations/new" }
+      %a{ :href => "/organizations/new", "gt-evt" => "click", "gt-cat" => "organizations", "gt-lbl" => "signup#label" }
         Request one now!
 / end intro
         
@@ -80,15 +80,15 @@
           .one_fourth
             %p.fancy_header
               %span
-                = link_to "Report", reports_path
+                = link_to "Report", reports_path, "gt-evt" => "click", "gt-cat" => "reports"
             %p  
               %span.dropcap1
                 1
               Report oiled beaches and animals directly from your phone. Volunteer to help with the response. Start uploading your pictures and videos by 
-              %a{ :href => "/tools" }
+              %a{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "download" }
                 downloading
               the Oil Reporter app for iPhone and Android today. Share with your networks.  
-            %a{ :href => "/reports" }
+            %a{ :href => "/reports", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "reports", "gt-act" => "reports#mouseenter,reports#mouseleave" }
               %img{ :src => "/images/front_report.png", :style => "margin-top:-10px;" }
           .one_fourth
             %p.fancy_header
@@ -103,7 +103,7 @@
               %a{ :href => "/setup" }
                 Create your own
               version of Oil Reporter, volunteer to code and contribute to the API today! 
-            %a{ :href => "/setup" }
+            %a{ :href => "/setup", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "setup", "gt-act" => "setup#mouseenter,setup#mouseleave" }
               %img{ :src => "/images/front_customize.png", :style => "margin-top:-10px;" }
           .one_fourth
             %p.fancy_header
@@ -114,7 +114,7 @@
               COMING SOON: Get trained to map imagery of beaches and wetlands, provide visual context and local knowledge. No experience necessary. You just need access to the internet & commitment to monitor a section of beach with your expertise. 
               %a{ :href => "http://adoptabeach.eventbrite.com" }
                 Sign up today!
-            %a{ :href => "" }
+            %a{ :href => "http://adoptabeach.eventbrite.com", "gt-evt" => "click", "gt-cat" => "adopt", "gt-lbl" => "signup#label" }
               %img{ :src => "/images/front_adopt.png", :style => "margin-top:-10px;" }
           .one_fourth.last
             %p.fancy_header
@@ -126,7 +126,7 @@
               %a{ :href => "/api" }
                 Oil Reporter API.
               If you're a response organization, do you need reports of your data? Check out open tools you can use to map Oil Reporter data and other open data feeds.  
-            %a{ :href => "/tools" }
+            %a{ :href => "/tools", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "api", "gt-act" => "api#mouseenter,api#mouseleave" }
               %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
           
           .clearboth
@@ -140,7 +140,7 @@
     #blurb{ :style => "padding:54px 230px 80px 0;" }
       Download the new iPhone or Android application for Oil Reporter
       #call_to_action_button1
-        %a{ :href => "/tools" }
+        %a{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "download" }
 
 #body_block
   .inner
@@ -154,38 +154,27 @@
             %h6 Building better applications.
             %p
               Oil Reporter was built by 
-              = link_to 'Intridea', 'http://intridea.com'
+              = link_to 'Intridea', 'http://intridea.com', "gt-evt" => "click", "gt-cat" => "intridea"
               for the Gulf of Mexico Oil Spill. On April 20, 2010, an explosion occurred on the semi-submersible offshore drilling rig Deepwater Horizon in the Gulf of Mexico killing 11 rig workers and injuring 17 others. On April 24, it was found that the wellhead was damaged and was leaking oil into the Gulf. Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. 
           
           .one_half.last
-            %a{ :href => "http://crisiscommons.org" }
+            %a{ :href => "http://crisiscommons.org", "gt-evt" => "click", "gt-cat" => "crisiscommons" }
               %h3 Crisis Commons
             %h6 Helping save lives through technology.
             %p
-              = link_to 'Crisis Commons', 'http://crisiscommons.org'
+              = link_to 'Crisis Commons', 'http://crisiscommons.org', "gt-evt" => "click", "gt-cat" => "crisiscommons"
               is an international volunteer network of technical and business professionals drawn together by a call to service. We create technological tools and resources for responders to use in mitigating disasters and crises around the world. CrisisCamps are efforts by local communities to garner the collective skills of volunteers, particularly technology related, to support relief efforts during crises, such as natural disasters. Most recently, CrisisCamps have been active in supporting relief efforts following the earthquake in Haiti.
           
           .one_half
-            %h3 Appcelerator
+            %a{ :href => "http://appcelerator.com", "gt-evt" => "click", "gt-cat" => "appcelerator" }
+              %h3 Appcelerator
             %h6 Built with Titanium.
             %p
               Oil Reporter was built with 
-              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
-              in a matter of days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Learn more about
-              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/'
+              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/', "gt-evt" => "click", "gt-cat" => "appcelerator", "gt-lbl" => "titanium#label"
+              in a matter of days! You’ve got the ideas, now you’ve got the power. Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. Download
+              = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/download/', "gt-evt" => "click", "gt-cat" => "appcelerator", "gt-lbl" => "titanium#label"
               for mobile development. 
-          
-          .one_half.last
-            %h3 Github
-            %h6 Social Coding.
-            %p
-              Oil Reporter for iPhone and Android has been released as open source on GitHub. If you're a developer and would like to contribute then please 
-              = link_to 'join the social coding!', 'http://github.com/intridea/oilreporter-mobile'
-            %p
-              What is 
-              %a{ :href => "http://github.com" }
-                Github?
-              Github is an online project hosting site that uses Git. Includes source-code browser, in-line editing, wikis, and ticketing. Free for public open-source code. 
           
           .clearboth
           

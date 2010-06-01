@@ -493,6 +493,23 @@ jQuery.extend( jQuery.easing,
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('(7($){18=7(q,k,o,f){3.B=A;3.q=q;3.k=k;3.o=o;3.f=f};12=7(F){3.F=F;3.X=A;3.V=7(h){};3.R=7(E){};3.s="1h";3.O=1n;3.d={};3.T=A;3.Q=A};1c=7(6,m){3.B=A;3.6=6;3.m=m;3.p=6;3.n="";3.y="1";3.d={}};$.4=7(2){$.N($.4.2,2);$.4.1b()};$.r({h:a,W:0,x:[],2:L 12(a),1b:7(){5 Y=(("P:"==1k.1l.1j)?"P://1m.":"1p://1o.");5 S=Y+"1e-1f.1g/1i.1q";$.1A(S,7(){5 h=1B.1y($.4.2.F);$.4.h=h;8($.4.2.X){h.1z()}$.4.2.V(h)});8($.4.2.T){$("*[j-17][j-1a]").15()}8($.4.2.Q){$(1C).1D(7(){$.4.I()})}8($.4.2.O>0){$.4.W=1E(7(){$.4.I()},$.4.2.O)}},1d:7(2){8(2.B){$.4.U(2)}v{$.4.J(2)}},J:7(2){$.4.2.R(2);g $.4.h.1t(2.q,2.k,2.o,2.f)},U:7(2){5 w=2.q+"Z"+2.k+"Z"+2.o;5 D=$.4.x[w];8(D==a){$.4.x[w]=$.N({},2);D=$.4.x[w]}v{D.f+=2.f}},I:7(){1s(5 w 1r $.4.x){5 2=$.4.x[w];8(2.f>0){$.4.J(2);2.f=0}}},11:7(e){5 z=e.b[$.4.2.s];5 2=L 18(z.q,z.k,z.o,z.f);$.4.1d(2)}},7(i){$.4[i]=3});$.K.15=7(2){5 16=2;g 3.r(7(){5 $3=$(3);5 G=L 1c($3.u("j-17"),$3.u("j-1a"));8($3.u("j-10")!=a){G.p=$3.u("j-10")}8($3.u("j-13")!=a){G.n=$3.u("j-13")}2=$.N(G,16);5 6=2.6.t(",");5 m=2.m.t(",");5 p=2.p.t(",");5 n=2.n.t(",");5 y=2.y.t(",");$.r(6,7(i){5 c=6[i];5 H=7(){5 9=$.4.11;5 M=$.4.2.d[c];8(M!=a){9=M}5 C=a;8(2.d!=a){C=2.d[c]}8(C!=a){9=C}g 9}();5 b=$3.b($.4.2.s);8(b!=a){8(b.d!=a){$3.14(c,b.d[c])}}5 E={};E[$.4.2.s]={B:2.B,k:c,q:7(){5 9="";8(m.l!=6.l){9=2.m}v{9=m[i]}g 9}(),k:7(){5 9="";8(p.l!=6.l){9=2.p}v{9=p[i]}g 9}(),o:7(){5 9="";8(n.l!=6.l){9=2.n}v{9=n[i]}g 9}(),f:7(){5 9="";8(y.l!=6.l){9=2.y}v{9=y[i]}g 1x(9)}()};$3.1w(c,E,H);2.d[c]=H});$3.b($.4.2.s,2)})};$.K.1v=7(6){g 3.r(7(){5 $3=$(3);5 b=$3.b($.4.2.s);8(b!=a){8(b.d!=a){8(6==a){6=b.6}8(6==a){6=""}6=6.t(",");$.r(6,7(i){5 c=6[i];$3.19(c);$3.14(c,b.d[c])})}}})};$.K.4=7(6){g 3.r(7(){5 $3=$(3);8(6==a){5 b=$3.b($.4.2.s);8(b!=a){6=b.6}}8(6==a){6=""}6=6.t(",");$.r(6,7(i){5 c=6[i];$3.19(c)})})}})(1u);',62,103,'||options|this|gtrack|var|events|function|if|result|null|data|name|handlers||count|return|tracker||gt|action|length|categories|labels|label|actions|category|each|dataName|split|attr|else|key|pooledTrack|counts|gtrackData|true|isPooled|userDefinedHandler|val|option|account|defaults|handler|trackPooled|trackDirectly|fn|new|defaultHandler|extend|intervalPool|https|autoFlush|onTracking|url|autoInit|addTrackToPool|onInitFinished|poolId|isPageTrackEnabled|host|_|act|getDefaultEvent|GTrackSysInitOptions|lbl|unbind|gtrackInit|userDefinedOptions|evt|GTrackOptions|trigger|cat|init|GTrackInitOptions|track|google|analytics|com|gtdata|ga|protocol|document|location|ssl|60000|www|http|js|in|for|_trackEvent|jQuery|gtrackFin|bind|parseInt|_getTracker|_trackPageview|getScript|_gat|window|unload|setInterval'.split('|'),0,{}))
+jQuery(document).ready(function()
+{
+	jQuery.gtrack(
+	{
+		account: "UA-2083560-30",
+		intervalPool: 2000,
+		onInitFinished: function(tracker)
+		{
+			tracker._setDomainName("none");
+		},
+		onTracking: function(option)
+		{
+			console.debug("sent [category:" + option.category + "], [action:" + option.action + "], [label:" + option.label + "], [count:" + option.count + "]");
+		}
+	});
+});
 /*
  * Copyright (c) 2009 Simo Kinnunen.
  * Licensed under the MIT license.

@@ -1,25 +1,25 @@
 - form_for(:organization, :url => organizations_path, :html => { :id => 'contact_form' }) do |f|
   %fieldset
     %p
-      = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field"
+      = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "name#mouseenter,name#mouseleave" }
       %br
       = f.label :name, "Organization Name"
     %p
-      = f.text_field :contact_person, :class => "requiredFieldContact textfield", :id => "field"
+      = f.text_field :contact_person, :class => "requiredFieldContact textfield", :id => "field", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "contact_person#mouseenter,contact_person#mouseleave" }
       %br
       = f.label :contact_person, "Contact Person"
     %p
-      = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email"
+      = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "email#mouseenter,email#mouseleave" }
       %br
       = f.label :email, "&nbsp;E-mail Address"
     %p
-      = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url"
+      = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "url#mouseenter,url#mouseleave" }
       %br
       = f.label :website
     %p
-      = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field"
+      = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "textarea#mouseenter,textarea#mouseleave" }
     %p
-      = recaptcha_tags(:display => {:theme => 'white' })
-    %p.loadingImgWidgetFt
+      %div{ :style => "margin-bottom:10px;" }
+        = recaptcha_tags(:display => {:theme => 'white' })
     %p
-      = submit_tag('Submit', :class => "round s button")
+      = submit_tag('Submit', :class => "round s button", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "organizations", "gt-act" => "submit#mouseenter,submit#mouseleave" })

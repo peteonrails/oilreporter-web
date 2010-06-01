@@ -32,26 +32,27 @@
           - form_for(:developer, :url => { :action => 'create' }, :html => { :id => 'contact_form' }) do |f|
             %fieldset
               %p
-                = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field"
+                = f.text_field :name, :class => "requiredFieldContact textfield", :id => "field", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "name#mouseenter,name#mouseleave" }
                 = f.label :name
                 (required)
               %p
-                = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email"
+                = f.text_field :email, :class => "requiredFieldContact textfield", :id => "email", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "email#mouseenter,email#mouseleave" }
                 = f.label :email
                 (required)
               %p
-                = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url", :value => "http://example.com", :onfocus => "if(this.value == 'http://example.com') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'http://example.com';}"
+                = f.text_field :website, :class => "requiredFieldContact textfield", :id => "url", :value => "http://example.com", :onfocus => "if(this.value == 'http://example.com') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'http://example.com';}", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "website#mouseenter,website#mouseleave" }
                 = f.label :website
                 (required)
               %p
-                = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field", :value => "Briefly describe why you are signing up for the Oil Reporter API.", :onfocus => "if(this.value == 'Briefly describe why you are signing up for the Oil Reporter API.') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'Briefly describe why you are signing up for the Oil Reporter API.';}"
+                = f.text_area :purpose, :class => "requiredFieldContact textarea", :id => "field", :value => "Briefly describe why you are signing up for the Oil Reporter API.", :onfocus => "if(this.value == 'Briefly describe why you are signing up for the Oil Reporter API.') {this.value = '';}", :onblur => "if (this.value == '') {this.value = 'Briefly describe why you are signing up for the Oil Reporter API.';}", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "textarea#mouseenter,textarea#mouseleave" }
               %p
-                = f.check_box :volunteer, :class => "input"
+                = f.check_box :volunteer, :class => "input", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "volunteer#mouseenter,volunteer#mouseleave" }
                 = f.label :volunteer, 'Please contact me regarding volunteer development opportunities.'
               %p
-                = recaptcha_tags(:display => {:theme => 'white'})
+                %div{ :style => "margin-bottom:10px;" }
+                  = recaptcha_tags(:display => {:theme => 'white'})
               %p
-                = submit_tag('Submit', :class => "round s button")
+                = submit_tag('Submit', :class => "round s button", :html => { "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "developers", "gt-act" => "submit#mouseenter,submit#mouseleave" })
         .clearboth
         / end two_third
       /end content 

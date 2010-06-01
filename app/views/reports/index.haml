@@ -24,7 +24,7 @@
       .content
         %h2#tables
           Oil Report
-          = link_to "(RSS)", reports_url(:format => :rss)
+          = link_to "(RSS)", reports_url(:format => :rss), "gt-evt" => "click", "gt-cat" => "rss"
         %table{ :cellpadding => "0", :cellspacing => "0", :border => "0" }
           %tr
             %th
@@ -58,7 +58,7 @@
                   .image_loader
                     .reports_img_holder
                       .loading_reports
-                      %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :class => "load_reports_img" }
+                      %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :class => "load_reports_img", "gt-evt" => "click", "gt-cat" => "reports", "gt-lbl" => "View Large Image" }
                         %span.rm_img.noscript
                           %img{ :src => "#{report.media(:medium)}" }
                         %span.roll_over.rollover  

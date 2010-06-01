@@ -82,7 +82,8 @@
               %a{ :href => "http://wiki.crisiscommons.org/wiki/Oil_Spill_Response" }
                 Wiki
         %li
-          = link_to "API", api_path
+          %a{ :href => "/api" }
+            API
         %li
           = link_to "RSS", reports_url(:format => :rss)
     / end top navigation

@@ -47,8 +47,10 @@ class OrganizationsTest < ActionController::IntegrationTest
     Factory.create(:super_friends)
 
     get '/organizations'
-    assert_response :success
-    assert_template :index
+    assert_response :redirect
+    # Per Heather's request, no longer showing signed-up organizations
+    # assert_response :success
+    # assert_template :index
   end
 
   test 'list reports for an organization' do

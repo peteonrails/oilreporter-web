@@ -3,6 +3,9 @@ class OrganizationsController < ApplicationController
   before_filter :verify_api_key, :only => [:show]
 
   def index
+    # Per Heather's request, no longer showing signed-up organizations
+    redirect_to :controller => 'home', :action => 'setup' and return
+
     add_crumb "organizations", '/organizations'
     @organizations = Organization.paginate(:page => params[:page])
   end

@@ -12,13 +12,16 @@ class OrganizationsTest < ActionController::IntegrationTest
     assert_redirected_to :controller => 'home', :action => 'setup'
   end
 
-  test 'creating a organization sends an email' do
+  test 'creating a organization sends two emails' do
     # Empty our outbox
     ActionMailer::Base.deliveries = [] 
     assert ActionMailer::Base.deliveries.empty?
 
     test_create_organization
     assert !ActionMailer::Base.deliveries.empty?
+
+    # One for the pin, one to notify us of a signup
+    assert ActionMailer::Base.deliveries.count == 2
   end
 
   test 'create evil organization' do

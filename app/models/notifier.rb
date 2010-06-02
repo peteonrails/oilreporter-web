@@ -20,4 +20,12 @@ class Notifier < ActionMailer::Base
     body          :pin => organization.pin
   end
 
+  def organization_signup(organization)
+    subject    "A new organization signed up"
+    from       "Oil Reporter <noreply@#{HOST}>"
+    recipients Oilreporter.config.organization_signup_recipients
+    sent_on    Time.now
+    body       :organization => organization
+  end
+
 end

@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(:version => 20100529161338) do
     t.datetime "updated_at"
     t.integer  "wetlands"
     t.string   "wildlife"
+    t.integer  "organization_id",    :limit => 255
     t.string   "device_id"
     t.integer  "developer_id"
-    t.integer  "organization_id"
     t.boolean  "within_oil_spill",                  :default => false
   end
 

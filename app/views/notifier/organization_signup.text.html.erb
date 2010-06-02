@@ -1,0 +1,5 @@
+<strong>Name:</strong> <%= @organization.name %><br />
+<strong>Contact person:</strong> <%= @organization.contact_person %><br />
+<strong>Email:</strong> <%= @organization.email %><br />
+<strong>Website:</strong> <%= @organization.website.blank? ? 'None given' : link_to(@organization.website, @organization.website) %><br />
+<strong>Purpose:</strong> <%= @organization.purpose %>

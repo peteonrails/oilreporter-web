@@ -1,0 +1,5 @@
+Name:  <%= @organization.name %>
+Contact person:  <%= @organization.contact_person %>
+Email:  <%= @organization.email %>
+Website:  <%= @organization.website.blank? ? 'None given' : link_to(@organization.website, @organization.website) %>
+Purpose:  <%= @organization.purpose %>

@@ -16,6 +16,7 @@ class OrganizationsController < ApplicationController
       @organization.save
       flash.now[:info] = "Thank you! We'll be getting in touch with you shortly. Your PIN is #{@organization.pin}"
       Notifier.deliver_organization_pin(@organization)
+      Notifier.deliver_organization_signup(@organization)
       redirect_to :controller => 'home', :action => 'setup'
     else
       flash.now[:error] = "There was a problem trying to save your information. Please complete all fields."

@@ -6,48 +6,48 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml-coderay: 
-    group: 
-    - :default
-    version: ">= 0"
   rails: 
     group: 
     - :rails
     version: ~> 2.3.5
     require: []
 
+  haml-coderay: 
+    group: 
+    - :default
+    version: ">= 0"
+  httparty: 
+    group: 
+    - :default
+    version: ">= 0"
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
   sprockets-rails: 
     group: 
     - :plugins
     version: ~> 0.0.1
-  SystemTimer: 
+  mysql: 
     group: 
     - :default
-    version: ~> 1.2.0
-    require: 
-    - system_timer
+    version: ~> 2.8.1
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
   memcache-client: 
     group: 
     - :rails
     version: ">= 1.7.4"
     require: []
 
-  haml: 
+  SystemTimer: 
     group: 
     - :default
-    version: ">= 0"
-  mysql: 
-    group: 
-    - :default
-    version: ~> 2.8.1
+    version: ~> 1.2.0
+    require: 
+    - system_timer
   sqlite3-ruby: 
     group: 
     - :development
@@ -92,6 +92,10 @@ dependencies:
     version: ~> 0.3.0
     require: []
 
+  taps: 
+    group: 
+    - :default
+    version: ">= 0"
   pickle: 
     group: 
     - :testing
@@ -102,16 +106,16 @@ dependencies:
     version: ">= 0"
     require: 
     - recaptcha/rails
+  RedCloth: 
+    group: 
+    - :default
+    version: ">= 0"
   aws-s3: 
     group: 
     - :default
     version: ~> 0.6.2
     require: 
     - aws/s3
-  RedCloth: 
-    group: 
-    - :default
-    version: ">= 0"
   capybara: 
     group: 
     - :testing
@@ -158,7 +162,7 @@ specs:
 - json_pure: 
     version: 1.4.3
 - selenium-webdriver: 
-    version: 0.0.18
+    version: 0.0.19
 - capybara: 
     version: 0.3.8
 - coderay: 
@@ -190,7 +194,7 @@ specs:
 - factory_girl: 
     version: 1.2.4
 - haml: 
-    version: 3.0.6
+    version: 3.0.9
 - haml-coderay: 
     version: 0.0.2
 - httparty: 
@@ -200,7 +204,7 @@ specs:
 - memcache-client: 
     version: 1.8.3
 - meta-tags: 
-    version: 1.1.1
+    version: 1.2.0
 - mysql: 
     version: 2.8.1
 - paperclip: 
@@ -213,6 +217,8 @@ specs:
     version: 2.3.8
 - recaptcha: 
     version: 0.2.3
+- rest-client: 
+    version: 1.4.2
 - rspec: 
     version: 1.3.0
 - rspec-rails: 
@@ -221,17 +227,23 @@ specs:
     version: 0.10.3
 - ruby-debug: 
     version: 0.10.3
+- sequel: 
+    version: 3.10.0
+- sinatra: 
+    version: "1.0"
 - sprockets: 
     version: 1.0.2
 - sprockets-rails: 
     version: 0.0.1
 - sqlite3-ruby: 
     version: 1.2.5
+- taps: 
+    version: 0.3.6
 - thin: 
     version: 1.2.7
 - will_paginate: 
     version: 2.3.14
-hash: 58f741bbab339dc1f7f14e3fb89232420c619335
+hash: c26829695cd5dd516c018ec8cd0d9d2d01e0db1d
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

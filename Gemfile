@@ -15,6 +15,7 @@ gem 'pg', '~> 0.9.0'
 gem 'thin'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
 gem 'crummy'
+gem 'taps'
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'

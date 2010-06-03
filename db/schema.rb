@@ -9,17 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100529161338) do
+ActiveRecord::Schema.define(:version => 20100603020437) do
 
   create_table "developers", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "website"
-    t.text     "purpose",    :limit => 255
+    t.text     "purpose"
     t.string   "api_key"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "volunteer",                 :default => false
+    t.boolean  "volunteer",  :default => false
   end
 
   create_table "organizations", :force => true do |t|
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20100529161338) do
   end
 
   create_table "reports", :force => true do |t|
-    t.text     "description",        :limit => 255
+    t.text     "description"
     t.integer  "oil"
     t.string   "media_file_name"
     t.string   "media_content_type"
@@ -46,10 +46,12 @@ ActiveRecord::Schema.define(:version => 20100529161338) do
     t.datetime "updated_at"
     t.integer  "wetlands"
     t.string   "wildlife"
-    t.integer  "organization_id",    :limit => 255
     t.string   "device_id"
     t.integer  "developer_id"
-    t.boolean  "within_oil_spill",                  :default => false
+    t.integer  "organization_id"
+    t.boolean  "within_oil_spill",   :default => false
   end
+
+  add_index "reports", ["latitude", "longitude", "device_id"], :name => "index_reports", :unique => true
 
 end

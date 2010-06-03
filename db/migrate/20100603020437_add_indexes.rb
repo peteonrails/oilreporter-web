@@ -4,6 +4,6 @@ class AddIndexes < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index :reports, [:latitude, :longitude, :device_id], :name => "index_reports", :unique => true
+    remove_index :reports, [:latitude, :longitude, :device_id], :name => "index_reports"
   end
 end

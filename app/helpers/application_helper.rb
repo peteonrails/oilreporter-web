@@ -68,4 +68,26 @@ module ApplicationHelper
     render :partial => 'shared/welcome_popup'
   end
   
+  def current_year
+    Date.today.year
+  end
+  
+  def sanitize_feed_content(html, sanitize_tables = false)
+    options = sanitize_tables ? {} : {:tags => %w(table thead tfoot tbody td tr th)}
+    returning h(sanitize(html.strip, options)) do |html|
+      html.gsub! /&amp;(#\d+);/ do |s|
+        "&#{$1};"
+      end
+    end
+  end
+  
+  def body_class
+    klass = []
+    klass << controller.controller_class_name
+    klass << controller.action_name
+    klass << controller.controller_name + '_' + controller.action_name
+    klass << params[:page_url].underscore if params[:page_url]
+    return klass.join(' ')
+  end
+  
 end

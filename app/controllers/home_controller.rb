@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   
+  ENABLE_FEATURED_POSTS = true;
+  
   def setup
     add_crumb "setup", '/setup'
   end

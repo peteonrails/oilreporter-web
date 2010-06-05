@@ -12,3 +12,9 @@ config.gem 'factory_girl',
 HOST = 'localhost'
 
 require 'factory_girl'
+
+config.after_initialize do
+  Disqus::defaults[:account] = "oilreporter"
+end
+
+  config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))

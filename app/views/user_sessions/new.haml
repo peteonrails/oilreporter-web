@@ -1,0 +1,47 @@
+- content_for :head do
+  = set_meta_tags :title => 'Please login'
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Admin Area
+    #blurb
+      Please Sign In
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary
+      .content
+        - if flash.any?
+          - flash.each do |key, value|
+            .two_third
+              %div{ :class => "#{key}_box" }
+                = value
+        .two_third
+          - form_for @user_session, :url => user_session_path do |f|
+            %fieldset
+              %p
+                = f.text_field :login
+                = f.label :username
+              %p
+                = f.password_field :password
+                = f.label :password
+              %p
+                = f.check_box :remember_me, :class => "input"
+                = f.label :remember_me, 'Remember Me'
+              %p
+                = submit_tag('Login', :class => "round s button")
+        .clearboth
+        / end two_third
+      /end content 
+    / end primary_full
+  / end inner
+/ end body_block

@@ -13,16 +13,14 @@ class Report < ActiveRecord::Base
   named_scope :within_oil_spill, :conditions => { :within_oil_spill => true }
 
   has_attached_file :media,
-    :styles => {
+    :styles => { 
       :tiny  => "50x50#",
       :thumb  => "100x100#",
       :medium => "300x300>",
     },
-    :storage => (RAILS_ENV == 'production' ? :s3 : :filesystem),
-    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-    :path => (RAILS_ENV == 'production' ? ':attachment/:id/:style.:extension' :
-                                          'public/system/:attachment/:id/:style/:basename.:extension'),
-    :bucket => 'oilspill_photos'
+    :path => Oilreporter.config.amazon_s3 ?
+      ":attachment/:id/:style.:extension" :
+      "public/system/:attachment/:id/:style/:basename.:extension"
 
   def verify_location
     self.update_attribute(:within_oil_spill, OilSpill.instance.contains?(self.latitude, self.longitude))

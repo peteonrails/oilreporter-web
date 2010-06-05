@@ -1,0 +1,71 @@
+- content_for :head do
+  = set_meta_tags :title => "#{@user.login.camelcase} Profile"
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span 
+        = @user.login.camelcase
+        Profile
+    #blurb
+      = link_to 'Click to edit profile', edit_admin_user_path(@user)
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary
+      .content
+        .one_third
+          %h6
+            Account
+          %p
+            %strong login:
+            = @user.login.downcase
+          %p
+            %strong name:
+            = @user.first_name.downcase unless @user.first_name.blank?
+            = @user.last_name.downcase unless @user.last_name.blank?
+          %p
+            %strong company:
+            = @user.company.downcase unless @user.company.blank?
+          %p
+            %strong email:
+            = @user.email.downcase unless @user.email.blank?
+        .one_third
+          %h6 
+            Links
+          %p
+            %strong website:
+            = link_to @user.website.downcase, @user.website.downcase unless @user.website.blank?
+          %p
+            %strong twitter:
+            = link_to "@#{@user.twitter}", "http://twitter.com/#{@user.twitter}" unless @user.twitter.blank?
+          %p
+            %strong blog:
+            = link_to @user.blog, @user.blog unless @user.blog.blank?
+        .one_third.last
+          %h6 
+            Stats
+          %p
+            %strong login count:
+            = @user.login_count
+          %p
+            %strong last request:
+            = @user.last_request_at
+          %p
+            %strong last login:
+            = @user.last_login_at
+          %p
+            %strong last login ip:
+            = @user.last_login_ip
+          %p
+            %strong current login ip:
+            = @user.current_login_ip
+        .clearboth

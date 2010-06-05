@@ -1,0 +1,62 @@
+- content_for :head do
+  = set_meta_tags :title => 'New Post' 
+    
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span New Post
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary_full
+      .content
+        - form_for :post, @post, :url => { :action => "create" } do |f|
+          %fieldset
+            %p
+              = f.label :title
+              %br
+              = f.text_field :title
+            %p
+              = f.label :author
+              %br
+              = f.select :user_id, User.author_select_options, :selected => (@post ? @post.user_id : current_user.id)
+            %p
+              = f.label :formatting
+              %br
+              = f.select :body_format, ["html", "textile", "markdown"]
+            %p
+              = f.label :body
+              = f.text_area :body
+            %p
+              = f.label :excerpt
+              %br
+              = f.text_area :excerpt
+            %p
+              = f.label :tags
+              %br
+              = f.text_field :tag_list
+            %p
+              = f.label :url
+              %br
+              = f.text_field :slug
+            %p
+              = f.label :make_draft
+              = f.check_box :draft
+            %p
+              = f.label :publish_on
+              %br
+              = f.datetime_select :published_on
+            - if HomeController::ENABLE_FEATURED_POSTS
+              %p
+                = f.label :feature_on_homepage
+                = f.check_box :featured
+            %p
+              = submit_tag "Save", :value => 'save', :class => "round s button"

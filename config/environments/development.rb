@@ -17,3 +17,7 @@ config.action_view.debug_rjs                         = true
 config.action_mailer.raise_delivery_errors = false
 
 HOST = 'localhost'
+
+config.after_initialize do
+  Disqus::defaults[:account] = "oilreporter"
+end

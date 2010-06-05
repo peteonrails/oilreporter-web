@@ -36,3 +36,7 @@ config.action_mailer.delivery_method = :smtp
 config.threadsafe!
 
 HOST = 'oilreporter.org'
+
+config.after_initialize do
+  Disqus::defaults[:account] = "oilreporter"
+end

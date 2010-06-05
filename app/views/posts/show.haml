@@ -1,0 +1,27 @@
+- content_for :head do
+  = set_meta_tags :title => "#{post.title}"
+
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span 
+        = post.title
+    #blurb
+      by
+      = post.user.name
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#has_sidebar
+  #body_block
+    .inner
+      #primary
+        .content
+          = render :partial => '/shared/post_with_comments', :locals => { :post_with_comments => post }
+      = render :partial => "blogs/sidebar"

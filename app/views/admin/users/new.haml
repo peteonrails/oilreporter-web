@@ -1,0 +1,91 @@
+- content_for :head do
+  = set_meta_tags :title => 'Create User'
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Create User
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary
+      - if flash.any?
+        - flash.each do |key, value|
+          .two_third
+            %div{ :class => "#{key}_box" }
+              = value
+          .clearboth
+      .content
+        = error_messages_for :user
+        - form_for @user, :url => admin_users_path do |f|
+          %fieldset
+            %h5 General
+            %p
+              = f.label :photo
+            %p
+              = image_tag(@user.photo.url(:original))
+            %p
+              = f.file_field :photo
+            %p
+              = f.label :active
+              = f.check_box :listed
+            %p
+              = f.label :login
+              %br
+              = f.text_field :login
+            %p
+              = f.label :email
+              %br
+              = f.text_field :email
+            %p
+              = f.label :first_name
+              %br
+              = f.text_field :first_name
+            %p
+              = f.label :last_name
+              %br
+              = f.text_field :last_name
+            %p
+              = f.label :company
+              %br
+              = f.text_field :company
+            %p
+              = f.label :title
+              %br
+              = f.text_field :title
+            %p
+              = f.label :bio
+              %br
+              = f.text_area :bio
+            %h5 Password
+            %p
+              = f.label :password, f.object.new_record? ? nil : "Password"
+              %br
+              = f.password_field :password
+            %p
+              = f.label :password_confirmation
+              %br
+              = f.password_field :password_confirmation
+            %h5 Links
+            %p
+              = f.label :twitter, "Twitter Username"
+              %br
+              = f.text_field :twitter
+            %p
+              = f.label :blog, "Blog"
+              %br
+              = f.text_field :blog
+            %p
+              = f.label :website, "Website"
+              %br
+              = f.text_field :website
+            %p
+              = submit_tag "Create", :value => 'Create', :class => "round s button"

@@ -134,6 +134,35 @@
           .divider.top
             %a{ :href => "#" }
               Top
+          
+          - unless Post.published.featured.blank?
+            .one_half
+              %h1 Featured Post
+              - Post.published.featured.by_date.limit(1).each do |post|
+                %h2.blog_header
+                  = link_to(post.title, post_link(post))
+                .top_metadata
+                  by
+                  = post.user.name
+                  on
+                  = post.published_on.strftime("%B %d, %Y").gsub(" 0"," ")
+                %p
+                  = post.excerpt
+                %p
+                  %a{ :href => "#{post_link(post)}", :class => "button_link" }
+                    %span Continue reading &raquo;
+          
+          - unless Post.published.blank?
+            .one_half.last
+              %h1 Recent Posts
+              - Post.published.by_date.limit(3).each do |post|
+                %h2.blog_header 
+                  = link_to(post.title, post_link(post))
+                .top_metadata
+                  by
+                  = post.user.name
+                  on
+                  = post.published_on.strftime("%B %d, %Y").gsub(" 0"," ")
 
 #call_to_action
   .inner

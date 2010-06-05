@@ -35,6 +35,9 @@ defaults: &defaults
 
   organization_signup_recipients:
     - test@oilreporter.local
+  
+  default_blog: 'oilreporter'
+  twitter: 'oilreporter'
 
 development:
   <<: *defaults

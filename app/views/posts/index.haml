@@ -1,0 +1,4 @@
+= render :partial => '/shared/post', :collection => @posts
+
+- content_for :head do
+  = set_meta_tags :title => "Archives"

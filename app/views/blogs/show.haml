@@ -1,0 +1,28 @@
+- content_for :head do
+  = set_meta_tags :title => "Blog"
+
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Blog
+    #blurb
+      Oil Reporter covering the latest Gulf Oil Crisis news. 
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#has_sidebar
+  #body_block
+    .inner
+      #primary
+        .content
+          %h1
+            Oil Reporter Blog
+          = render :partial => '/shared/post', :collection => @posts
+          = will_paginate @posts
+      = render :partial => "blogs/sidebar"

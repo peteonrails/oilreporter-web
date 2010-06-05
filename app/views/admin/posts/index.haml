@@ -1,0 +1,77 @@
+- content_for :head do
+  = set_meta_tags :title => 'Admin Area'
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Posts
+    #blurb
+      = link_to 'Click to create a new post', new_admin_post_path
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary_full
+      - if flash.any?
+        - flash.each do |key, value|
+          .two_third
+            %div{ :class => "#{key}_box" }
+              = value
+          .clearboth
+      .content
+        - if @posts.empty?
+          %p 
+            No posts, yet. Why don't you 
+            = link_to 'create one', new_admin_post_path, :style => "text-decoration:underline;"
+            now?
+        - else
+          %h2#tables
+            Posts
+          %table{ :cellpadding => "0", :cellspacing => "0", :border => "0" }
+            %tr
+              %th
+                Name
+              %th
+                Status
+              %th
+                Published
+              %th
+                Username
+              %th
+                Manage
+            - for post in @posts
+              %tr{ :class => future_draft(post) }
+                %td
+                  - if post.draft?
+                    = link_to truncate(post.title, 50), admin_post_path(post)
+                  - else
+                    = link_to truncate(post.title, 50), post_path(post)
+                  - if post.featured? && HomeController::ENABLE_FEATURED_POSTS
+                    &#9733;
+                %td
+                  = post.draft? ? "Draft" : "Published"
+                %td
+                  = post.published_on.strftime("%m/%d/%y")
+                %td
+                  = post.user.name
+                %td
+                  = link_to "Edit", edit_admin_post_path(post)
+                  |
+                  = link_to "Delete", admin_post_path(post), :method => :delete, :confirm => "Are you sure you want to delete this post?"
+          = will_paginate(@posts)
+          - if HomeController::ENABLE_FEATURED_POSTS
+            %p
+              Posts, denoted with a star, are featured on the homepage.
+      / end content
+      .clearboth
+    / end primary_full
+  / end inner
+/ end body_block
+

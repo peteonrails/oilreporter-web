@@ -23,5 +23,30 @@ ActionController::Routing::Routes.draw do |map|
 
   # Organizations
   map.resources :organizations, :only => [:index, :create, :new, :show]
+  
+  # Admin
+  map.resources :posts, :only => :show
+  map.resource :user_session
+  
+  map.namespace :admin do |admin|
+    admin.resources :posts
+    admin.resources :users, :collection => {:update_positions => :put}
+  end
+  
+  map.admin_home 'admin', :controller => 'admin/posts', :action => 'index'
+  map.preview 'admin/post/preview', :controller => 'admin/posts', :action => 'preview'
+  
+  # Blog
+  map.default_blog 'blog', :controller => 'blogs', :action => 'index'
+  map.blog 'blog/:id', :controller => 'blogs', :action => 'show'
+  map.blog_author 'blog/authors/:id', :controller => 'authors', :action => 'show'
+  map.tag '/tag/:id', :controller => 'blogs', :action => 'tag'
+  map.blog_post '/:year/:month/:day/:id', :controller => 'posts', :action => 'show', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/, :day => /\d{1,2}/}
+  map.default_blog_feed 'blog/feed.xml', :controller => 'blogs', :action => 'feed'
+  map.blog_feed 'blog/:id/feed.xml', :controller => 'blogs', :action => 'feed'
+  map.posts_by_year '/blog/archives/:year', :controller => 'posts', :action => 'index', :requirements => {:year => /\d{4}/}
+  map.posts_by_month '/blog/archives/:year/:month', :controller => 'posts', :action => 'index', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
+  map.post_by_date '/blog/archives/:year/:month/:day', :controller => 'posts', :action => 'show', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
+  map.post_by_slug '/:year/:month/:day/:id', :controller => 'posts', :action => 'show', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
 
 end

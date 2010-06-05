@@ -1,0 +1,17 @@
+#secondary
+  .content
+    / = search # disabled for now
+    - if @post
+      #popular-widget.widget.webtreats_popular_widget
+        %h3.widgettitle Popular Discussions
+        = disqus_combo(:hide_mods => false, :num_items => 20)
+      / end popular_related_posts
+    #widget.link_list
+      %h3.widgettitle Archives
+      %ul
+        - unless Post.published.by_date.last.nil?
+          - for month in (Month.new(Post.published.by_date.last.published_on)...Month.new(Date.today)).to_a.reverse
+            - if (count = Post.in_month(month).count) > 0
+              %li
+                = link_to month, posts_by_month_path(month.year, month.month), :class => "thumbnail_title", :style => "display:inline;"
+    / end archives

@@ -23,9 +23,23 @@
 		3. Reports Photo View
 		4. Reports Full Photo Veiw
 		6. Contact Form
+04. BLOG STYLES 
+		1. Blog Index
+		2. About Author
+		3. Social Media
+		4. Popular and Related Posts
+		5. Threaded Comments
 05. WIDGETS
 		1. Search Box
-		2. Contact Us Widget
+		2. Twitter
+		3. Flickr
+		4. Tag Cloud
+		5. Custom Post Lists
+		6. Calendar
+		7. Contact Us Widget
+		8. Recent Comments
+		9. Categories, Links, Archives, ETC.
+		10. RSS Widget
 06. MENU 
 07. EXTRAS
 		1. Dropcaps
@@ -974,7 +988,7 @@ a.button_link:hover span {background-position:-2px -2px;}
 .gradient_box_top{background:transparent url(/images/gradient_box_top.gif) no-repeat scroll 0 top;}
 
 .fancy_box,.message_box,.error_box,.info_box,.note_box{clear:both;padding:20px;margin: 20px 0px;-moz-border-radius:6px;-webkit-border-radius:6px;}
-.message_box,.error_box,.info_box,.note_box{padding-left:55px;background:#eee;padding-bottom:25px;
+.message_box,.error_box,.info_box,.notice_box{padding-left:55px;background:#eee;padding-bottom:25px;
 padding-top:20px;}
 .fancy_box{
 	background:#F9F9F9 url(/images/form-gradient.gif) repeat-x scroll 0 -7px;
@@ -991,7 +1005,7 @@ padding-top:20px;}
 	background:#dee3ab url(/images/icons/down_alt.png) no-repeat scroll 10px 15px;
 	border:1px solid #a3c159;
 	color:#5e6f33;}
-.note_box{
+.notice_box{
 	background:#fdebae url(/images/icons/notebook.png) no-repeat scroll 10px 15px;
 	border:1px solid #e6c555;
 	color:#9e660d;}

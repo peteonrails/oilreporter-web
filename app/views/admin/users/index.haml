@@ -1,0 +1,74 @@
+- content_for :head do
+  = set_meta_tags :title => 'Manage Users'
+  
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Manage Users
+    #blurb
+      = link_to 'Click to add new user', new_admin_user_path
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    .primary
+      - if flash.any?
+        - flash.each do |key, value|
+          .two_third
+            %div{ :class => "#{key}_box" }
+              = value
+          .clearboth
+      .content
+        .one_half
+          %h6 Active Users
+          - form_tag update_positions_admin_users_path, :method => :put do
+            - if @people.blank?
+              The are no active users.
+            - else
+              %table{ :cellpadding => "0", :cellspacing => "0", :border => "0" }
+                %tr
+                  %th
+                    ID
+                  %th
+                    Name
+                  %th
+                    Manage
+                - for person in @people
+                  %tr{:class => cycle("even", "odd")}
+                  %td
+                    = text_field_tag "positions[#{person.id}]", person.position, :size => 3
+                  %td
+                    = person.name
+                  %td
+                    = link_to 'Edit', edit_admin_user_path(person)
+                    |
+                    = link_to "Delete", admin_user_path(person), :method => :delete, :confirm => "Are you sure you want to delete #{person.name}?"
+              %p
+                = submit_tag "Update List", :value => 'Update List', :class => "round s button"
+        .one_half.last
+          %h6 Deactivated Users
+          - if @unlisted.blank?
+            The are no deactivated users.
+          - else
+            %table{ :cellpadding => "0", :cellspacing => "0", :border => "0" }
+              %tr
+                %th
+                  Name
+                %th
+                  Manage
+              - for person in @unlisted
+                %tr{:class => cycle("even", "odd")}
+                %td
+                  = person.name
+                %td
+                  = link_to 'Edit', edit_admin_user_path(person)
+                  |
+                  = link_to "Delete", admin_user_path(person), :method => :delete, :confirm => "Are you sure you want to delete #{person.name}?"
+        .clearboth

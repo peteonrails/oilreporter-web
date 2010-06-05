@@ -1,0 +1,67 @@
+- if @posts
+  %h2.blog_header
+    = @preview ? post.title : link_to(post.title, post_link(post))
+.top_metadata
+  Posted
+  = post.published_on.strftime("%B %d, %Y").gsub(" 0"," ")
+  by
+  = link_to "#{post.user.name}"
+  in
+  = tag_links_for(post.tag_list)
+  - if @post
+    and
+    = link_to("Permalink", post_path(@post, :anchor => "disqus_thread"))
+    = disqus_comment_counts
+.entry
+  %p
+    = render_body(post)
+  .clearboth
+.bottom_metadata
+  - if current_user && !@preview
+    = link_to 'Edit Post', edit_admin_post_path(post), :class => 'edit_post'
+    |
+    = link_to 'Delete Post', admin_post_path(post), :method => :delete, :confirm => "Are you sure you want to delete this post?", :class => 'delete_post'
+  - else
+    %span.tags
+      = tag_links_for(post.tag_list)
+.gradient_box_middle#spread_the_word
+  .gradient_box_top
+    .gradient_box_bottom
+      %span.sprite
+      .icons
+        .twitter_icon
+          %a{ :href => "http://twitter.com/#{Oilreporter.config[:twitter]}", :title => "Twitter" }
+        / .stumbleupon_icon
+        /   %a{ :href => "#", :title => "Stumble Upon" }
+        / .reddit_icon
+        /   %a{ :href => "#", :title => "Reddit" }
+        / .digg_icon
+        /   %a{ :href => "#", :title => "Digg" }
+        / .delicious_icon
+        /   %a{ :href => "#", :title => "Delicious" }
+        .facebook_icon
+          %a{ :href => "http://www.facebook.com/group.php?gid=124499387563120&ref=ts", :title => "Facebook" }
+        / .linkedin_icon
+        /   %a{ :href => "#", :title => "LinkedIn" }
+      .clearboth
+/ end spread_the_word
+.gradient_box_middle#about_the_author
+  .gradient_box_top
+    .gradient_box_bottom
+      %span.sprite
+      %img{ :src => "#{post.user.photo.url(:original)}", :class => "avatar avatar-80 photo", :height => "80", :width => "80" }
+      %p.padding
+        %strong 
+          = post.user.name
+        \-
+        = post.user.bio
+      .clearboth
+/ end about_the_author
+.clearboth
+- if comments ||= false
+  #comments
+    - if "production" == RAILS_ENV
+      = disqus_thread(:show_powered_by => false)
+    - else
+      = disqus_thread(:show_powered_by => false, :developer => true)
+  / end comments

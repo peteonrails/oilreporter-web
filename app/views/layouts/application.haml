@@ -22,7 +22,7 @@
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
       = javascript_include_tag 'unitpngfix'
   
-  %body
+  %body{ :class => body_class }
     = header
   
     = yield

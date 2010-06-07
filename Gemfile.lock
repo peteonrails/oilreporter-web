@@ -10,11 +10,7 @@ dependencies:
     version: ~> 0.10.3
     require: []
 
-  pg: 
-    group: 
-    - :default
-    version: ~> 0.9.0
-  httparty: 
+  haml-coderay: 
     group: 
     - :default
     version: ">= 0"
@@ -24,10 +20,14 @@ dependencies:
     version: ~> 2.3.5
     require: []
 
-  haml-coderay: 
+  httparty: 
     group: 
     - :default
     version: ">= 0"
+  pg: 
+    group: 
+    - :default
+    version: ~> 0.9.0
   sqlite3-ruby: 
     group: 
     - :development
@@ -38,30 +38,30 @@ dependencies:
     group: 
     - :plugins
     version: ">= 0"
-  haml: 
+  mysql: 
+    group: 
+    - :default
+    version: ~> 2.8.1
+  BlueCloth: 
     group: 
     - :default
     version: ">= 0"
-  memcache-client: 
-    group: 
-    - :rails
-    version: ">= 1.7.4"
-    require: []
-
   SystemTimer: 
     group: 
     - :default
     version: ~> 1.2.0
     require: 
     - system_timer
-  BlueCloth: 
+  memcache-client: 
+    group: 
+    - :rails
+    version: ">= 1.7.4"
+    require: []
+
+  haml: 
     group: 
     - :default
     version: ">= 0"
-  mysql: 
-    group: 
-    - :default
-    version: ~> 2.8.1
   sprockets-rails: 
     group: 
     - :plugins
@@ -126,11 +126,11 @@ dependencies:
     version: ~> 0.3.0
     require: []
 
-  taps: 
+  mbleigh-canonical-url: 
     group: 
     - :default
     version: ">= 0"
-  mbleigh-canonical-url: 
+  taps: 
     group: 
     - :default
     version: ">= 0"
@@ -142,16 +142,16 @@ dependencies:
     group: 
     - :testing
     version: ">= 0"
+  RedCloth: 
+    group: 
+    - :default
+    version: ">= 0"
   aws-s3: 
     group: 
     - :default
     version: ~> 0.6.2
     require: 
     - aws/s3
-  RedCloth: 
-    group: 
-    - :default
-    version: ">= 0"
   recaptcha: 
     group: 
     - :plugins
@@ -162,6 +162,10 @@ dependencies:
     group: 
     - :testing
     version: ~> 0.3.5
+  twitter: 
+    group: 
+    - :default
+    version: ">= 0"
   crummy: 
     group: 
     - :default
@@ -230,9 +234,9 @@ specs:
 - term-ansicolor: 
     version: 1.0.5
 - cucumber: 
-    version: 0.7.3
+    version: 0.8.0
 - cucumber-rails: 
-    version: 0.3.1
+    version: 0.3.2
 - daemons: 
     version: 1.0.10
 - database_cleaner: 
@@ -246,9 +250,11 @@ specs:
 - factory_girl: 
     version: 1.2.4
 - haml: 
-    version: 3.0.9
+    version: 3.0.10
 - haml-coderay: 
     version: 0.0.2
+- hashie: 
+    version: 0.2.0
 - httparty: 
     version: 0.5.2
 - linecache: 
@@ -261,6 +267,8 @@ specs:
     version: 1.2.1
 - mysql: 
     version: 2.8.1
+- oauth: 
+    version: 0.4.0
 - paperclip: 
     version: 2.3.1.1
 - pg: 
@@ -307,9 +315,13 @@ specs:
     version: 0.3.8
 - thin: 
     version: 1.2.7
+- yajl-ruby: 
+    version: 0.7.6
+- twitter: 
+    version: 0.9.7
 - will_paginate: 
     version: 2.3.14
-hash: 3ce2bf0901dac998156164d9126eba5ca3a36512
+hash: 0e07606230a1aeac96d5bcf118b091da0bc9d3a6
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

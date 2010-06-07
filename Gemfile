@@ -20,6 +20,7 @@ gem 'crummy'
 gem 'taps'
 gem 'mbleigh-canonical-url'
 gem 'disqus'
+gem 'twitter'
 
 group :plugins do
   gem 'paperclip', '~> 2.3.1'

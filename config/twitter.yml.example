@@ -1,0 +1,10 @@
+# see http://docs.heroku.com/apigee
+defaults: &defaults
+  ctoken: 'your_consumer_token'
+  csecret: 'your_consumer_secret'
+  atoken, asecret: ["mykey", "mysecret"]
+
+development:
+  <<: *defaults
+production:
+  <<: *defaults

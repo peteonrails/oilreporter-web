@@ -1,0 +1,13 @@
+# see http://docs.heroku.com/apigee
+defaults: &defaults
+  ctoken: U1UxK0nCwgwD5R3SA6kdw
+  csecret: 2irIf7UzFAFQjs00EF6XH3ZG4aRVBibHuseHQB0rYc0
+  atoken, asecret: ["12307815760346780347069834", "247802078y7892y78y09123"]
+
+development:
+  <<: *defaults
+production:
+  <<: *defaults
+  ctoken: LS5IQCSRPZ7LegcyAj2Q
+  csecret: S48bn94nBGv0rYsUsoLvI0ZCylw3HE4oSTfvmoSmgVY
+  atoken, asecret: ["12307815760346780347069834", "247802078y7892y78y09123"]

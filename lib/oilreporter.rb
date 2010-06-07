@@ -65,6 +65,10 @@ module Oilreporter
     def amazon_s3_config_file
       "#{Rails.root}/config/amazon_s3.yml"
     end
+    
+    def twitter_config_file
+      "#{Rails.root}/config/twitter.yml"
+    end
   end
 
 end

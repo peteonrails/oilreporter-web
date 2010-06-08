@@ -52,15 +52,35 @@ class ReportsTest < ActionController::IntegrationTest
     # assert msg['error']
   end
 
-  test 'upload photo' do
+  # test 'upload photo' do
+  #   test_create_report
+  #   report = Report.last
+  #   developer = Developer.last
+  #   assert !report.media?
+  #   media = fixture_file_upload('media/1.jpg', 'image/jpeg')
+  # 
+  #   put "/reports/#{report.id}", { :api_key => developer.api_key, :media => media, :api_key => report.developer.api_key }
+  #   assert_response :success
+  #   assert report.reload.media?
+  # end
+  # 
+  test 'add meta to report' do
     test_create_report
     report = Report.last
-    assert !report.media?
-    media = fixture_file_upload('media/1.jpg', 'image/jpeg')
-
-    put "/reports/#{report.id}", { :media => media, :api_key => report.developer.api_key }
+    developer = Developer.last
+    
+    put "/reports/#{report.id}", { :api_key => developer.api_key, :meta => 
+        { 
+          'key1' => 'value1', 
+          'key2' => 'value2',
+          'key3' => 'value3', 
+          'key4' => 'value4' 
+        }
+      }
+            
     assert_response :success
-    assert report.reload.media?
+    assert !report.report_metas.empty?
+    assert_equal report.report_metas.length, 4
   end
 
   test 'list reports in json' do

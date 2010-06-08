@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(:version => 20100608161322) do
     t.datetime "published_on"
   end
 
+  create_table "report_metas", :force => true do |t|
+    t.integer "report_id"
+    t.string  "key"
+    t.string  "value"
+  end
+
   create_table "reports", :force => true do |t|
     t.text     "description"
     t.integer  "oil"

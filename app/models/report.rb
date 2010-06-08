@@ -3,6 +3,7 @@ require 'oil_spill'
 class Report < ActiveRecord::Base
   belongs_to :developer
   belongs_to :organization
+  has_many :report_metas
 
   validates_numericality_of :oil, :wetlands, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10
   validates_presence_of :latitude, :longitude

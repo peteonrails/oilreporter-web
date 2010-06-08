@@ -2,6 +2,10 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 class ReportsTest < ActionController::IntegrationTest
 
+  def setup
+    Factory.create(:louisiana)
+  end
+
   test 'create report' do
     factory = Factory.build(:new_orleans)
     report = factory.attributes

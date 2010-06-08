@@ -2,6 +2,10 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 class ReportTest < ActiveSupport::TestCase
 
+  def setup
+    Factory.create(:louisiana)
+  end
+
   test 'valid report' do
     report = Factory.build(:new_orleans)
     assert report.save!
@@ -18,6 +22,17 @@ class ReportTest < ActiveSupport::TestCase
     report = Factory.build(:new_orleans)
     report.latitude = report.longitude = nil
     assert !report.valid?
+  end
+
+  test 'state is properly set' do
+    report = Factory.create(:new_orleans)
+    assert report.state == State.find_by_code('LA')
+  end
+
+  test 'slug is descriptive' do
+    report = Factory.create(:new_orleans)
+    assert !report.slug.blank?
+    assert Regexp.new(report.description.split(' ').first, 'i') === report.slug
   end
 
   %w(washington_dc atlanta).each do |city|

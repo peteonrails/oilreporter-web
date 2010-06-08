@@ -82,3 +82,8 @@ Factory.define :atlanta, :class => Report do |s|
   s.longitude -84.42
   s.developer { |a| a.association(:dilbert) }
 end
+
+Factory.define :louisiana, :class => State do |s|
+  s.code 'LA'
+  s.name 'Louisiana'
+end

@@ -21,6 +21,11 @@ class ReportsController < ApplicationController
       render :nothing => true, :status => :not_found
       return
     end
+    
+    unless filtered_params[:meta].blank?
+      meta_params = filtered_params.delete(:meta)
+      ReportMeta.create_from_params(report, meta_params)
+    end
 
     if report.update_attributes(filtered_params)
       report.update_attribute(:organization, current_organization) if current_organization

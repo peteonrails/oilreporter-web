@@ -8,7 +8,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   private
-  
+
+    def not_found(options = {})
+      options = { :file => File.join(File.dirname(__FILE__), '../../public/404.html'), :status => :not_found }.merge(options)
+      render options
+      false
+    end
+
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find

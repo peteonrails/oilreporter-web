@@ -72,3 +72,13 @@ Factory.define :washington_dc, :class => Report do |s|
   s.longitude -77.04
   s.developer { |a| a.association(:dilbert) }
 end
+
+Factory.define :atlanta, :class => Report do |s|
+  s.description 'No visible effects'
+  s.oil 8
+  s.wetlands 5
+  s.wildlife "Lots of wildlife"
+  s.latitude 33.65
+  s.longitude -84.42
+  s.developer { |a| a.association(:dilbert) }
+end

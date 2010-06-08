@@ -8,11 +8,11 @@ class Point
   end
 
   def x
-    @x.nil? ? 0 : @x.abs
+    @x.nil? ? 0 : @x + 180.0
   end
 
   def y
-    @y.nil? ? 0 : @y.abs
+    @y.nil? ? 0 : @y + 180.0
   end
 
 end

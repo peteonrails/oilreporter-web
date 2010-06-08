@@ -20,11 +20,13 @@ class ReportTest < ActiveSupport::TestCase
     assert !report.valid?
   end
 
-  test 'valid report but not within oil spill boundary' do
-    report = Factory.build(:washington_dc)
-    assert report.save!
-    assert !report.within_oil_spill?
-    assert Report.within_oil_spill.empty?
+  %w(washington_dc atlanta).each do |city|
+    test "valid report but #{city} not within oil spill boundary" do
+      report = Factory.build(city.to_sym)
+      assert report.save!
+      assert !report.within_oil_spill?
+      assert Report.within_oil_spill.empty?
+    end
   end
 
 end

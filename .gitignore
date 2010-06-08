@@ -15,3 +15,4 @@ uploads
 webrat-*
 capybara-*
 public/system
+Gemfile.lock

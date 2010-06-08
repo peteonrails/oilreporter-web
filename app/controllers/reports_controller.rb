@@ -3,6 +3,14 @@ class ReportsController < ApplicationController
   before_filter :verify_api_key, :only => [:create, :update]
   before_filter :extract_organization_pin, :only => [:create, :update]
 
+  def show
+    state = State.find_by_name(params[:state].titleize)
+    return not_found unless state
+
+    @report = state.reports.find_by_slug(params[:id])
+    return not_found unless @report
+  end
+
   def create
     report = current_developer.reports.new(filtered_params)
 

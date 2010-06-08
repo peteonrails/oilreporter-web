@@ -5,6 +5,7 @@
   
   jQuery(document).ready(function(){ jQuery('#tweethash').tweetSync({ width:'960px', tweetCount:'5', center: true }); });
   
+  
 #home_feature
   .background
     .inner
@@ -20,6 +21,9 @@
               Oil Reporter was built with 
               = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/', "gt-cat" => "appcelerator", "gt-lbl" => "titanium#label"
               in a matter of days! Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. Download the app for iPhone or Android and start helping out today.
+            %p
+              :erb
+                <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Foilreporter.org&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
           .slider_img_cropped
             %a.load_slider_img{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "download"  }
               %span.rm_img

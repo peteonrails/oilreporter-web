@@ -661,7 +661,7 @@ function cycleStart() {
 		easing: 'easeInOutQuad',
 		next: '.slider_nav .slider_next_btn',
 		timeout: $duration,
-		speed: 700,
+		speed: 500,
 		pauseOnPagerHover: true,
 		cleartypeNoBg: true,
 		cleartype: true,

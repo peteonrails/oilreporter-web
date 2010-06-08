@@ -67,7 +67,7 @@ function cycleStart() {
 	
 	var $sliderdisable = jQuery("meta[name=slider_disable]").attr('content');
 	var $sliderspeed = jQuery("meta[name=slider_speed]").attr('content');
-	if ($sliderdisable == 1){$duration = 0; }else{if ($sliderspeed != "" && $sliderdisable == ''){$duration = $sliderspeed}else{$duration = 5000;}}
+	if ($sliderdisable == 1){$duration = 0; }else{if ($sliderspeed != "" && $sliderdisable == ''){$duration = $sliderspeed}else{$duration = 10000;}}
 	
 	jQuery("#slider_img").cycle({
 		fx: 'fade',
@@ -76,7 +76,7 @@ function cycleStart() {
 		easing: 'easeInOutQuad',
 		next: '.slider_nav .slider_next_btn',
 		timeout: $duration,
-		speed: 600,
+		speed: 700,
 		pauseOnPagerHover: true,
 		cleartypeNoBg: true,
 		cleartype: true,

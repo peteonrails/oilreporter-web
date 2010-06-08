@@ -21,9 +21,15 @@
               Oil Reporter was built with 
               = link_to 'Appcelerator Titanium', 'http://www.appcelerator.com/products/titanium-mobile/', "gt-cat" => "appcelerator", "gt-lbl" => "titanium#label"
               in a matter of days! Oil Reporter enables people to help with the recovery effort by using real-time check-ins to report what they're seeing on the ground.  Users can upload photos and videos, reporting oil sighting, harmed wildlife sightings and much more. Download the app for iPhone or Android and start helping out today.
-            %p
+            %div{ :style => "display:inline" }
               :erb
-                <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Foilreporter.org&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+                <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Foilreporter.org&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+              &nbsp;
+              :erb
+                <script type="text/javascript">
+                tweetmeme_style = 'compact';
+                </script>
+                <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
           .slider_img_cropped
             %a.load_slider_img{ :href => "/tools", "gt-evt" => "click", "gt-cat" => "download"  }
               %span.rm_img
@@ -41,7 +47,7 @@
         .image_loader.slider_cropped
           .slider_content
             %h2 Twitter Feed
-            %p Stay in touch with what's happening on the ground with the Oil Reporter Twitter feed. 
+            %p Stay in touch with what's happening on the ground with the Oil Reporter Twitter feed.
           .slider_img_cropped
             %a.load_slider_img{ :href => "http://search.twitter.com/search?q=%23oilspill", :target => "_blank", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "twitter", "gt-lbl" => "#oilspill" }
               %span.rm_img
@@ -58,7 +64,6 @@
             %a.load_slider_img{ :href => "http://intridea.com", "gt-evt" => "click", "gt-cat" => "intridea" }
               %span.rm_img
                 %img{ :src => "/images/slides/4.jpg" }
-
 #intro_blurb
   .inner
     #intro_blurb_title
@@ -80,7 +85,46 @@
     #primary_full
       .content
         .entry
-          %h1 Getting Started:
+          %h1 As Featured On
+          .one_fourth
+            %a{ :href => "http://www.cnn.com/video/#/video/tech/2010/05/29/nr.armstrong.oil.spill.tech.cnn", :title => "Tech expert Mario Armstrong explains how new technology can enable Gulf Coast residents to become mobile oil reporters.", "gt-evt" => "click", "gt-cat" => "news", "gt-lbl" => "CNN" }
+              %img{ :src => "/images/pr/cnn_small.png" }
+            %p
+              Tech expert 
+              %a{ :href => "http://twitter.com/marioarmstrong", "gt-evt" => "click", "gt-cat" => "twitter", "gt-lbl" => "@marioarmstrong" }
+                Mario Armstrong
+              explains how new technology can enable Gulf Coast residents to become mobile oil reporters with 
+              %a{ :href => "/tools" }
+                Oil Reporter.
+          .one_fourth
+            %a{ :href => "http://www.npr.org/blogs/alltechconsidered/2010/05/26/127135431/oil-spill-iphone-android-app", :title => "Want To Help Report The Oil Spill? There's An App For That", "gt-evt" => "click", "gt-cat" => "news", "gt-lbl" => "NPR" }
+              %img{ :src => "/images/pr/npr_small.png" }
+            %p
+              Want To Help Report The Oil Spill? There's An App For That - NPR's 
+              %a{ :href => "http://twitter.com/acarvin", "gt-evt" => "click", "gt-cat" => "twitter", "gt-lbl" => "@acarvin" }
+                Andy Carvin 
+              reports.
+          .one_fourth
+            %a{ :href => "http://radar.oreilly.com/2010/05/crisis-commons-releases-open-s.html", :title => "Crisis Commons releases open source oil spill reporting", "gt-evt" => "click", "gt-cat" => "news", "gt-lbl" => "O'Reilly" }
+              %img{ :src => "/images/pr/oreilly_small.png" }
+            %p
+              Crisis Commons releases open source oil spill reporting - O'Reilly's 
+              %a{ :href => "https://twitter.com/digiphile", "gt-evt" => "click", "gt-cat" => "twitter", "gt-lbl" => "@digiphile" }
+                Alex Howards
+              reports.
+          .one_fourth.last
+            %a{ :href => "http://www.cbsnews.com/8301-504464_162-20006197-504464.html?tag=contentMain;contentBody", :title => "Online Resources to Drill into the BP Oil Disaster", "gt-evt" => "click", "gt-cat" => "news", "gt-lbl" => "CBS News" }
+              %img{ :src => "/images/pr/cbs_news_small.png" }
+            %p
+              Online Resources to Drill into the BP Oil Disaster - CBS News 
+              %a{ :href => "http://twitter.com/shiralazar", "gt-evt" => "click", "gt-cat" => "twitter", "gt-lbl" => "@shiralazar" }
+                Shira Lazar
+              reports.
+          .clearboth
+          .divider.top
+            %a{ :href => "#" }
+              Top
+          %h1 Getting Started
           .one_fourth
             %p.fancy_header
               %span
@@ -115,9 +159,7 @@
             %p
               %span.dropcap1
                 3
-              COMING SOON: Get trained to map imagery of beaches and wetlands, provide visual context and local knowledge. No experience necessary. You just need access to the internet & commitment to monitor a section of beach with your expertise. 
-              %a{ :href => "http://adoptabeach.eventbrite.com" }
-                Sign up today!
+              Get trained to map imagery of beaches and wetlands, provide visual context and local knowledge. No experience necessary. You just need access to the internet & commitment to monitor a section of beach with your expertise. 
             %a{ :href => "http://adoptabeach.eventbrite.com", "gt-evt" => "click", "gt-cat" => "adopt", "gt-lbl" => "signup#label" }
               %img{ :src => "/images/front_adopt.png", :style => "margin-top:-10px;" }
           .one_fourth.last
@@ -129,7 +171,7 @@
               View, download and interact with other tools submitted by developers using the 
               %a{ :href => "/api" }
                 Oil Reporter API.
-              If you're a response organization, do you need reports of your data? Check out open tools you can use to map Oil Reporter data and other open data feeds.  
+              If you're a response organization check out open tools you can use to map Oil Reporter data and other open data feeds.  
             %a{ :href => "/tools", "gt-evt" => "mouseenter,mouseleave", "gt-cat" => "tools", "gt-act" => "tools#mouseenter,tools#mouseleave" }
               %img{ :src => "/images/front_tools.png", :style => "margin-top:-10px;" }
           

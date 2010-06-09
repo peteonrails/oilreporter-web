@@ -1,0 +1,25 @@
+- content_for :head do
+  = set_meta_tags :title => "Posts tagged with #{@tag}"
+
+#intro_blurb
+  .inner
+    #intro_blurb_title
+      %span Tags
+    #blurb
+      Posts tagged with
+      = @tag
+/ end intro
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#has_sidebar
+  #body_block
+    .inner
+      #primary
+        .content
+          = render :partial => '/shared/post', :collection => @posts

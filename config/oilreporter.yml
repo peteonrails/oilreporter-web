@@ -38,6 +38,7 @@ defaults: &defaults
   
   default_blog: oilreporter
   twitter: oilreporter
+  facebook: oilreporter
 
 development:
   <<: *defaults

@@ -49,5 +49,6 @@ State.seed_many(:name, :code, [
   { :name => "Washington", :code => "WA" },
   { :name => "West Virginia", :code => "WV" },
   { :name => "Wisconsin", :code => "WI" },
-  { :name => "Wyoming", :code => "WY" }
+  { :name => "Wyoming", :code => "WY" },
+  { :name => "None", :code => "XX" }
 ])

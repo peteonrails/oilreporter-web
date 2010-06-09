@@ -11,7 +11,7 @@ class State < ActiveRecord::Base
     return State.find_by_code('LA') if RAILS_ENV == 'test'
     return nil if lat.nil? or lng.nil?
     code = state(lat, lng)
-    return nil unless code
+    return State.find_by_code('XX') unless code
     return self.find_by_code(code)
   end
 end

@@ -41,9 +41,13 @@ class Report < ActiveRecord::Base
                               :thumb => self.media(:thumb),
                               :medium => self.media(:medium) } )
     end
-
+    
     [:latitude, :longitude].each do |k|
       hash[k] = "%.4f" % hash[k]
+    end
+    
+    unless self.report_metas.empty?
+      hash.merge!(:meta => self.report_metas.collect {|x| { x.key => x.value }})
     end
 
     hash

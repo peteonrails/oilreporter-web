@@ -65,14 +65,7 @@ class ReportsTest < ActionController::IntegrationTest
     report = Report.last
     developer = Developer.last
     
-    put "/reports/#{report.id}", { :api_key => developer.api_key, :meta => 
-        { 
-          'key1' => 'value1', 
-          'key2' => 'value2',
-          'key3' => 'value3', 
-          'key4' => 'value4' 
-        }
-      }
+    put "/reports/#{report.id}", { :api_key => developer.api_key, :meta => meta_values }
             
     assert_response :success
     assert !report.report_metas.empty?
@@ -82,6 +75,8 @@ class ReportsTest < ActionController::IntegrationTest
   test 'list reports in json' do
     test_create_report
     report = Report.last
+        
+    ReportMeta.create_from_params(report, meta_values)
 
     get "/reports.json", { :api_key => report.developer.api_key }
     assert_response :success
@@ -111,4 +106,12 @@ class ReportsTest < ActionController::IntegrationTest
     post path, params.to_json, {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
   end
 
+  def meta_values
+    { 
+      'key1' => 'value1', 
+      'key2' => 'value2',
+      'key3' => 'value3', 
+      'key4' => 'value4' 
+    }
+  end
 end

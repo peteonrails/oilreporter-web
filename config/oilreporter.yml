@@ -50,7 +50,6 @@ production:
   google_api_key: ABQIAAAAv2kP9nkf-2Hm8WO7uocS5hQq1UCU9SBkmSXBlazPa3yrPjWakBTJvhnKvmEEeW71_sMHVod_VFD1rg
 
   organization_signup_recipients:
-    - heather@crisiscommons.org
     - oilreporter@intridea.com
 
 test: &test

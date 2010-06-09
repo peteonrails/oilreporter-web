@@ -6,8 +6,8 @@
   = post.published_on.strftime("%B %d, %Y").gsub(" 0"," ")
   by
   = link_to "#{post.user.name}"
-  in
-  = tag_links_for(post.tag_list)
+  / in
+  / = tag_links_for(post.tag_list)
   - if @post
     and
     = link_to("Permalink", post_path(@post, :anchor => "disqus_thread"))
@@ -22,8 +22,8 @@
     |
     = link_to 'Delete Post', admin_post_path(post), :method => :delete, :confirm => "Are you sure you want to delete this post?", :class => 'delete_post'
   - else
-    %span.tags
-      = tag_links_for(post.tag_list)
+    / %span.tags
+    /       = tag_links_for(post.tag_list)
 .gradient_box_middle#spread_the_word
   .gradient_box_top
     .gradient_box_bottom

@@ -47,6 +47,9 @@
               %a{ :href => "#create", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Create Anchor" }
                 Create a New Report
             %li
+              %a{ :href => "#meta", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Anchor" }
+                Add Metadata to Report
+            %li
               %a{ :href => "#media", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Media Anchor" }
                 Add Media to Report
             %li
@@ -85,6 +88,9 @@
                   If media has not been set then the value is null.
 
                   On a call to update to upload a photo, then media accepts a binary stream.
+              - meta (string key value pair)
+                  Can only create this when updating a report or adding media.
+                  See documentation below for a good explanation on how to add metdata.
           
           .divider.top
             %a{ :href => "#" }
@@ -113,11 +119,35 @@
           .divider.top
             %a{ :href => "#" }
               Top
+
+          %a{ :name => "meta" }
+          %h2 Add Metadata to Reports
+          %p
+            Allows you to add as many metadata elements to your report.  You need the ID of the report you created to be able to call this url. Meta parameters can use any key and any value.  Both keys and values are stored as strings.  You can pass as many metadata items as you want.  In the example below we are adding two meta values.  The first one has a key of <i>my_key_1</i> with a value of <i>custom value</i>.  The other meta element has a key of <i>extra_url</i> with a value of <i>oilreporter.org</i>.
+            %li 
+              Method: PUT
+            %li 
+              URL: /reports/*ID*
+            %li 
+              Required: id, api_key, meta
+            %li
+              Success: empty text and HTTP status code 200
+            %li
+              Failure: empty text and HTTP status code 422
+          %p
+            :coderay
+              #!plaintext
+              curl -X PUT http://oilreporter.org/reports/8?api_key=YOUR_API_KEY&meta[my_key_1]=custom%20value&meta[extra_url]=oilreporter.org
+              Returns empty text and an HTTP status code of 200
+
+          .divider.top
+            %a{ :href => "#" }
+              Top
           
           %a{ :name => "media" }
           %h2 Add Media to Report
           %p
-            Allows you to add media to an existing report.  You need the ID of the report you created to be able to call this url. 
+            Allows you to add media to an existing report.  You need the ID of the report you created to be able to call this url.  You may also pass metadata in this call as well (see above).
             %li 
               Method: PUT
             %li 
@@ -168,7 +198,9 @@
                   "created_at": "2010-05-13T19:29:54Z",
                   "media": { "tiny":"http://s3.amazonaws.com/oilreporter_production/medias/7/tiny.jpg?1273722135",
                              "thumb":"http://s3.amazonaws.com/oilreporter_production/medias/7/thumb.jpg?1273722135",
-                             "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" }
+                             "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" },
+                  "meta": { "my_custom_key": "my custom value",
+                            "another_item": "another value"}
                 }
               ]
               
@@ -207,7 +239,9 @@
                   "created_at": "2010-05-13T19:29:54Z",
                   "media": { "tiny":"http://s3.amazonaws.com/oilreporter_production/medias/7/tiny.jpg?1273722135",
                              "thumb":"http://s3.amazonaws.com/oilreporter_production/medias/7/thumb.jpg?1273722135",
-                             "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" }
+                             "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" },
+                  "meta": { "my_custom_key": "my custom value",
+                           "another_item": "another value"}
                 }
               ]
 
@@ -230,6 +264,9 @@
               %li
                 %a{ :href => "#create", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Create Anchor Sidebar" }
                   Create a New Report
+              %li
+                %a{ :href => "#meta", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Anchor Sidebar" }
+                  Add Metadata to Report
               %li
                 %a{ :href => "#media", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Media Anchor Sidebar" }
                   Add Media to Report

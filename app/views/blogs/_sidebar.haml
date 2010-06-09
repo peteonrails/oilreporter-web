@@ -1,11 +1,10 @@
 #secondary
   .content
     / = search # disabled for now
-    - if @post
-      #popular-widget.widget.webtreats_popular_widget
-        %h3.widgettitle Popular Discussions
-        = disqus_combo(:hide_mods => false, :num_items => 20)
-      / end popular_related_posts
+    #popular-widget.widget.webtreats_popular_widget
+      %h3.widgettitle Popular Discussions
+      = disqus_combo(:hide_mods => false, :num_items => 20)
+    / end popular_related_posts
     #widget.link_list
       %h3.widgettitle Archives
       %ul

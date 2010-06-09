@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100608160813) do
+ActiveRecord::Schema.define(:version => 20100608161322) do
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
@@ -85,9 +85,16 @@ ActiveRecord::Schema.define(:version => 20100608160813) do
     t.integer  "developer_id"
     t.integer  "organization_id"
     t.boolean  "within_oil_spill",   :default => false
+    t.string   "slug"
+    t.integer  "state_id"
   end
 
   add_index "reports", ["latitude", "longitude", "device_id"], :name => "index_reports", :unique => true
+
+  create_table "states", :force => true do |t|
+    t.string "name"
+    t.string "code"
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

@@ -2,6 +2,10 @@ require File.join(File.dirname(__FILE__), '../test_helper')
 
 class ReportsTest < ActionController::IntegrationTest
 
+  def setup
+    Factory.create(:louisiana)
+  end
+
   test 'create report' do
     factory = Factory.build(:new_orleans)
     report = factory.attributes
@@ -11,6 +15,11 @@ class ReportsTest < ActionController::IntegrationTest
 
     post '/reports', report
     assert_response :success
+
+    report = Report.last
+    get "/reports/#{report.state.name.downcase}/#{report.slug}"
+    assert_response :success
+    assert_template :show
   end
 
   test 'create report for organization' do

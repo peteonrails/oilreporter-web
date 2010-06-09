@@ -42,7 +42,7 @@
           - for report in @reports do
             %tr{:class => cycle("even", "odd")}
               %td
-                = report.created_at.strftime('%m.%d.%Y')
+                = link_to(report.created_at.strftime('%m.%d.%Y'), show_report_path(:state => report.state.name.downcase, :id => report.slug))
               %td
                 = report.description
               %td

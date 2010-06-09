@@ -1,11 +1,41 @@
-%p
-  = @report.created_at.strftime('%m.%d.%Y')
-%p
-  = @report.description
-%p
-  = @report.wildlife 
-%p
-  = @report.oil
-%p
-  = @report.wetlands
-  
+- content_for :head do
+  = set_meta_tags :title => "Reports | #{truncate(@report.description,50)}"
+
+.clearboth
+
+#breadcrumbs
+  .inner
+    %p.breadcrumb
+      = render_crumbs :seperator => '<span class="breadarrow">/</span>'
+
+#body_block
+  .inner
+    #primary_full
+      .content
+        %h4
+          This report was
+          \submitted on
+          = @report.created_at.strftime('%m/%d/%Y')
+        %blockquote
+          %h1
+            = @report.description
+        %h3.toggle{ :style => "margin-top:-40px;" }
+          %a{ :href => "#" }
+            view report details
+        .toggle_content{ :style => "display:none" }
+          .block
+            %ul.arrow_list
+              %li
+                %h4
+                  How much oil do you see?
+                  = @report.oil
+                  out of 10
+              %li
+                %h4
+                  Is there wildlife present?
+                  = @report.wildlife
+              %li
+                %h4
+                  Impact to wetlands?
+                  = @report.wetlands
+                  out of 10

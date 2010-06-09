@@ -4,6 +4,7 @@ class ReportsController < ApplicationController
   before_filter :extract_organization_pin, :only => [:create, :update]
 
   def show
+    add_crumb "reports", '/reports'
     state = State.find_by_name(params[:state].titleize)
     return not_found unless state
 

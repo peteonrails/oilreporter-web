@@ -16,11 +16,12 @@
     %p.breadcrumb
       = render_crumbs :seperator => '<span class="breadarrow">/</span>'
 
-#body_block
-  .inner
-    #primary
-      .content
-        %h1
-          Oil Reporter Blog
-        = render :partial => '/shared/post', :collection => @posts
-        = will_paginate @posts
+#has_sidebar
+  #body_block
+    .inner
+      #primary
+        .content
+          %h1
+            Oil Reporter Blog
+          = render :partial => '/shared/post', :collection => @posts
+          = will_paginate @posts

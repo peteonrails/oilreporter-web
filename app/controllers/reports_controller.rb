@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
   def show
     add_crumb "reports", '/reports'
-    state = State.find_by_name(params[:state].titleize)
+    state = State.find_by_slug(params[:state])
     return not_found unless state
 
     @report = state.reports.find_by_slug(params[:id])

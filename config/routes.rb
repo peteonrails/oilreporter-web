@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :reports, :only => [:create, :update, :index, :map]
   map.connect '/map', :controller => 'reports', :action => 'map'
   map.data '/data', :controller => 'reports', :action => 'index'
-  map.show_report '/reports/:state/:id', :controller => 'reports', :action => 'show', :requirements => { :state => /[a-z ]+/, :id => /[\w-]+/ }, :conditions => { :method => :get }
+  map.show_report '/reports/:state/:id', :controller => 'reports', :action => 'show', :requirements => { :state => /[a-z-]+/, :id => /[\w-]+/ }, :conditions => { :method => :get }
 
   # Developers
   map.resources :developers, :only => [:new, :create, :show]

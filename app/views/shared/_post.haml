@@ -52,7 +52,7 @@
       %img{ :src => "#{post.user.photo.url(:original)}", :class => "avatar avatar-80 photo", :height => "80", :width => "80" }
       %p.padding
         %strong 
-          = post.user.name
+          = link_to post.user.name, post.user.website
         \-
         = post.user.bio
       .clearboth

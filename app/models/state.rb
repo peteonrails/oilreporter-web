@@ -7,6 +7,8 @@ class State < ActiveRecord::Base
 
   validates_presence_of :name, :code
 
+  after_create :sluggify
+
   def self.reverse_geocode(lat, lng)
     return State.find_by_code('LA') if RAILS_ENV == 'test'
     return nil if lat.nil? or lng.nil?

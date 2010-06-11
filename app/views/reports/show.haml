@@ -1,5 +1,5 @@
 - content_for :head do
-  = set_meta_tags :title => "Reports | #{truncate(@report.description,50)}"
+  = set_meta_tags :title => "Reports | #{truncate(@report.description, :length => 50)}"
 
 .clearboth
 

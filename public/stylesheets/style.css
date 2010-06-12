@@ -373,9 +373,9 @@ body#home_page #header{height:92px;}
 .loading_reports {
 	background:transparent url(/images/ajax-loader.gif) no-repeat scroll center center;
 	height:32px;
-	left:129px;
+	left:45px;
 	position:absolute;
-	top:73px;
+	top:20px;
 	width:32px;}
 h2.reports{margin-top:45px;}
 h3.reports{margin-bottom:15px;margin-top:0;}
@@ -402,25 +402,25 @@ p.reports{margin-bottom:15px;}
 .loading_reports_post {
 	background: transparent url(/images/ajax-loader.gif) no-repeat scroll center center;
 	height:32px;
-	left:450px;
+	left:250px;
 	position:absolute;
-	top:267px;
+	top:167px;
 	width:32px;}
 .reports_img_holder {
-	background: transparent url(/images/reports_gallery_frame.gif) no-repeat scroll 0 -5px;
+	background: transparent url(/images/reports_small_frame.gif) no-repeat scroll 0 -5px;
 	display:block;
-	height:180px;
+	height:85px;
 	position:relative;
-	width:288px;}
+	width:120px;}
 .reports_img_holder img {
 	background: #F5F5F5 none repeat scroll 0 0;
 	border:1px solid #FFFFFF;
-	height:151px;
-	left:1px;
+	height:55px;
+	left:5px;
 	padding:4px;
 	position:absolute;
-	top:9px;
-	width:276px;}
+  top:2px;
+	width:100px;}
 .rollover {
 	background: transparent url(/images/zoom_small.png) no-repeat 0 0;
 	display:none;

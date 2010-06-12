@@ -19,7 +19,19 @@ module ApplicationHelper
 
     buffer
   end
-  
+
+  def detailed_map(report)
+    buffer = <<-JS
+      var map = new GMap2(document.getElementById('map'));
+      map.setCenter(new GLatLng(#{report.latitude}, #{report.longitude}), 6);
+      map.addControl(new GSmallMapControl());
+      map.addControl(new GMapTypeControl());
+      map.enableScrollWheelZoom();
+      map.setMapType(G_HYBRID_MAP);
+      map.addOverlay(createMarker(map, #{report.hew.to_json}));
+    JS
+  end
+
   def google_maps_js
     key_pair = "key=#{Oilreporter.config.google_api_key}" if Oilreporter.config.google_api_key   
     "<script type='text/javascript' src='http://maps.google.com/maps?file=api&amp;#{key_pair}'></script>"

@@ -1,6 +1,14 @@
 - content_for :head do
   = set_meta_tags :title => "Reports | #{truncate(@report.description, :length => 50)}"
 
+= map_javascripts
+
+= markers
+:javascript
+  jQuery(document).ready(function() {
+    #{detailed_map(@report)}
+  });
+
 .clearboth
 
 #breadcrumbs
@@ -39,3 +47,8 @@
                   Impact to wetlands?
                   = @report.wetlands
                   out of 10
+        .media
+          .map-container
+            %div{:id => 'map', :style => "height: 480px; width: 480px; float: left" }
+          .image-container{ :style => 'float: left; margin-left: 100px' }
+            %img{ :src => "#{@report.media(:medium)}" }

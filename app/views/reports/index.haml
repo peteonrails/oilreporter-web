@@ -60,7 +60,7 @@
                       .loading_reports
                       %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :class => "load_reports_img", "gt-evt" => "click", "gt-cat" => "reports", "gt-lbl" => "View Large Image" }
                         %span.rm_img.noscript
-                          %img{ :src => "#{report.media(:medium)}" }
+                          %img{ :src => "#{report.media(:thumb)}" }
                         %span.roll_over.rollover  
                 - else
                   = image_tag('http://placehold.it/50x50')

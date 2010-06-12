@@ -2,6 +2,11 @@ class HomeController < ApplicationController
   
   ENABLE_FEATURED_POSTS = true;
   
+  def sitemap
+    sitemap = Sitemap.create!('http://oilreporter.org')
+    render :xml => sitemap
+  end
+  
   def setup
     add_crumb "setup", '/setup'
   end

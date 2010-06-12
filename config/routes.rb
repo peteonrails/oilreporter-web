@@ -49,5 +49,8 @@ ActionController::Routing::Routes.draw do |map|
   map.posts_by_month '/blog/archives/:year/:month', :controller => 'posts', :action => 'index', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
   map.post_by_date '/blog/archives/:year/:month/:day', :controller => 'posts', :action => 'show', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
   map.post_by_slug '/:year/:month/:day/:id', :controller => 'posts', :action => 'show', :requirements => {:month => /\d{1,2}/, :year => /\d{4}/}
+  
+  # Sitemap
+  map.sitemap '/sitemap.xml', :controller => "home", :action => "sitemap"
 
 end

@@ -55,13 +55,7 @@
                 out of 10
               %td
                 - if report.media?
-                  .image_loader
-                    .reports_img_holder
-                      .loading_reports
-                      %a{ :href => "#{report.media(:medium)}", :rel => "lightbox[gallery]", :class => "load_reports_img", "gt-evt" => "click", "gt-cat" => "reports", "gt-lbl" => "View Large Image" }
-                        %span.rm_img.noscript
-                          %img{ :src => "#{report.media(:thumb)}" }
-                        %span.roll_over.rollover  
+                  %img{ :src => "#{report.media(:thumb)}" }
                 - else
                   = image_tag('http://placehold.it/50x50')
         = will_paginate(@reports)

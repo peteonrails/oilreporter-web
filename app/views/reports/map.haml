@@ -28,6 +28,8 @@
   .inner
     #primary_full
       .content
+        %h3
+          = link_to('View in Google Earth', reports_path(:format => :kml))
         %div{:id => 'map', :style => "height: 600px;" }
       / end content
       .clear

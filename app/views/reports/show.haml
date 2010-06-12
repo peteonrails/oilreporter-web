@@ -27,7 +27,7 @@
         %blockquote
           %h1
             = @report.description
-        %h3.toggle{ :style => "margin-top:-40px;" }
+        %h3.toggle{ :style => "margin-top:-30px;margin-bottom:40px;" }
           %a{ :href => "#" }
             view report details
         .toggle_content{ :style => "display:none" }
@@ -47,8 +47,14 @@
                   Impact to wetlands?
                   = @report.wetlands
                   out of 10
-        .media
-          .map-container
-            %div{:id => 'map', :style => "height: 480px; width: 480px; float: left" }
-          .image-container{ :style => 'float: left; margin-left: 100px' }
+        .one_half
+          %h6 Map
+          %div{:id => 'map', :style => "height:480px;width:454px;border:1px#0d4275solid;" }
+        .one_half.last
+          - if @report.media?
+            %h6 Photo Taken
             %img{ :src => "#{@report.media(:medium)}" }
+          - else
+            %h6 Photo
+            No photo taken
+          

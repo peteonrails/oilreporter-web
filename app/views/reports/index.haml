@@ -44,7 +44,7 @@
               %td
                 = link_to(report.created_at.strftime('%m.%d.%Y'), show_report_path(:state => report.state.slug, :id => report.slug))
               %td
-                = report.description
+                = link_to(report.description, show_report_path(:state => report.state.slug, :id => report.slug))
               %td
                 = report.wildlife 
               %td

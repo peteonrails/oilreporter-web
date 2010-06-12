@@ -25,7 +25,7 @@ class Report < ActiveRecord::Base
     :path => Oilreporter.config.amazon_s3 ?
       ":attachment/:id/:style.:extension" :
       "public/system/:attachment/:id/:style/:basename.:extension",
-    :default_url => "/images/missing.png"
+    :default_url => "http://oilspill_photos.s3.amazonaws.com/missing.png"
 
   def verify_location
     self.update_attribute(:within_oil_spill, OilSpill.instance.contains?(self.latitude, self.longitude))

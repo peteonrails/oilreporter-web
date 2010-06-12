@@ -47,7 +47,7 @@ module ApplicationHelper
   end
 
   def kml_text(report)
-    buffer = [:description, :oil, :wetlands, :wildlife].collect do |field|
+    buffer = [:description, :oil, :wetlands, :wildlife, :media].collect do |field|
       value = report.send(field)
       value = value.to_s.strip if value.respond_to?(:to_s)
       value.blank? ? '' : content_tag('strong', "#{field.to_s.titleize}: ") + value

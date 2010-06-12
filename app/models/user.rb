@@ -5,13 +5,12 @@ class User < ActiveRecord::Base
   has_many :posts, :order => 'published_on DESC'
   has_attached_file :photo,
     :styles => { :thumb  => "80x80>" },
-    :url  => "/photos/:id/:style/:basename.:extension",
     :path => Oilreporter.config.amazon_s3 ?
-      "photos/:id/:style/:filename" :
-      ":rails_root/photos/:id/:style/:filename",
-    :default_url => "/images/missing.png"
-  
-  validates_attachment_size :photo, :less_than => APP_CONFIG['asset_max_file_size'].to_i.megabytes
+      ":attachment/:id/:style.:extension" :
+      "public/system/:attachment/:id/:style/:basename.:extension",
+    :default_url => "http://oilspill_photos.s3.amazonaws.com/missing.png"
+
+  validates_attachment_size :photo, :less_than => Oilreporter.config.asset_max_file_size.to_i.megabytes
   
   named_scope :listed, :conditions => "listed IS true"
   named_scope :unlisted, :conditions => "listed IS NOT true"

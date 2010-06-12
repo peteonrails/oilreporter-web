@@ -47,28 +47,23 @@ class ReportsTest < ActionController::IntegrationTest
     report.merge!(:api_key => developer.api_key)
     report.merge!(:organization_pin => 0000)
 
-    # For the time being we are not throwing any issues if the organization pin is invalid
+    # We do not throw an error if the organization pin is invalid
     post '/reports', report
     assert_response :success
-
-    # post '/reports', report
-    # assert_response :unprocessable_entity
-    # msg = JSON.parse(response.body)
-    # assert msg['error']
   end
 
-  # test 'upload photo' do
-  #   test_create_report
-  #   report = Report.last
-  #   developer = Developer.last
-  #   assert !report.media?
-  #   media = fixture_file_upload('media/1.jpg', 'image/jpeg')
-  # 
-  #   put "/reports/#{report.id}", { :api_key => developer.api_key, :media => media, :api_key => report.developer.api_key }
-  #   assert_response :success
-  #   assert report.reload.media?
-  # end
-  # 
+  test 'upload photo' do
+    test_create_report
+    report = Report.last
+    developer = Developer.last
+    assert !report.media?
+    media = fixture_file_upload('media/1.jpg', 'image/jpeg')
+
+    put "/reports/#{report.id}", { :api_key => developer.api_key, :media => media, :api_key => report.developer.api_key }
+    assert_response :success
+    assert report.reload.media?
+  end
+
   test 'add meta to report' do
     test_create_report
     report = Report.last

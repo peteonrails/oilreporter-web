@@ -12,7 +12,7 @@ defaults: &defaults
   # See "config/amazon_s3.yml" for info about credentials.
   amazon_s3: false
 
-  asset_max_file_size: 50 # in megabytes
+  asset_max_file_size: 10 # in megabytes
 
   # Default timezone
   time_zone: UTC

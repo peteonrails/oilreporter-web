@@ -46,18 +46,16 @@
               %td
                 = link_to(report.description, show_report_path(:state => report.state.slug, :id => report.slug))
               %td
-                = report.wildlife 
+                = link_to(report.wildlife, show_report_path(:state => report.state.slug, :id => report.slug))
               %td
-                = report.oil
-                out of 10
+                = link_to(report.oil, show_report_path(:state => report.state.slug, :id => report.slug))
               %td
-                = report.wetlands
-                out of 10
+                = link_to(report.wetlands, show_report_path(:state => report.state.slug, :id => report.slug))
               %td
                 - if report.media?
-                  %img{ :src => "#{report.media(:thumb)}" }
+                  = link_to image_tag(report.media(:thumb)), show_report_path(:state => report.state.slug, :id => report.slug)
                 - else
-                  = image_tag('http://placehold.it/50x50')
+                  = link_to image_tag('/images/missing.png'), show_report_path(:state => report.state.slug, :id => report.slug)
         = will_paginate(@reports)
       / end content
       .clearboth

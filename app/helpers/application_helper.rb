@@ -46,6 +46,16 @@ module ApplicationHelper
     end
   end
 
+  def kml_text(report)
+    buffer = [:description, :oil, :wetlands, :wildlife].collect do |field|
+      value = report.send(field)
+      value = value.to_s.strip if value.respond_to?(:to_s)
+      value.blank? ? '' : content_tag('strong', "#{field.to_s.titleize}: ") + value
+    end
+    buffer = buffer.join('<br />')
+    "\n#{buffer}\n"
+  end
+
   def coderay(text)
     text.gsub(/\<code( lang="(.+?)")?\>(.+?)\<\/code\>/m) do
       content_tag("notextile", CodeRay.scan($3, $2).div(:css => :class))

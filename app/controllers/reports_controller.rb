@@ -47,20 +47,26 @@ class ReportsController < ApplicationController
   def index
     add_crumb "reports", '/reports'
     respond_to do |format|
-      @reports = Report.within_oil_spill.paginate(:page => params[:page], :order => 'created_at DESC')
-
       format.json {
         return unless verify_api_key
+        @reports = paginated_reports
         render :json => @reports.collect(&:hew), :layout => false
       }
       format.html {
+        @reports = paginated_reports
         render
       }
-      format.rss { 
+      format.rss {
+        @reports = paginated_reports
         render :layout => false
       }
       format.xml { 
+        @reports = paginated_reports
         render :xml => @reports.to_xml
+      }
+      format.kml {
+        @reports = Report.within_oil_spill
+        render :layout => false
       }
     end
   end
@@ -68,6 +74,12 @@ class ReportsController < ApplicationController
   def map
     add_crumb "map", '/map'
     @reports = Report.within_oil_spill
+  end
+
+  private
+
+  def paginated_reports
+    Report.within_oil_spill.paginate(:page => params[:page], :order => 'created_at DESC')
   end
 
 end

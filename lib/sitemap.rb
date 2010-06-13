@@ -104,6 +104,8 @@ class Sitemap
   end
 
   def save(xml)
+    return if RAILS_ENV == 'production' # Heroku filesystem is read-only
+
     File.open("#{Rails.root}/public/sitemap.xml", "w") do |f|
       f.write(xml)
     end
@@ -133,7 +135,7 @@ class Sitemap
         when Net::HTTPSuccess
           options[:output] << "Successfully notified #{engine}\n"
         else
-          options[:output] << "Failed to notify #{engine}\n"
+          options[:output] << "Failed to notify #{engine}\n#{response.body.inspect}"
         end
       rescue Timeout::Error => error
         options[:output] << "Timeout while attempting to notify #{engine}\n"

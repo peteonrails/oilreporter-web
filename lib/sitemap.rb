@@ -66,7 +66,7 @@ class Sitemap
 
       Report.within_oil_spill.each do |report|
         xml.url do
-          xml.loc "#{options[:url]}#{report_link(report)}"
+          xml.loc("#{options[:url]}#{report_link(report)}")
           xml.changefreq 'monthly'
           xml.priority '0.9'
           xml.lastmod report.updated_at.xmlschema
@@ -75,7 +75,7 @@ class Sitemap
 
       Post.published.each do |post|
         xml.url do
-          xml.loc "#{options[:url]}#{post_link(post)}"
+          xml.loc("#{options[:url]}#{post_link(post)}")
           xml.changefreq 'monthly'
           xml.priority '0.8'
           xml.lastmod post.updated_at.xmlschema

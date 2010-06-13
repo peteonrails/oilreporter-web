@@ -129,16 +129,16 @@ class Sitemap
       begin
         response = Net::HTTP.start(url.host, url.port) do |http|
           http.read_timeout = 5
-          http.get(url.path)
+          http.get(url.path, { 'User-Agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.1) Gecko/20060111 Firefox/1.5.0.1' })
         end
         case response
         when Net::HTTPSuccess
-          options[:output] << "Successfully notified #{engine}\n"
+          options[:output] << "\nSuccessfully notified #{engine}\n"
         else
-          options[:output] << "Failed to notify #{engine}\n#{response.body.inspect}"
+          options[:output] << "\nFailed to notify #{engine}\nResponse: #{response.body.inspect}\n"
         end
       rescue Timeout::Error => error
-        options[:output] << "Timeout while attempting to notify #{engine}\n"
+        options[:output] << "\nTimeout while attempting to notify #{engine}\n"
       end # begin
     end # each
   end # update_search_engines

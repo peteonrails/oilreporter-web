@@ -1,4 +1,6 @@
 require 'builder'
+require 'post'
+require 'report'
 
 class Sitemap
   include ActionView::Helpers::UrlHelper

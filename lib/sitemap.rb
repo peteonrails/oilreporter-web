@@ -49,7 +49,8 @@ class Sitemap
     xml = Builder::XmlMarkup.new(:target => result, :indent => 2)
 
     xml.instruct!
-    xml.urlset(:xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
+    xml.urlset(:xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9',
+               'xmlns:geo' => 'http://www.google.com/geo/schemas/sitemap/1.0') do
       static_urls.each do |loc, path_or_time, freq, priority|
         xml.url do
           xml.loc "#{options[:url]}/#{loc}"

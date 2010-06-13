@@ -42,20 +42,20 @@
           - for report in @reports do
             %tr{:class => cycle("even", "odd")}
               %td
-                = link_to(report.created_at.strftime('%m/%d/%Y'), show_report_path(:state => report.state.slug, :id => report.slug))
+                = link_to(report.created_at.strftime('%m/%d/%Y'), report_link(report))
               %td
-                = link_to(report.description, show_report_path(:state => report.state.slug, :id => report.slug))
+                = link_to(report.description, report_link(report))
               %td
-                = link_to(report.wildlife, show_report_path(:state => report.state.slug, :id => report.slug))
+                = link_to(report.wildlife, report_link(report))
               %td
-                = link_to(report.oil, show_report_path(:state => report.state.slug, :id => report.slug))
+                = link_to(report.oil, report_link(report))
               %td
-                = link_to(report.wetlands, show_report_path(:state => report.state.slug, :id => report.slug))
+                = link_to(report.wetlands, report_link(report))
               %td
                 - if report.media?
-                  = link_to image_tag(report.media(:thumb)), show_report_path(:state => report.state.slug, :id => report.slug)
+                  = link_to image_tag(report.media(:thumb)), report_link(report)
                 - else
-                  = link_to image_tag('/images/missing.png'), show_report_path(:state => report.state.slug, :id => report.slug)
+                  = link_to image_tag('/images/missing.png'), report_link(report)
         = will_paginate(@reports)
       / end content
       .clearboth

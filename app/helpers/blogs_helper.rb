@@ -7,11 +7,6 @@ module BlogsHelper
     end
   end
   
-  def post_link(post, blog = nil, html_options = {})
-    method = (html_options.delete(:url) == true ? "url" : "path")
-    send "blog_post_#{method}", post.published_on.year, post.published_on.month, post.published_on.day, post.slug, {:blog => blog}.merge(html_options)
-  end
-  
   def blog_feedburner_url(blog)
     "http://feeds.feedburner.com/oilreporter#{"-#{blog.name}" unless blog.name == 'Oil Reporter'}"
   end

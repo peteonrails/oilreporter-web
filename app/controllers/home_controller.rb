@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
-  
+
   ENABLE_FEATURED_POSTS = true;
-  
+
   def sitemap
-    sitemap = Sitemap.create!('http://oilreporter.org')
+    sitemap = Sitemap.instance.create!
     render :xml => sitemap
   end
   

@@ -116,5 +116,15 @@ module ApplicationHelper
     klass << params[:page_url].underscore if params[:page_url]
     return klass.join(' ')
   end
-  
+
+  def post_link(post, blog = nil, html_options = {})
+    method = (html_options.delete(:url) == true ? "url" : "path")
+    send "blog_post_#{method}", post.published_on.year, post.published_on.month, post.published_on.day, post.slug, {:blog => blog}.merge(html_options)
+  end
+
+  def report_link(report, html_options = {})
+    method = (html_options.delete(:url) == true ? "url" : "path")
+    send "show_report_#{method}", report.state.slug, report.slug
+  end
+
 end

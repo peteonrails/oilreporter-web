@@ -16,3 +16,4 @@ webrat-*
 capybara-*
 public/system
 Gemfile.lock
+public/sitemap.xml

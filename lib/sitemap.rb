@@ -31,16 +31,16 @@ class Sitemap
 
   def static_urls
     [
-     ['', 'home/index', 'monthly'],
-     ['blog', Post.published.last.updated_at, 'weekly'],
-     ['reports', Report.within_oil_spill.last.updated_at, 'daily'],
-     ['news', 'home/news', 'weekly'],
-     ['signup', 'developers/new', 'monthly'],
-     ['organizations/new', 'organizations/new', 'monthly'],
-     ['tools', 'home/tools', 'monthly'],
-     ['map', Report.within_oil_spill.last.updated_at, 'daily'],
-     ['data-sources', 'home/data_sources', 'monthly'],
-     ['api', 'home/api', 'monthly']
+     ['', 'home/index', 'monthly', 0.1],
+     ['blog', Post.published.last.updated_at, 'weekly', 0.5],
+     ['reports', Report.within_oil_spill.last.updated_at, 'daily', 0.9],
+     ['news', 'home/news', 'weekly', 0.5],
+     ['signup', 'developers/new', 'monthly', 0.4],
+     ['organizations/new', 'organizations/new', 'monthly', 0.1],
+     ['tools', 'home/tools', 'monthly', 0.1],
+     ['map', Report.within_oil_spill.last.updated_at, 'daily', 0.9],
+     ['data-sources', 'home/data_sources', 'monthly', 0.1],
+     ['api', 'home/api', 'monthly', 0.1]
     ]
   end
 
@@ -50,11 +50,11 @@ class Sitemap
 
     xml.instruct!
     xml.urlset(:xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9') do
-      static_urls.each do |loc, path_or_time, freq|
+      static_urls.each do |loc, path_or_time, freq, priority|
         xml.url do
           xml.loc "#{options[:url]}/#{loc}"
           xml.changefreq freq
-          xml.priority '0.1'
+          xml.priority priority.to_s
 
           if path_or_time.is_a?(String)
             xml.lastmod(File.mtime(File.join(Rails.root, 'app/views', "#{path_or_time}.haml")).xmlschema)
@@ -63,6 +63,18 @@ class Sitemap
           end
         end
       end # static_urls
+
+      xml.url do
+        xml.loc "#{options[:url]}/reports.kml"
+        xml.changefreq 'daily'
+        xml.priority '0.9'
+        xml.lastmod Report.within_oil_spill.last.updated_at.xmlschema
+        xml.geo :geo do
+          xml.geo :format do
+            xml.text! 'kml'
+          end
+        end
+      end
 
       Report.within_oil_spill.each do |report|
         xml.url do

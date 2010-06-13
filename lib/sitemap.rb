@@ -1,5 +1,7 @@
 require 'builder'
+require 'blog'
 require 'post'
+require 'state'
 require 'report'
 
 class Sitemap

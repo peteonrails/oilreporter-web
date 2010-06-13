@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  include BlogsHelper
+  include ApplicationHelper
   
   before_filter :include_syntax_highlighter
 

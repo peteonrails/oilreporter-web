@@ -127,15 +127,16 @@ class Sitemap
       url = URI.parse("http://#{submit_url}#{escaped_uri}")
 
       begin
+        request = Net::HTTP::Get.new(url.path, { 'User-Agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.1) Gecko/20060111 Firefox/1.5.0.1' })
         response = Net::HTTP.start(url.host, url.port) do |http|
           http.read_timeout = 5
-          http.get(url.path, { 'User-Agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.1) Gecko/20060111 Firefox/1.5.0.1' })
+          http.request(request)
         end
         case response
         when Net::HTTPSuccess
           options[:output] << "\nSuccessfully notified #{engine}\n"
         else
-          options[:output] << "\nFailed to notify #{engine}\nResponse: #{response.body.inspect}\n"
+          options[:output] << "\nFailed to notify #{engine}\nRequest: #{url}\nResponse: #{response.body.inspect}\n"
         end
       rescue Timeout::Error => error
         options[:output] << "\nTimeout while attempting to notify #{engine}\n"

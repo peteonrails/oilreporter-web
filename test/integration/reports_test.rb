@@ -52,6 +52,22 @@ class ReportsTest < ActionController::IntegrationTest
     assert_response :success
   end
 
+  test 'create report with a report session' do
+    factory = Factory.build(:new_orleans)
+    developer = factory.developer
+    report = factory.attributes
+    report_session = ReportSession.create
+    
+    report.delete(:developer)
+    report.merge!(:api_key => developer.api_key)
+    report.merge!(:report_session_id => report_session.id)
+
+    post '/reports', report
+    assert_response :success
+    assert Report.last.report_session == report_session
+    assert report_session.reload.reports.include?(Report.last)
+  end
+  
   test 'upload photo' do
     test_create_report
     report = Report.last
@@ -96,6 +112,22 @@ class ReportsTest < ActionController::IntegrationTest
     assert msg['error']
   end
 
+  test 'list reports in json with session id' do
+    report_session = ReportSession.create
+    test_create_report(:report_session_id => report_session.id)
+    report = Report.last
+    developer = Developer.last
+
+    get "/report_sessions/#{report_session.id}/reports.json", { :api_key => developer.api_key }
+
+    assert_response :success
+    reports = JSON.parse(response.body)
+    
+    assert_equal reports.length, 1
+    assert_equal reports.first['id'], report.id
+    assert_equal reports.first['session_id'], report_session.id
+  end
+  
   test 'list reports in html' do
     test_create_report
     report = Report.first

@@ -14,6 +14,12 @@ ActionController::Routing::Routes.draw do |map|
 
   # Reports
   map.resources :reports, :only => [:create, :update, :index, :map]
+  
+  # Report Sessions
+  map.resources :report_sessions do |report_session|
+    report_session.resources :reports
+  end
+  
   map.connect '/map', :controller => 'reports', :action => 'map'
   map.data '/data', :controller => 'reports', :action => 'index'
   map.show_report '/reports/:state/:id', :controller => 'reports', :action => 'show', :requirements => { :state => /[a-z-]+/, :id => /[\w-]+/ }, :conditions => { :method => :get }

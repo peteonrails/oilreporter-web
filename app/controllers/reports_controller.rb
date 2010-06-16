@@ -79,7 +79,13 @@ class ReportsController < ApplicationController
   private
 
   def paginated_reports
-    Report.within_oil_spill.paginate(:page => params[:page], :order => 'created_at DESC')
+    if params[:report_session_id]
+      report_session = ReportSession.find(params[:report_session_id])
+      @reports = report_session.reports.within_oil_spill
+    end
+
+    @reports = Report.within_oil_spill if @reports.nil?
+    @reports.paginate(:page => params[:page], :order => 'created_at DESC')
   end
 
 end

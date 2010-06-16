@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100609030554) do
+ActiveRecord::Schema.define(:version => 20100616200202) do
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(:version => 20100609030554) do
     t.string  "value"
   end
 
+  create_table "report_sessions", :force => true do |t|
+  end
+
   create_table "reports", :force => true do |t|
     t.text     "description"
     t.integer  "oil"
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20100609030554) do
     t.boolean  "within_oil_spill",   :default => false
     t.string   "slug"
     t.integer  "state_id"
+    t.integer  "report_session_id"
   end
 
   add_index "reports", ["latitude", "longitude", "device_id"], :name => "index_reports", :unique => true
@@ -108,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20100609030554) do
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
     t.string "name"

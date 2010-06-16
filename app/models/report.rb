@@ -3,6 +3,7 @@ require 'oil_spill'
 class Report < ActiveRecord::Base
   belongs_to :developer
   belongs_to :organization
+  belongs_to :report_session
   has_many :report_metas
 
   validates_numericality_of :oil, :wetlands, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10
@@ -27,7 +28,7 @@ class Report < ActiveRecord::Base
       "public/system/:attachment/:id/:style/:basename.:extension",
     :default_url => "http://oilspill_photos.s3.amazonaws.com/missing.png"
 
-  validates_attachment_size :media, :less_than => Oilreporter.config.asset_max_file_size.to_i.megabytes
+  validates_attachment_size :media, :less_than => Oilreporter.config.asset_max_file_size.to_i.megabytes, :unless => "media_content_type.blank?"
 
   def verify_location
     self.update_attribute(:within_oil_spill, OilSpill.instance.contains?(self.latitude, self.longitude))

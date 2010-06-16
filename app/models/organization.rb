@@ -1,6 +1,6 @@
 class Organization < ActiveRecord::Base
-
   has_many :reports
+  has_many :report_sessions, :through => :reports
 
   before_create :generate_pin
 

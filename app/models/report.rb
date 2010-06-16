@@ -56,7 +56,7 @@ class Report < ActiveRecord::Base
   end
 
   def hew
-    fields = [:id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :created_at]
+    fields = [:id, :oil, :wetlands, :wildlife, :description, :latitude, :longitude, :report_session_id, :created_at]
 
     hash = self.attributes.symbolize_keys.inject({}) do |a, (k, v)|
       fields.include?(k) ? a.merge(k => v) : a

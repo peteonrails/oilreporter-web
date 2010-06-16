@@ -123,9 +123,9 @@
               curl -d "api_key=YOUR_API_KEY&latitude=29.964639&longitude=-90.067763&oil=5&wetlands=7&description=Distressed%20Wildlife&device_id=UNIQUE_DEVICE_ID" http://oilreporter.org/reports
               Returns {"id":8}
           
-      .divider.top
-        %a{ :href => "#" }
-          Top
+          .divider.top
+            %a{ :href => "#" }
+              Top
 
           %a{ :name => "session" }
           %h2 Create a New Report Session
@@ -227,7 +227,7 @@
                   "latitude":"29.9646",
                   "longitude": "-90.0678",
                   "created_at": "2010-05-13T19:29:54Z",
-                  "report_session_id": nil,
+                  "report_session_id": null,
                   "media": { "tiny":"http://s3.amazonaws.com/oilreporter_production/medias/7/tiny.jpg?1273722135",
                              "thumb":"http://s3.amazonaws.com/oilreporter_production/medias/7/thumb.jpg?1273722135",
                              "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" },
@@ -247,7 +247,7 @@
             %li 
               Method: GET
             %li 
-              URL: /reports.format (format: json, xml)
+              URL: /report_sessions/REPORT_SESSION_ID/reports.format (format: json, xml)
             %li 
               Required: api_key, report_session_id
             %li 
@@ -310,7 +310,7 @@
                   "latitude":"29.9646",
                   "longitude": "-90.0678",
                   "created_at": "2010-05-13T19:29:54Z",
-                  "report_session_id": nil,
+                  "report_session_id": null,
                   "media": { "tiny":"http://s3.amazonaws.com/oilreporter_production/medias/7/tiny.jpg?1273722135",
                              "thumb":"http://s3.amazonaws.com/oilreporter_production/medias/7/thumb.jpg?1273722135",
                              "medium":"http://s3.amazonaws.com/oilreporter_production/medias/7/medium.jpg?1273722135" },

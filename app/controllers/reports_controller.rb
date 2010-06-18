@@ -85,7 +85,7 @@ class ReportsController < ApplicationController
     end
 
     @reports = Report.within_oil_spill if @reports.nil?
-    @reports.paginate(:page => params[:page], :order => 'created_at DESC')
+    @reports.paginate(:page => params[:page], :per_page => (params[:per_page] || 10), :order => 'created_at DESC')
   end
 
 end

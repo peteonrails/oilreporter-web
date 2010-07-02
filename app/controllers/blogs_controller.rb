@@ -3,6 +3,7 @@ class BlogsController < ApplicationController
 
   def index
     add_crumb "blog", '/blog'
+    canonical_url '/blog'
     @blog = Blog.find_default_blog
     @posts = Post.published.by_date.paginate( :page => params[:page] )
     render :action => 'show'

@@ -4,6 +4,7 @@ class DevelopersController < ApplicationController
 
   def new
     add_crumb "sign up", '/signup'
+    canonical_url '/signup'
     @developer = Developer.new
   end
 

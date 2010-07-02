@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def show
     add_crumb "#{post.title.downcase}", "#{post_link(post)}"
-    canonical_url post_link(post, 'Oil Reporter', :url => true)
+    canonical_url post_link(post)
   end
     
   protected

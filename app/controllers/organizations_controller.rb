@@ -7,11 +7,13 @@ class OrganizationsController < ApplicationController
     redirect_to :controller => 'home', :action => 'setup' and return
 
     add_crumb "organizations", '/organizations'
+    canonical_url '/organizations'
     @organizations = Organization.paginate(:page => params[:page])
   end
 
   def create
     add_crumb "new", '/organizations/new'
+    canonical_url '/organizations/new'
     @organization = Organization.new(params[:organization])
 
     if @organization.valid? &

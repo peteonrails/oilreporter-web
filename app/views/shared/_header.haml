@@ -24,6 +24,9 @@
             %a{ :href => "/news", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "News" }
               News
           %li
+            %a{ :href => "/setup", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "Setup" }
+              Setup
+          %li
             %a
               Sign Up
             %ul
@@ -90,8 +93,6 @@
           %li
             %a{ :href => "/api", "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "API" }
               API
-          %li
-            = link_to "RSS", reports_url(:format => :rss), "gt-evt" => "click", "gt-cat" => "header", "gt-lbl" => "RSS"
       / end top navigation
     - else
       #main_navigation.jqueryslidemenu

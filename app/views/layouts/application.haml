@@ -23,6 +23,8 @@
     /[if lt IE 7]
       = stylesheet_link_tag 'ie6', :type => "text/css", :media => "screen"
       = javascript_include_tag 'unitpngfix'
+      
+    = canonical_link_tag
   
   %body{ :class => body_class }
     = header

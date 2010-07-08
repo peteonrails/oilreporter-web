@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100616200202) do
+ActiveRecord::Schema.define(:version => 20100708193100) do
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(:version => 20100616200202) do
   end
 
   add_index "reports", ["latitude", "longitude", "device_id"], :name => "index_reports", :unique => true
+
+  create_table "session_metas", :force => true do |t|
+    t.integer "report_session_id"
+    t.string  "key"
+    t.string  "value"
+  end
 
   create_table "states", :force => true do |t|
     t.string "name"

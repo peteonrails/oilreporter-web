@@ -50,6 +50,9 @@
               %a{ :href => "#session", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Create Session Anchor" }
                 Create a New Report Session
             %li
+              %a{ :href => "#meta_session", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Session Anchor" }
+                Add Metadata to Report Session
+            %li
               %a{ :href => "#meta", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Anchor" }
                 Add Metadata to Report
             %li
@@ -151,6 +154,30 @@
             %a{ :href => "#" }
               Top
 
+          %a{ :name => "meta_session" }
+          %h2 Add Metadata to Report Session
+          %p
+            Allows you to add as many metadata elements to your report session.  You need the ID of the report you created to be able to call this url. Meta parameters can use any key and any value.  Both keys and values are stored as strings.  You can pass as many metadata items as you want.  In the example below we are adding two meta values.  The first one has a key of <i>my_key_1</i> with a value of <i>custom value</i>.  The other meta element has a key of <i>extra_url</i> with a value of <i>oilreporter.org</i>.
+            %li 
+              Method: PUT
+            %li 
+              URL: /report_sessions/*ID*
+            %li 
+              Required: id, api_key, meta
+            %li
+              Success: empty text and HTTP status code 200
+            %li
+              Failure: empty text and HTTP status code 422
+          %p
+            :coderay
+              #!plaintext
+              curl -d "api_key=YOUR_API_KEY&meta[my_key_1]=custom%20value&meta[extra_url]=oilreporter.org" -X PUT http://oilreporter.org/report_sesions/8
+              Returns empty text and an HTTP status code of 200
+
+          .divider.top
+            %a{ :href => "#" }
+              Top
+
           %a{ :name => "meta" }
           %h2 Add Metadata to Reports
           %p
@@ -168,7 +195,7 @@
           %p
             :coderay
               #!plaintext
-              curl -X PUT http://oilreporter.org/reports/8?api_key=YOUR_API_KEY&meta[my_key_1]=custom%20value&meta[extra_url]=oilreporter.org
+              curl -d "api_key=YOUR_API_KEY&meta[my_key_1]=custom%20value&meta[extra_url]=oilreporter.org" -X PUT http://oilreporter.org/reports/8
               Returns empty text and an HTTP status code of 200
 
           .divider.top
@@ -341,6 +368,9 @@
               %li
                 %a{ :href => "#session", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Create Session Anchor Sidebar" }
                   Create a New Report Session
+              %li
+                %a{ :href => "#meta_session", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Session Anchor Sidebar" }
+                  Add Metadata to Report Session
               %li
                 %a{ :href => "#meta", "gt-evt" => "click", "gt-cat" => "api", "gt-lbl" => "Meta Anchor Sidebar" }
                   Add Metadata to Report

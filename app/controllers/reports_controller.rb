@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
 
   before_filter :verify_api_key, :only => [:create, :update]
   before_filter :extract_organization_pin, :only => [:create, :update]
+  skip_before_filter :verify_authenticity_token
 
   def show
     add_crumb "reports", '/reports'

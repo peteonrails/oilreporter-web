@@ -28,7 +28,7 @@ class Report < ActiveRecord::Base
       "public/system/:attachment/:id/:style/:basename.:extension",
     :default_url => "http://oilspill_photos.s3.amazonaws.com/missing.png"
 
-  validates_attachment_size :media, :less_than => Oilreporter.config.asset_max_file_size.to_i.megabytes, :unless => "media_content_type.blank?"
+  validates_attachment_size :media, :less_than => Oilreporter.config.asset_max_file_size.to_i.megabytes, :unless => lambda { |record| record.media_content_type.blank? }
 
   def verify_location
     self.update_attribute(:within_oil_spill, OilSpill.instance.contains?(self.latitude, self.longitude))
